@@ -1,0 +1,1 @@
+window._CCSettings={platform:"android",groupList:["default"],collisionMatrix:[[true]],rawAssets:{assets:{}},assetTypes:[],launchScene:"db://assets/main.fire",scenes:[{url:"db://assets/main.fire",uuid:"dfpWV22+ZNm60dtsDidaXy"}],packedAssets:{},md5AssetsMap:{},orientation:"",subpackages:{},uuids:[]};
