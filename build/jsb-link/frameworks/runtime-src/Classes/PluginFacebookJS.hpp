@@ -1,0 +1,26 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_PluginFacebook_proto;
+extern se::Class* __jsb_sdkbox_PluginFacebook_class;
+
+bool js_register_sdkbox_PluginFacebook(se::Object* obj);
+bool register_all_PluginFacebookJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_getSDKVersion);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_isLoggedIn);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_getUserID);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_setLoginBehavior);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_requestGift);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_init);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_setAppURLSchemeSuffix);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_logEvent);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_logout);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_sendGift);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_setAppId);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_fetchFriends);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_logPurchase);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_login);
+SE_DECLARE_FUNC(js_PluginFacebookJS_PluginFacebook_getAccessToken);
+

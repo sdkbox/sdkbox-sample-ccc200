@@ -19,7 +19,7 @@ android {
                     // skip the NDK Build step if PROP_NDK_MODE is none
                     targets 'cocos2djs'
                     arguments 'NDK_TOOLCHAIN_VERSION=4.9'
-                    
+
                     def module_paths = [project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x"),
                                         project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos"),
                                         project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/external")]
@@ -68,6 +68,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
@@ -103,7 +104,7 @@ android.applicationVariants.all { variant ->
         copy {
             from "${buildDir}/../../../../../src"
             into "${buildDir}/intermediates/assets/${variant.dirName}/src"
-        }        
+        }
 
         copy {
             from "${buildDir}/../../../../../jsb-adapter"
@@ -123,3 +124,4 @@ dependencies {
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
 }
+dependencies { compile 'com.facebook.android:facebook-android-sdk:[4,5)' }
