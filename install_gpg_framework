@@ -1,0 +1,44 @@
+#!/bin/bash
+
+CUR_DIR=$(cd "$(dirname $0)" && pwd)
+
+cd "$CUR_DIR"
+
+
+MD5="MD5 (gpg-cpp-sdk.v3.0.1.zip) = fea8539403c752692d6b4e7be6312284"
+ZIP_FILENAME="gpg-cpp-sdk.v3.0.1.zip"
+TMP_DIR="__tmp"
+
+if [ -f $ZIP_FILENAME ]; then
+	# check zip
+	CHECK_MD5=`md5 $ZIP_FILENAME`
+	echo $CHECK_MD5, $MD5
+	if [ "$CHECK_MD5" != "$MD5" ]; then
+		echo rm $ZIP_FILENAME
+		rm $ZIP_FILENAME
+	fi
+fi
+
+if [ ! -f $ZIP_FILENAME ]; then
+	curl -o $ZIP_FILENAME "https://developers.google.com/games/services/downloads/gpg-cpp-sdk.v3.0.1.zip"
+fi
+
+if [ -d $TMP_DIR ]; then
+	rm -fr $TMP_DIR
+fi
+mkdir $TMP_DIR
+cd $TMP_DIR
+unzip ../$ZIP_FILENAME
+
+IOS_FRAMEWORK="gpg-cpp-sdk/ios/gpg.framework"
+IOS_DEST="../build/jsb-link/frameworks/runtime-src/proj.ios_mac/gpg.framework"
+rm -rfv $IOS_DEST
+cp -rfv $IOS_FRAMEWORK $IOS_DEST
+
+cd ..
+rm -fr $TMP_DIR
+
+echo ""
+echo "Done."
+echo ""
+
