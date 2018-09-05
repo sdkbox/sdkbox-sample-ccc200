@@ -3,7 +3,6 @@
   "appSecret": "",
   "encryptJs": false,
   "excludeScenes": [],
-  "fb-instant-games": {},
   "includeAnySDK": false,
   "includeSDKBox": false,
   "inlineSpriteFrames": true,
@@ -21,11 +20,7 @@
   },
   "packageName": "com.sdkbox.sample.ccc200",
   "privateKey": "",
-  "qqplay": {
-    "REMOTE_SERVER_ROOT": "",
-    "orientation": "portrait"
-  },
-  "startScene": "dfa56576-dbe6-4d9b-ad1d-b6c0e275a5f2",
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
   "title": "sdkbox-sample-ccc200",
   "webOrientation": "auto",
   "wechatgame": {
@@ -36,5 +31,10 @@
     "subContext": ""
   },
   "xxteaKey": "f6921958-80db-45",
-  "zipCompressJs": true
+  "zipCompressJs": true,
+  "qqplay": {
+    "orientation": "portrait",
+    "REMOTE_SERVER_ROOT": ""
+  },
+  "fb-instant-games": {}
 }

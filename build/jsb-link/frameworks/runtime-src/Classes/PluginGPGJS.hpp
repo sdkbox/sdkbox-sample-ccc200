@@ -1,0 +1,156 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_GPGRealTimeMultiplayerWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGRealTimeMultiplayerWrapper_class;
+
+bool js_register_sdkbox_GPGRealTimeMultiplayerWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_CreateRealTimeRoom);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_LeaveRoom);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_SendUnreliableMessage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_DismissInvitation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_DeclineInvitation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_SendReliableMessage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_AcceptInvitation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_FetchInvitations);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_SendUnreliableMessageToOthers);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGRealTimeMultiplayerWrapper_ShowRoomInboxUI);
+
+extern se::Object* __jsb_sdkbox_GPGTurnBasedMultiplayerWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGTurnBasedMultiplayerWrapper_class;
+
+bool js_register_sdkbox_GPGTurnBasedMultiplayerWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_ShowPlayerSelectUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_CancelMatch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_DismissMatch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_ShowMatchInboxUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_SynchronizeData);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_CreateTurnBasedMatch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_DismissInvitation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_FetchMatch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_DeclineInvitation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_ConfirmPendingCompletion);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_FinishMatchDuringMyTurn);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_Rematch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_LeaveMatchDuringTheirTurn);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_CreateParticipantResult);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_TakeMyTurn);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_FetchMatches);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_LeaveMatchDuringMyTurn);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGTurnBasedMultiplayerWrapper_AcceptInvitation);
+
+extern se::Object* __jsb_sdkbox_GPGWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGWrapper_class;
+
+bool js_register_sdkbox_GPGWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_StartAuthorizationUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_getAuthCode);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_IsAuthorized);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_NotifyToScripting);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_CreateGameServices);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGWrapper_SignOut);
+
+extern se::Object* __jsb_sdkbox_GPGPlayerWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGPlayerWrapper_class;
+
+bool js_register_sdkbox_GPGPlayerWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGPlayerWrapper_FetchRecentlyConnected);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGPlayerWrapper_FetchRecentlyInvitable);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGPlayerWrapper_Fetch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGPlayerWrapper_FetchRecentlyPlayed);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGPlayerWrapper_FetchSelf);
+
+extern se::Object* __jsb_sdkbox_GPGSnapshotWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGSnapshotWrapper_class;
+
+bool js_register_sdkbox_GPGSnapshotWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGSnapshotWrapper_Load);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGSnapshotWrapper_ShowSelectUIOperation);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGSnapshotWrapper_Save);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGSnapshotWrapper_Delete);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGSnapshotWrapper_FetchAll);
+
+extern se::Object* __jsb_sdkbox_GPGLeaderboardWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGLeaderboardWrapper_class;
+
+bool js_register_sdkbox_GPGLeaderboardWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchAll);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchScoreSummary);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchPreviousScorePage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_ShowAllUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchNextScorePage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_SubmitScore);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchAllScoreSummaries);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_ShowUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_Fetch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGLeaderboardWrapper_FetchScorePage);
+
+extern se::Object* __jsb_sdkbox_GPGAchievementWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGAchievementWrapper_class;
+
+bool js_register_sdkbox_GPGAchievementWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_FetchAll);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_Reveal);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_Unlock);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_ShowAllUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_SetStepsAtLeast);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_Increment);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGAchievementWrapper_Fetch);
+
+extern se::Object* __jsb_sdkbox_GPGQuestsWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGQuestsWrapper_class;
+
+bool js_register_sdkbox_GPGQuestsWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_FetchList);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_Accept);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_ShowAllUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_ShowUI);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_ClaimMilestone);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGQuestsWrapper_Fetch);
+
+extern se::Object* __jsb_sdkbox_GPGEventsWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGEventsWrapper_class;
+
+bool js_register_sdkbox_GPGEventsWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGEventsWrapper_FetchAll);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGEventsWrapper_Fetch);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGEventsWrapper_Increment);
+
+extern se::Object* __jsb_sdkbox_GPGStatsWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGStatsWrapper_class;
+
+bool js_register_sdkbox_GPGStatsWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGStatsWrapper_FetchForPlayer);
+
+extern se::Object* __jsb_sdkbox_GPGNearbyConnectionsWrapper_proto;
+extern se::Class* __jsb_sdkbox_GPGNearbyConnectionsWrapper_class;
+
+bool js_register_sdkbox_GPGNearbyConnectionsWrapper(se::Object* obj);
+bool register_all_PluginGPGJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_StartDiscovery);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_RejectConnectionRequest);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_Disconnect);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_SendUnreliableMessage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_GetLocalDeviceId);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_StopAdvertising);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_Stop);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_SendReliableMessage);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_GetLocalEndpointId);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_Init);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_StopDiscovery);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_SendConnectionRequest);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_StartAdvertising);
+SE_DECLARE_FUNC(js_PluginGPGJS_GPGNearbyConnectionsWrapper_AcceptConnectionRequest);
+

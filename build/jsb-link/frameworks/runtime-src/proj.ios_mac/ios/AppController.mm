@@ -78,7 +78,16 @@ Application* app = nullptr;
     //run the cocos2d-x game scene
     app->start();
     
+    [GIDSignIn sharedInstance].uiDelegate = _viewController;
+    
     return YES;
+}
+
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
+    return [[GIDSignIn sharedInstance] handleURL:url
+                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
 

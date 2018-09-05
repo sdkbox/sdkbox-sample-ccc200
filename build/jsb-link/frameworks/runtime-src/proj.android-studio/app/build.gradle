@@ -7,10 +7,10 @@ android {
     buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.sdkbox.sample.ccc200"
+        applicationId "com.sdkbox.gpg"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 1
+        versionCode 4
         versionName "1.0"
 
         externalNativeBuild {
@@ -19,10 +19,10 @@ android {
                     // skip the NDK Build step if PROP_NDK_MODE is none
                     targets 'cocos2djs'
                     arguments 'NDK_TOOLCHAIN_VERSION=4.9'
-
-                    def module_paths = [project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x"),
-                                        project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos"),
-                                        project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/external")]
+                    
+                    def module_paths = [project.file("/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x"),
+                                        project.file("/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x/cocos"),
+                                        project.file("/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x/external")]
                     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
                     }
@@ -63,12 +63,20 @@ android {
                 keyPassword RELEASE_KEY_PASSWORD
             }
         }
+
+        debug {
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                storeFile file(RELEASE_STORE_FILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
@@ -104,7 +112,7 @@ android.applicationVariants.all { variant ->
         copy {
             from "${buildDir}/../../../../../src"
             into "${buildDir}/intermediates/assets/${variant.dirName}/src"
-        }
+        }        
 
         copy {
             from "${buildDir}/../../../../../jsb-adapter"
@@ -121,6 +129,14 @@ android.applicationVariants.all { variant ->
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
+    implementation fileTree(dir: "/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
+
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.android.gms:play-services-games:15.0.1'
+    implementation 'com.google.android.gms:play-services-nearby:15.0.1'
+
 }
+
+
+

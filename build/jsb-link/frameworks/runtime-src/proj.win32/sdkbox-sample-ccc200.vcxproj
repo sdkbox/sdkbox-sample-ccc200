@@ -40,13 +40,13 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="/Applications/CocosCreator.app/Contents/Resources/cocos2d-x\build\cocos2dx.props" />
-    <Import Project="/Applications/CocosCreator.app/Contents/Resources/cocos2d-x\build\cocos2d_headers.props" />
+    <Import Project="/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x\build\cocos2dx.props" />
+    <Import Project="/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x\build\cocos2d_headers.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="/Applications/CocosCreator.app/Contents/Resources/cocos2d-x\build\cocos2dx.props" />
-    <Import Project="/Applications/CocosCreator.app/Contents/Resources/cocos2d-x\build\cocos2d_headers.props" />
+    <Import Project="/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x\build\cocos2dx.props" />
+    <Import Project="/Applications/CocosCreator.2.0.app/Contents/Resources/cocos2d-x\build\cocos2d_headers.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>

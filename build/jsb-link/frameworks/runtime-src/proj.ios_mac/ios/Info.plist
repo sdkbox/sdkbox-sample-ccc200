@@ -51,5 +51,28 @@
       <string>UIInterfaceOrientationLandscapeRight</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
     </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.google.ReverseClientId</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.777734739048-cdkbeieil19d6pfkavddrri5o19gk4ni</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.google.BundleId</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.sdkbox.gpg</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>
