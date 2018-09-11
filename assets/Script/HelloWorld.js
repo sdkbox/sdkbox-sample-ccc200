@@ -2,7 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        label: {
+        logs: {
             default: null,
             type: cc.Label
         },
@@ -39,6 +39,13 @@ cc.Class({
 
     log: function(s) {
         cc.log(s);
+        let lines = this.logs.string.split('\n');
+        cc.log(lines);
+        while (lines.length > 5) {
+            lines.shift();
+        }
+        lines.push(s);
+        this.logs.string = lines.join('\n');
     },
 
     // called every frame
