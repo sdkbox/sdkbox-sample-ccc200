@@ -1,0 +1,19 @@
+{
+  "actualPlatform": "android",
+  "apiLevel": "android-26",
+  "appABIs": [],
+  "buildPath": "./build",
+  "debug": true,
+  "embedWebDebugger": false,
+  "keystoreAlias": "tecokey",
+  "keystoreAliasPassword": "Punch2013",
+  "keystorePassword": "Punch2013",
+  "keystorePath": "../../../../../../keystore/teco.keystore",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "sourceMaps": false,
+  "template": "link",
+  "useDebugKeystore": false,
+  "vsVersion": "auto"
+}
