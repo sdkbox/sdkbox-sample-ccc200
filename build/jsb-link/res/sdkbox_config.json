@@ -1,0 +1,16 @@
+
+{
+    "android": {
+        "GoogleAnalytics": {
+            "trackingCode": "UA-62417901-1", 
+            "anonymizeIp": true
+        }
+    }, 
+    "ios": {
+        "GoogleAnalytics": {
+            "track_init_screen": false, 
+            "trackingCode": "UA-62417901-1", 
+            "anonymizeIp": true
+        }
+    }
+}
