@@ -1,0 +1,48 @@
+
+{
+"android": {
+    "AdMob": {
+        "test": false,
+        "ads": {
+            "banner": {
+                "width": 300,
+                "height": 50,
+                "type": "banner",
+                "id": "ca-app-pub-3940256099942544/6300978111", 
+                "alignment": "bottom"
+            },
+            "interstitial": {
+                "type": "interstitial", 
+                "id": "ca-app-pub-3940256099942544/1033173712"
+            },
+            "reward": {
+                "type": "rewarded_video",
+                "id": "ca-app-pub-3940256099942544/5224354917"
+            }
+        }
+    }
+}, 
+"ios": {
+    "AdMob": {
+        "test": false, 
+        "safearea": true, 
+        "ads": {
+            "banner": {
+                "width": 300,
+                "height": 50,
+                "type": "banner",
+                "id": "ca-app-pub-3940256099942544/2934735716", 
+                "alignment": "bottom"
+            },
+            "interstitial": {
+                "type": "interstitial", 
+                "id": "ca-app-pub-3940256099942544/4411468910"
+            },
+            "reward": {
+                "type": "rewarded_video",
+                "id": "ca-app-pub-3940256099942544/1712485313"
+            }
+        }
+    }
+}
+}

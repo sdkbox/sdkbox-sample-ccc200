@@ -16,31 +16,71 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginAdMob();
     },
 
-    initPluginName: function() {
+    initPluginAdMob: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginAdMob) {
+            this.log('sdkbox.PluginAdMob is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginAdMob.setListener({
+            adViewDidReceiveAd: function(name) {
+                self.log('adViewDidReceiveAd:'+name);
+            },
+            adViewDidFailToReceiveAdWithError: function(name, msg) {
+                self.log('adViewDidFailToReceiveAdWithError:'+name+':'+msg);
+            },
+            adViewWillPresentScreen: function(name) {
+                self.log('adViewWillPresentScreen:'+name);
+            },
+            adViewDidDismissScreen: function(name) {
+                self.log('adViewDidDismissScreen:'+name);
+            },
+            adViewWillDismissScreen: function(name) {
+                self.log('adViewWillDismissScreen:'+name);
+            },
+            adViewWillLeaveApplication: function(name) {
+                self.log('adViewWillLeaveApplication:'+name);
+            },
+            reward: function(name, currency, amount) {
+                self.log('reward:'+name+':'+currency+':'+amount);
+            }
+        });
+        sdkbox.PluginAdMob.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        const adName = 'interstitial'; //interstitial ad
+        // const adName = 'reward'; //reward video
+        if (sdkbox.PluginAdMob.isAvailable(adName)) {
+            sdkbox.PluginAdMob.show(adName);
+        } else {
+            this.log(adName + ' is not available');
+            sdkbox.PluginAdMob.cache(adName);
+        }
+    },
+
+    onButton2: function() {
+        const adName = 'banner';
+        if (sdkbox.PluginAdMob.isAvailable(adName)) {
+            sdkbox.PluginAdMob.show(adName);
+        } else {
+            this.log(adName + ' is not available');
+            sdkbox.PluginAdMob.cache(adName);
+        }
     },
 
     log: function(s) {
         cc.log(s);
         let lines = this.logs.string.split('\n');
-        cc.log(lines);
         while (lines.length > 5) {
             lines.shift();
         }
