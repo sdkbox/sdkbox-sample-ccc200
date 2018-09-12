@@ -40,7 +40,6 @@ cc.Class({
     log: function(s) {
         cc.log(s);
         let lines = this.logs.string.split('\n');
-        cc.log(lines);
         while (lines.length > 5) {
             lines.shift();
         }
