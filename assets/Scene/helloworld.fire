@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.758344443830251,
-      "y": 0.758344443830251,
+      "x": 0.7742788726133636,
+      "y": 0.7742788726133636,
       "z": 1
     },
     "_quat": {
@@ -365,7 +365,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 229,
+      "width": 160.06,
       "height": 40
     },
     "_anchorPoint": {
@@ -411,8 +411,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Plugin Name",
-    "_N$string": "Plugin Name",
+    "_string": "UnityAds",
+    "_N$string": "UnityAds",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -565,8 +565,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Button1",
-    "_N$string": "Button1",
+    "_string": "Show",
+    "_N$string": "Show",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -742,7 +742,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 13,
+    "_localZOrder": 9,
     "groupIndex": 0,
     "_id": "1d2PyyXMJLZZDrgFlZSxjS"
   },

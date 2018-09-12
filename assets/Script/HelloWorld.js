@@ -16,25 +16,51 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginUnityAds();
     },
 
-    initPluginName: function() {
+    initPluginUnityAds: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginUnityAds) {
+            this.log('sdkbox.PluginUnityAds is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginUnityAds.setListener({
+            unityAdsDidClick: function(placementId) {
+                self.log('unityAdsDidClick ' + placementId);
+            },
+            unityAdsPlacementStateChanged: function(placementId, oldState, newState) {
+                self.log('unityAdsPlacementStateChanged:' + placementId + ' oldState:' + oldState + " newState:" + newState);
+            },
+            unityAdsReady: function(placementId) {
+                self.log('unityAdsReady ' + placementId);
+            },
+            unityAdsDidError: function(error, message) {
+                self.log('unityAdsDidError:' + error + ' message:' + message);
+            },
+            unityAdsDidStart: function(placementId) {
+                self.log('unityAdsDidStart=' + placementId);
+            },
+            unityAdsDidFinish: function(placementId, state) {
+                self.log('unityAdsDidFinish ' + placementId + ' state:' + state);
+            }
+        });
+        sdkbox.PluginUnityAds.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+         const placementId = '';
+        if (sdkbox.PluginUnityAds.isReady(placementId)) {
+            sdkbox.PluginUnityAds.show(placementId);
+        } else {
+            this.log('unityads is not ready');
+        }
     },
 
     log: function(s) {
