@@ -1,0 +1,15 @@
+
+{
+"android": {
+    "UnityAds": {
+        "gameId": "1493045", 
+        "testMode": true
+    }
+}, 
+"ios": {
+    "UnityAds": {
+        "gameId": "1493044", 
+        "testMode": true
+    }
+}
+}
