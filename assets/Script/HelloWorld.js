@@ -16,31 +16,33 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginGoogleAnalytics();
     },
 
-    initPluginName: function() {
+    initPluginGoogleAnalytics: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginGoogleAnalytics) {
+            this.log('sdkbox.PluginGoogleAnalytics is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        this.log('Google Analytics init');
+        sdkbox.PluginGoogleAnalytics.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        this.log('log event');
+        sdkbox.PluginGoogleAnalytics.logEvent("Test", "Click", "", 1);
+        sdkbox.PluginGoogleAnalytics.dispatchHits();
     },
 
     log: function(s) {
         cc.log(s);
         let lines = this.logs.string.split('\n');
-        cc.log(lines);
         while (lines.length > 5) {
             lines.shift();
         }

@@ -365,7 +365,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 229,
+      "width": 300.16,
       "height": 40
     },
     "_anchorPoint": {
@@ -411,8 +411,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Plugin Name",
-    "_N$string": "Plugin Name",
+    "_string": "Google Analytics",
+    "_N$string": "Google Analytics",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -565,8 +565,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Button1",
-    "_N$string": "Button1",
+    "_string": "Send Data",
+    "_N$string": "Send Data",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
