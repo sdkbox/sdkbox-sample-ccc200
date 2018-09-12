@@ -16,25 +16,45 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginReview();
     },
 
-    initPluginName: function() {
+    initPluginReview: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginReview) {
+            this.log('sdkbox.PluginReview is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginReview.setListener({
+            onDisplayAlert: function(data) {
+                self.log("didDisplayAlert");
+            },
+            onDeclineToRate: function(data) {
+                self.log("didDeclineToRate");
+            },
+            onRate: function(data) {
+                self.log("didToRate");
+            },
+            onRemindLater: function(data) {
+                self.log("didToRemindLater");
+            }
+        });
+        sdkbox.PluginReview.init();
+
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        sdkbox.PluginReview.rate();
+    },
+
+    onButton2: function() {
+        sdkbox.PluginReview.show(true /* force */);
     },
 
     log: function(s) {

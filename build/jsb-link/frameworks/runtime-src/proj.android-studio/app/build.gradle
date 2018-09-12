@@ -120,6 +120,7 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
+    compile project(':libPluginReviewResource')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
