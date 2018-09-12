@@ -51,5 +51,37 @@
       <string>UIInterfaceOrientationLandscapeRight</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
     </array>
+
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb280194012150923</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>twitterkit-s5xddoPxy4xIbzAhqrecESSlW</string>
+        </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>280194012150923</string>
+    <key>FacebookDisplayName</key>
+    <string>helloworld - Test1</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+      <string>twitter</string>
+      <string>twitterauth</string>
+    </array>
+
   </dict>
 </plist>

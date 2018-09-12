@@ -32,6 +32,8 @@
 
 #import "cocos-analytics/CAAgent.h"
 
+#import <TwitterKit/TWTRKit.h>
+
 using namespace cocos2d;
 
 @implementation AppController
@@ -79,6 +81,12 @@ Application* app = nullptr;
     app->start();
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    return [[Twitter sharedInstance] application:app openURL:url options:options];
 }
 
 

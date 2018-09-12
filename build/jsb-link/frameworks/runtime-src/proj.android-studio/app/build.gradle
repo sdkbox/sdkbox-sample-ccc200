@@ -124,3 +124,5 @@ dependencies {
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
 }
+dependencies { compile 'com.twitter.sdk.android:twitter-core:3.1.1' }
+dependencies { compile 'com.twitter.sdk.android:tweet-composer:3.1.1' }
