@@ -16,25 +16,37 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginFirebase();
     },
 
-    initPluginName: function() {
+    initPluginFirebase: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.firebase) {
+            this.log('sdkbox.firebase is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        sdkbox.firebase.Analytics.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        const evt = {}
+        evt[sdkbox.firebase.Analytics.Param.kFIRParameterItemID] = 'id123456';
+        evt[sdkbox.firebase.Analytics.Param.kFIRParameterItemName] = 'name123456';
+        evt[sdkbox.firebase.Analytics.Param.kFIRParameterItemCategory] = 'category123456';
+        evt[sdkbox.firebase.Analytics.Param.kFIRParameterPrice] = '123.4';
+
+        // log event
+        sdkbox.firebase.Analytics.logEvent(sdkbox.firebase.Analytics.Event.kFIREventViewItem, evt);
+
+        // log custom event
+        // evt['customKey'] = 'custom value';
+        // sdkbox.firebase.Analytics.logEvent("customEvent", evt);
+
     },
 
     log: function(s) {

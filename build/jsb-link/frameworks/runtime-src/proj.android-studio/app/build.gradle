@@ -124,3 +124,5 @@ dependencies {
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
 }
+dependencies { compile 'com.google.android.gms:play-services-ads:12.0.1' }
+dependencies { compile 'com.google.firebase:firebase-core:12.0.1' }
