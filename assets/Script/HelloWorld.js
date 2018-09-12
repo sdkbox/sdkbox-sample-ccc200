@@ -16,25 +16,44 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginSdkboxAds();
     },
 
-    initPluginName: function() {
+    initPluginSdkboxAds: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginSdkboxAds) {
+            this.log('sdkbox.PluginSdkboxAds is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginSdkboxAds.setListener({
+            onAdAction : function(ad_unit_id, zone_location_place_you_name_it, action_type) {
+                self.log("onAdAction:" + String(ad_unit_id) + ":" + String(zone_location_place_you_name_it) + ":" + String(action_type));
+            },
+            onRewardAction : function(ad_unit_id, zone_id, reward_amount, reward_succeed) {
+                self.log("onRewardAction:" + String(ad_unit_id) + ":" + String(zone_id) + ":" + String(reward_amount) + ":" + String(reward_succeed));
+            }
+        });
+        sdkbox.PluginSdkboxAds.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        const placement = 'placement-1';
+        if (sdkbox.PluginSdkboxAds.isAvailable(placement)) {
+            sdkbox.PluginSdkboxAds.placement(placement);
+        } else {
+            this.log(placement + ' is not available');
+        }
+    },
+
+    onButton2: function() {
+        sdkbox.PluginSdkboxAds.playAd("AdMob", "interstitial");
+        //sdkbox.PluginSdkboxAds.playAd("UnityAds", "rewardedVideo");
     },
 
     log: function(s) {

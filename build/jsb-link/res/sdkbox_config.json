@@ -1,0 +1,133 @@
+
+{
+    "android": {
+        "AdMob": {
+            "test": false,
+            "ads": {
+                "banner": {
+                    "width": 300,
+                    "height": 50,
+                    "type": "banner",
+                    "id": "ca-app-pub-3940256099942544/6300978111", 
+                    "alignment": "bottom"
+                },
+                "interstitial": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-3940256099942544/1033173712"
+                },
+                "reward": {
+                    "type": "rewarded_video",
+                    "id": "ca-app-pub-3940256099942544/5224354917"
+                }
+            }
+        },
+        "UnityAds": {
+            "gameId": "1493045", 
+            "testMode": true
+        }, 
+        "SdkboxAds": {
+            "units": [
+                "AdMob",
+                "UnityAds"
+            ], 
+            "placements": [
+                {
+                    "units": [
+                        {
+                            "unit": "AdMob", 
+                            "name": "interstitial", 
+                            "weight": 1
+                        }, 
+                        {
+                            "unit": "UnityAds", 
+                            "name": "video", 
+                            "weight": 2
+                        }
+                    ], 
+                    "id": "placement-1", 
+                    "strategy": "weight"
+                },
+                {
+                    "units": [
+                        {
+                            "unit": "AdMob", 
+                            "name": "reward"
+                        },
+                        {
+                            "unit": "UnityAds", 
+                            "name": "rewardedVideo"
+                        }
+                    ], 
+                    "id": "placement-2", 
+                    "strategy": "round-robin"
+                }
+            ]
+        }
+    }, 
+    "ios": {
+        "AdMob": {
+            "test": false, 
+            "safearea": true, 
+            "ads": {
+                "banner": {
+                    "width": 300,
+                    "height": 50,
+                    "type": "banner",
+                    "id": "ca-app-pub-3940256099942544/2934735716", 
+                    "alignment": "bottom"
+                },
+                "interstitial": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-3940256099942544/4411468910"
+                },
+                "reward": {
+                    "type": "rewarded_video",
+                    "id": "ca-app-pub-3940256099942544/1712485313"
+                }
+            }
+        },
+        "UnityAds": {
+            "gameId": "1493044", 
+            "testMode": true
+        }, 
+        "SdkboxAds": {
+            "debug": true, 
+            "units": [
+                "AdMob",
+                "UnityAds"
+            ],
+            "placements": [
+                {
+                    "units": [
+                        {
+                            "unit": "AdMob", 
+                            "name": "interstitial", 
+                            "weight": 1
+                        }, 
+                        {
+                            "unit": "UnityAds", 
+                            "name": "video", 
+                            "weight": 2
+                        }
+                    ], 
+                    "id": "placement-1", 
+                    "strategy": "weight"
+                },
+                {
+                    "units": [
+                        {
+                            "unit": "AdMob", 
+                            "name": "reward"
+                        },
+                        {
+                            "unit": "UnityAds", 
+                            "name": "rewardedVideo"
+                        }
+                    ], 
+                    "id": "placement-2", 
+                    "strategy": "round-robin"
+                }
+            ]
+        }
+    }
+}
