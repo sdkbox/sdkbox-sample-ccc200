@@ -81,8 +81,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     jsb_register_all_modules();
 #ifdef SDKBOX_ENABLED
-    //se->addRegisterCallback(register_all_PluginSdkboxPlayJS);
-    //se->addRegisterCallback(register_all_PluginSdkboxPlayJS_helper);
+    se->addRegisterCallback(register_all_PluginSdkboxPlayJS);
+    se->addRegisterCallback(register_all_PluginSdkboxPlayJS_helper);
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS) && PACKAGE_AS

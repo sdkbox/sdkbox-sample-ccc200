@@ -16,6 +16,7 @@ LOCAL_SRC_FILES := hellojavascript/main.cpp \
 ../../../Classes/PluginSdkboxPlayJS.cpp \
 ../../../Classes/PluginSdkboxPlayJSHelper.cpp \
 ../../../Classes/SDKBoxJSHelper.cpp
+
 LOCAL_CPPFLAGS := -DSDKBOX_ENABLED \
 -DSDKBOX_COCOS_CREATOR
 LOCAL_LDLIBS := -landroid \
