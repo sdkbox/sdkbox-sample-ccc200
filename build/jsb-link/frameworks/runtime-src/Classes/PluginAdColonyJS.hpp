@@ -1,0 +1,30 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_PluginAdColony_proto;
+extern se::Class* __jsb_sdkbox_PluginAdColony_class;
+
+bool js_register_sdkbox_PluginAdColony(se::Object* obj);
+bool register_all_PluginAdColonyJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_zoneStatusForZone);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_show);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getUniqueDeviceID);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getStatus);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_init);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_videoAdCurrentlyRunning);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_setUserMetadata);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_setGDPR);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getCustomID);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getAdvertisingIdentifier);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_turnAllAdsOff);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_requestAllAds);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_setCustomID);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getVideoCreditBalance);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getVideosPerReward);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_getVendorIdentifier);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_notifyIAPComplete);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_userInterestedIn);
+SE_DECLARE_FUNC(js_PluginAdColonyJS_PluginAdColony_cancelAd);
+

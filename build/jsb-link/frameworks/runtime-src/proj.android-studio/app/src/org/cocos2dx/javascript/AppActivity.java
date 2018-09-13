@@ -35,7 +35,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 
-public class AppActivity extends Cocos2dxActivity {
+public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,38 @@
+{
+    "android": {
+        "AdColony": {
+            "debug": true, 
+            "id": "app185a7e71e1714831a49ec7", 
+            "ads": {
+                "v4vc": {
+                    "v4vc": true, 
+                    "pre_popup": true, 
+                    "zone": "vz1fd5a8b2bf6841a0a4b826", 
+                    "post_popup": true
+                }, 
+                "video": {
+                    "v4vc": false, 
+                    "zone": "vz06e8c32a037749699e7050"
+                }
+            }
+        }
+    }, 
+    "ios": {
+        "AdColony": {
+            "debug": true, 
+            "id": "appbdee68ae27024084bb334a", 
+            "ads": {
+                "v4vc": {
+                    "v4vc": true, 
+                    "pre_popup": true, 
+                    "zone": "vzf8e4e97704c4445c87504e", 
+                    "post_popup": true
+                }, 
+                "video": {
+                    "v4vc": false, 
+                    "zone": "vzf8fb4670a60e4a139d01b5"
+                }
+            }
+        }
+    }
+}

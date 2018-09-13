@@ -16,25 +16,45 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginAdColony();
     },
 
-    initPluginName: function() {
+    initPluginAdColony: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginAdColony) {
+            this.log('sdkbox.PluginAdColony is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginAdColony.setListener({
+            onAdColonyChange : function (data, available) {
+                self.log("onAdColonyChange:" + data.name + ':' + available);
+            },
+            onAdColonyReward : function (data, currencyName, amount, success) {
+                self.log("onAdColonyReward:" + data.name + ':' + currencyName + ':' + amount + ':' + success);
+            },
+            onAdColonyStarted : function (data) {
+                self.log("onAdColonyStarted:" + data.name);
+            },
+            onAdColonyFinished : function (data) {
+                self.log("onAdColonyFinished:" + data.name);
+            }
+        });
+        sdkbox.PluginAdColony.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        if (3 == sdkbox.PluginAdColony.getStatus("video")) {
+            sdkbox.PluginAdColony.show("video");
+        } else {
+            this.log("video is not ready, to cache");
+            sdkbox.PluginAdColony.requestAllAds();
+        }
     },
 
     log: function(s) {
