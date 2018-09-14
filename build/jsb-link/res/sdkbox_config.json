@@ -1,0 +1,36 @@
+{
+    "android": {
+        "Chartboost": {
+            "ads": {
+                "Default": {
+                    "type": "interstitial"
+                }, 
+                "Level Complete": {
+                    "type": "rewarded_video"
+                }, 
+                "MoreApp": {
+                    "type": "more_app"
+                }
+            }, 
+            "id": "4f7b433509b6025804000002", 
+            "signature": "dd2d41b69ac01b80f443f5b6cf06096d457f82bd"
+        }
+    }, 
+    "ios": {
+        "Chartboost": {
+            "ads": {
+                "Default": {
+                    "type": "interstitial"
+                }, 
+                "Level Complete": {
+                    "type": "rewarded_video"
+                }, 
+                "MoreApp": {
+                    "type": "more_app"
+                }
+            }, 
+            "id": "4f21c409cd1cb2fb7000001b", 
+            "signature": "92e2de2fd7070327bdeb54c15a5295309c6fcd2d"
+        }
+    }
+}

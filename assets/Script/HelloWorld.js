@@ -16,25 +16,67 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginChartboost();
     },
 
-    initPluginName: function() {
+    initPluginChartboost: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginChartboost) {
+            this.log('sdkbox.PluginChartboost is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginChartboost.setListener({
+            onChartboostCached : function (name) {
+                self.log("onChartboostCached:" + name);
+            },
+            onChartboostShouldDisplay : function (name) {
+                self.log("onChartboostShouldDisplay:" + name);
+            },
+            onChartboostDisplay : function (name) {
+                self.log("onChartboostDisplay:" + name);
+            },
+            onChartboostDismiss : function (name) {
+                self.log("onChartboostDismiss:" + name);
+            },
+            onChartboostClose : function (name) {
+                self.log("onChartboostClose:" + name);
+            },
+            onChartboostClick : function (name) {
+                self.log("onChartboostClick:" + name);
+            },
+            onChartboostReward : function (name, reward) {
+                self.log("onChartboostReward:" + name + ":" + reward.toString());
+            },
+            onChartboostFailedToLoad : function (name, e) {
+                self.log("onChartboostFailedToLoad:" + name + ":" + e.toString());
+            },
+            onChartboostFailToRecordClick : function (name, e) {
+                self.log("onChartboostFailToRecordClick:" + name + ":" + e.toString());
+            },
+            onChartboostConfirmation : function () {
+                self.log("onChartboostConfirmation");
+            },
+            onChartboostCompleteStore : function () {
+                self.log("onChartboostCompleteStore");
+            }
+        });
+        sdkbox.PluginChartboost.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        const adName = 'Default';
+        if (sdkbox.PluginChartboost.isAvailable(adName)) {
+            sdkbox.PluginChartboost.show(adName);
+        } else {
+            this.log(adName + ' is not available, to cache...');
+            sdkbox.PluginChartboost.cache(adName);
+        }
     },
 
     log: function(s) {
