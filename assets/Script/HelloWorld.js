@@ -16,25 +16,32 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginYoutube();
     },
 
-    initPluginName: function() {
+    initPluginYoutube: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginYoutube) {
+            this.log('sdkbox.PluginYoutube is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginYoutube.setListener({
+            onPlayEnds: function(ok) {
+                self.log("onPlayEnds:" + ok);
+            }
+        });
+        sdkbox.PluginYoutube.init();
+
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        sdkbox.PluginYoutube.playVideo("GrP3jHuLQ9o", 0, true, true);
     },
 
     log: function(s) {
