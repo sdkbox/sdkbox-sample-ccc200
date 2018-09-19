@@ -16,25 +16,84 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginAppnext();
     },
 
-    initPluginName: function() {
+    initPluginAppnext: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginAppnext) {
+            this.log('sdkbox.PluginAppnext is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginAppnext.setListener({
+            onAdError : function(msg) {
+                self.log("onAdError: " + msg);
+            },
+
+            onAdLoaded : function() {
+                self.log("onAdLoaded");
+            },
+
+            onAdOpened : function() {
+                self.log("onAdOpened");
+            },
+
+            onAdClosed : function() {
+                self.log("onAdClosed");
+            },
+
+            onAdClicked : function() {
+                self.log("onAdClicked");
+            },
+
+            onVideoLoaded : function(name) {
+                self.log("onVideoLoaded: " + name);
+            },
+
+            onVideoClicked : function(name) {
+                self.log("onVideoClicked: " + name);
+            },
+
+            onVideoClosed : function(name) {
+                self.log("onVideoClosed: " + name);
+            },
+
+            onVideoEnded : function(name) {
+                self.log("onVideoEnded: " + name);
+            },
+
+            onVideoError : function(name, msg) {
+                self.log("onVideoError: " + name);
+            }
+        });
+        sdkbox.PluginAppnext.init();
+
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        if (sdkbox.PluginAppnext.isAdReady()) {
+            sdkbox.PluginAppnext.showAd();
+        } else {
+            this.log("ad is not ready, to cache");
+            sdkbox.PluginAppnext.cacheAd("default");
+        }
+    },
+
+    onButton2: function() {
+        const videoName = "fullscreen"; // 'reward'
+        if (sdkbox.PluginAppnext.isVideoReady(videoName)) {
+            sdkbox.PluginAppnext.showVideo(videoName);
+        } else {
+            this.log(videoName + " is not ready, to cache...");
+            sdkbox.PluginAppnext.cacheVideo(videoName);
+        }
+
     },
 
     log: function(s) {

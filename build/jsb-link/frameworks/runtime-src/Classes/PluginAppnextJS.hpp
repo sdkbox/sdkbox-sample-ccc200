@@ -1,0 +1,26 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_PluginAppnext_proto;
+extern se::Class* __jsb_sdkbox_PluginAppnext_class;
+
+bool js_register_sdkbox_PluginAppnext(se::Object* obj);
+bool register_all_PluginAppnextJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_hideAd);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_cacheAd);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_showVideo);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_refreshAds);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_isVideoReady);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_setRewardsRewardTypeCurrency);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_isAdReady);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_refreshVideo);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_cacheVideo);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_init);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_setRewardsTransactionId);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_setRewardsUserId);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_showAd);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_setRewardsCustomParameter);
+SE_DECLARE_FUNC(js_PluginAppnextJS_PluginAppnext_setRewardsAmountRewarded);
+

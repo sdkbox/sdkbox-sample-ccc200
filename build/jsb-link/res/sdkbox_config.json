@@ -1,0 +1,93 @@
+{
+    "android": {
+        "Appnext": {
+            "debug": true, 
+            "ads": {
+                "default": {
+                    "creative_type": "managed", 
+                    "can_close": false, 
+                    "mute": false, 
+                    "skip_text": "Skip Text", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "button_color": "#6AB344", 
+                    "type": "interstitial", 
+                    "id": "2f6850dd-190a-499d-aa50-1f4a3dd1ed5f", 
+                    "categories": "Action,Puzzle", 
+                    "autoplay": true
+                }, 
+                "fullscreen": {
+                    "can_close": false, 
+                    "progress_color": "#ffffff", 
+                    "show_close_button": true, 
+                    "progress_type": "clock", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "video_lenght": "short", 
+                    "button_color": "#6AB344", 
+                    "type": "fullscreen", 
+                    "id": "17322152-1ef3-4e72-9677-eaf7c09f1054", 
+                    "categories": "Action,Puzzle"
+                }, 
+                "reward": {
+                    "can_close": false, 
+                    "progress_color": "#ffff00", 
+                    "show_close_button": false, 
+                    "progress_type": "bar", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "video_lenght": "long", 
+                    "button_color": "#6AB344", 
+                    "type": "reward", 
+                    "id": "8d653a16-129b-4c14-bd22-fae625f70cf4", 
+                    "categories": "Action,Puzzle"
+                }
+            }
+        }
+    }, 
+    "ios": {
+        "Appnext": {
+            "debug": true, 
+            "ads": {
+                "default": {
+                    "creative_type": "managed", 
+                    "mute": false, 
+                    "skip_text": "Skip Text", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "button_color": "#6AB344", 
+                    "type": "interstitial", 
+                    "id": "6d596bc5-b4c1-48ca-be95-3758fd29a3a5", 
+                    "categories": "Action,Puzzle", 
+                    "autoplay": true
+                }, 
+                "fullscreen": {
+                    "progress_color": "#ffffff", 
+                    "show_close_button": true, 
+                    "progress_type": "clock", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "video_lenght": "short", 
+                    "button_color": "#6AB344", 
+                    "close_delay": 5.0, 
+                    "type": "fullscreen", 
+                    "id": "39cd02ce-8607-42f2-8134-069aaa3796e2", 
+                    "categories": "Action,Puzzle"
+                }, 
+                "reward": {
+                    "progress_color": "#ffff00", 
+                    "show_close_button": true, 
+                    "progress_type": "bar", 
+                    "postback": "postback", 
+                    "button_text": "Button Text", 
+                    "video_lenght": "long", 
+                    "button_color": "#6AB344", 
+                    "close_delay": 5.4, 
+                    "type": "reward", 
+                    "id": "1cd50102-0914-4506-8514-3e2bb3787c35", 
+                    "categories": "Action,Puzzle"
+                }
+            }
+        }
+    }
+}
