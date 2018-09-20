@@ -42,6 +42,10 @@ using namespace anysdk::framework;
 #endif
 
 USING_NS_CC;
+#ifdef SDKBOX_ENABLED
+#include "PluginFyberJS.hpp"
+#include "PluginFyberJSHelper.h"
+#endif
 
 AppDelegate::AppDelegate(int width, int height) : Application("Cocos Game", width, height)
 {
@@ -76,6 +80,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     });
 
     jsb_register_all_modules();
+#ifdef SDKBOX_ENABLED
+    se->addRegisterCallback(register_all_PluginFyberJS);
+    se->addRegisterCallback(register_all_PluginFyberJS_helper);
+#endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS) && PACKAGE_AS
    se->addRegisterCallback(register_all_anysdk_framework);

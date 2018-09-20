@@ -1,0 +1,18 @@
+{
+    "android": {
+        "Fyber": {
+            "debug": true, 
+            "toast": true, 
+            "token": "48e8452e9f008fe6d2ef61d742ce6c06", 
+            "appid": "35669"
+        }
+    }, 
+    "ios": {
+        "Fyber": {
+            "debug": true, 
+            "toast": true, 
+            "token": "34a9643edf4d3052d2bc1928b2e34d8d", 
+            "appid": "35561"
+        }
+    }
+}

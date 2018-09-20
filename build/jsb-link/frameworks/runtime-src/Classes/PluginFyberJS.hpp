@@ -1,0 +1,41 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_PluginFyber_proto;
+extern se::Class* __jsb_sdkbox_PluginFyber_class;
+
+bool js_register_sdkbox_PluginFyber(se::Object* obj);
+bool register_all_PluginFyberJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setZipcode);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_showInterstitial);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setNumberOfSessions);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setNumberOfChildren);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setLocation);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setIap);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setVersion);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_requestInterstitial);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_showOfferWall);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_requestOffers);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_init);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setDevice);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setLastSession);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setAnnualHouseholdIncome);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setMaritalStatus);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_showOffers);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_cleanLocation);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setSexualOrientation);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setGender);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setBirthdate);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setAge);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setConnectionType);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_addCustomParameters);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setInterests);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_requestDeltaOfCoins);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setPsTime);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_cleanCustomParameters);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setIapAmount);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setEthnicity);
+SE_DECLARE_FUNC(js_PluginFyberJS_PluginFyber_setEducation);
+
