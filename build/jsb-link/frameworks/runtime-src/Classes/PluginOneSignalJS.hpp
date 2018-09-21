@@ -1,0 +1,23 @@
+#pragma once
+#include "base/ccConfig.h"
+
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+
+extern se::Object* __jsb_sdkbox_PluginOneSignal_proto;
+extern se::Class* __jsb_sdkbox_PluginOneSignal_class;
+
+bool js_register_sdkbox_PluginOneSignal(se::Object* obj);
+bool register_all_PluginOneSignalJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_getTags);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_enableInAppAlertNotification);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_postNotification);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_setLogLevel);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_idsAvailable);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_setEmail);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_promptLocation);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_init);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_registerForPushNotifications);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_deleteTag);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_setSubscription);
+SE_DECLARE_FUNC(js_PluginOneSignalJS_PluginOneSignal_sendTag);
+
