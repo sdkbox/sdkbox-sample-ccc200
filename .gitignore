@@ -1,8 +1,11 @@
 
 packages/
 sdkbox/
+build/jsb-link/res/
+build/jsb-link/src/
 build/jsb-link/frameworks/runtime-src/proj.ios_mac/Appodeal.framework
 build/jsb-link/frameworks/runtime-src/proj.ios_mac/gpg.framework
+
 
 
 #/////////////////////////////////////////////////////////////////////////////
