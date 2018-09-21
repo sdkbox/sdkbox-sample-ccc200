@@ -2,7 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        label: {
+        logs: {
             default: null,
             type: cc.Label
         },
@@ -68,20 +68,26 @@ cc.Class({
 
     onButton1: function() {
         if (null == this.gameServices) {
-            cc.log('GPG game services is null');
+            this.log('GPG game services is null');
             return;
         }
         if (this.signIn) {
-            cc.log('GPG to sign out ...');
+            this.log('GPG to sign out ...');
             this.gameServices.SignOut();
         } else {
-            cc.log('GPG to sign in ...');
+            this.log('GPG to sign in ...');
             this.gameServices.StartAuthorizationUI();
         }
     },
 
     log: function(s) {
         cc.log(s);
+        let lines = this.logs.string.split('\n');
+        while (lines.length > 5) {
+            lines.shift();
+        }
+        lines.push(s);
+        this.logs.string = lines.join('\n');
     }
 
 });
