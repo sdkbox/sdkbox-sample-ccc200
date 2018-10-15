@@ -24,6 +24,8 @@
  THE SOFTWARE.
 ****************************************************************************/
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
 #import "AppController.h"
 #import "cocos2d.h"
 #import "AppDelegate.h"
@@ -75,12 +77,24 @@ Application* app = nullptr;
 
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 
+    BOOL ret = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                        didFinishLaunchingWithOptions:launchOptions];
+
     //run the cocos2d-x game scene
     app->start();
     
-    return YES;
+    return ret;
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -93,6 +107,7 @@ Application* app = nullptr;
     /*
       Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     */
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

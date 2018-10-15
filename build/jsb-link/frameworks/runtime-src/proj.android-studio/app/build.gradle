@@ -124,3 +124,4 @@ dependencies {
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
 }
+dependencies { compile 'com.facebook.android:facebook-android-sdk:[4,5)' }
