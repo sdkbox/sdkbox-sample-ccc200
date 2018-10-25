@@ -16,25 +16,33 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initPluginMisc();
     },
 
-    initPluginName: function() {
+    initPluginMisc: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginMisc) {
+            this.log('sdkbox.PluginMisc is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginMisc.setListener({
+            onHandleLocalNotify :function (json) {
+                self.log("onHandleLocalNotify");
+                cc.log(json);
+            }
+        });
+        sdkbox.PluginMisc.init();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        let nid = sdkbox.PluginMisc.localNotify("test title", "this a test notify content", 1000 * 10);
+        this.log('Local Notification ID:' + nid);
     },
 
     log: function(s) {

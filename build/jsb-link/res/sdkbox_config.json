@@ -1,0 +1,18 @@
+{
+    "android": {
+        "Misc": {
+            "debug": true
+        }, 
+        "Facebook": {
+            "debug": false
+        }
+    }, 
+    "ios": {
+        "Misc": {
+            "debug": true
+        }, 
+        "Facebook": {
+            "debug": true
+        }
+    }
+}

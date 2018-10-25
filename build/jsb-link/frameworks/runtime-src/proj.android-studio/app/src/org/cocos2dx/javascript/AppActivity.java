@@ -35,7 +35,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 
-public class AppActivity extends Cocos2dxActivity {
+public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,8 @@ public class AppActivity extends Cocos2dxActivity {
         
         SDKWrapper.getInstance().init(this);
         CAAgent.enableDebug(false);
+
+        com.sdkbox.plugin.PluginMisc.onHandleNotification(getIntent());
     }
     
     @Override
@@ -99,6 +101,8 @@ public class AppActivity extends Cocos2dxActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         SDKWrapper.getInstance().onNewIntent(intent);
+
+        com.sdkbox.plugin.PluginMisc.onHandleNotification(intent);
     }
 
     @Override

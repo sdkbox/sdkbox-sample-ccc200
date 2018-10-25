@@ -32,6 +32,8 @@
 
 #import "cocos-analytics/CAAgent.h"
 
+#include "PluginMisc/PluginMisc.h"
+
 using namespace cocos2d;
 
 @implementation AppController
@@ -78,7 +80,28 @@ Application* app = nullptr;
     //run the cocos2d-x game scene
     app->start();
     
+    if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
+        [self handleLocalNotification:launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]];
+    }
+
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [self handleLocalNotification:notification.userInfo];
+}
+
+- (void)handleLocalNotification:(NSDictionary *)payloadDic {
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payloadDic
+                                                       options:0
+                                                         error:&error];
+    if (nil != jsonData) {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        sdkbox::PluginMisc::handleLocalNotify([jsonString UTF8String]);
+    } else {
+        NSLog(@"Error:%@", error);
+    }
 }
 
 

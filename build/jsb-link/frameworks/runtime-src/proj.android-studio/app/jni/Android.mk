@@ -11,9 +11,16 @@ LOCAL_ARM_MODE := arm
 endif
 
 LOCAL_SRC_FILES := hellojavascript/main.cpp \
-				   ../../../Classes/AppDelegate.cpp \
-				   ../../../Classes/jsb_module_register.cpp \
+    ../../../Classes/AppDelegate.cpp \
+    ../../../Classes/jsb_module_register.cpp \
+    ../../../Classes/PluginMiscJS.cpp \
+    ../../../Classes/PluginMiscJSHelper.cpp \
+    ../../../Classes/SDKBoxJSHelper.cpp
 
+
+
+
+LOCAL_CPPFLAGS := -DSDKBOX_ENABLED -DSDKBOX_COCOS_CREATOR
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 
 ifeq ($(USE_ANY_SDK),1)
@@ -27,12 +34,17 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/anysdk
 LOCAL_WHOLE_STATIC_LIBRARIES := PluginProtocolStatic
 endif
 
+LOCAL_WHOLE_STATIC_LIBRARIES += PluginMisc
+LOCAL_WHOLE_STATIC_LIBRARIES += sdkbox
 
 LOCAL_STATIC_LIBRARIES := cocos2dx_static
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2
 
 include $(BUILD_SHARED_LIBRARY)
+$(call import-add-path,$(LOCAL_PATH))
 
 
 $(call import-module, cocos)
+$(call import-module, ./sdkbox)
+$(call import-module, ./PluginMisc)
