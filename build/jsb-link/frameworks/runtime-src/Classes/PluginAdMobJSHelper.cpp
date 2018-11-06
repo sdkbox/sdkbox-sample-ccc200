@@ -32,7 +32,7 @@ public:
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFunNow(__FUNCTION__, args);
     }
     void adViewDidDismissScreen(const std::string &name) override {
         MAKE_V8_HAPPY

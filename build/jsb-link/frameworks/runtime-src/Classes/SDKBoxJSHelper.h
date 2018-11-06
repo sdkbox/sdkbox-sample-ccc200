@@ -20,6 +20,7 @@ namespace sdkbox {
         const se::Value& getJSDelegate();
 
         void invokeJSFun(const std::string& funName, const se::ValueArray& params = se::EmptyValueArray);
+        void invokeJSFunNow(const std::string& funName, const se::ValueArray& params = se::EmptyValueArray);
 
     protected:
         se::Value _JSDelegate;
