@@ -2,6 +2,23 @@
 #include "PluginSdkboxPlay/PluginSdkboxPlay.h"
 #include "SDKBoxJSHelper.h"
 
+
+static se::Value savedGameData_to_jsobj(const sdkbox::SavedGameData* gameData) {
+    se::Value ret;
+    if (nullptr == gameData) {
+        return ret;
+    }
+    std::string dataStr(reinterpret_cast<char const*>(gameData->data), (unsigned int)gameData->dataLength);
+    cocos2d::ValueMap map;
+    map["name"] = cocos2d::Value(gameData->name);
+    map["data"] = cocos2d::Value(dataStr);
+    map["dataLength"] = cocos2d::Value(gameData->dataLength);
+    map["lastModifiedTimestamp"] = cocos2d::Value((double)gameData->lastModifiedTimestamp);
+    map["deviceName"] = cocos2d::Value(gameData->deviceName);
+    ccvaluemap_to_seval(map, &ret);
+    return ret;
+}
+
 class SdkboxPlayListenerJS : public sdkbox::SdkboxPlayListener, public sdkbox::JSListenerBase
 {
 public:
@@ -155,6 +172,39 @@ public:
         args.push_back(se::Value(error));
         invokeJSFun(__FUNCTION__, args);
     }
+
+    virtual void onSaveGameData(bool success, const std::string& error) {
+        MAKE_V8_HAPPY
+        se::ValueArray args;
+        args.push_back(se::Value(success));
+        args.push_back(se::Value(error));
+        invokeJSFun(__FUNCTION__, args);
+    }
+
+    virtual void onLoadGameData(const sdkbox::SavedGameData* savedData, const std::string& error) {
+        MAKE_V8_HAPPY
+        se::ValueArray args;
+        args.push_back(savedGameData_to_jsobj(savedData));
+        args.push_back(se::Value(error));
+        invokeJSFun(__FUNCTION__, args);
+    }
+
+    virtual void onGameDataNames(const std::vector<std::string>& names, const std::string& error) {
+        MAKE_V8_HAPPY
+
+        se::Value namesValue;
+        cocos2d::ValueVector vec;
+        for (std::string name : names) {
+            vec.push_back(cocos2d::Value(name));
+        }
+        ccvaluevector_to_seval(vec, &namesValue);
+
+        se::ValueArray args;
+        args.push_back(namesValue);
+        args.push_back(se::Value(error));
+        invokeJSFun(__FUNCTION__, args);
+    }
+
 };
 
 

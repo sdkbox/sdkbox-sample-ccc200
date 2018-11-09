@@ -98,6 +98,45 @@ cc.Class({
                         self.log('onGameData unknown action:' + action);
                     }
                 }
+            },
+            onSaveGameData: function(success, error) {
+                if (error) {
+                    // failed
+                    self.log('onSaveGameData failed:' + error);
+                } else {
+                    //success
+                    self.log('onSaveGameData success');
+                }
+            },
+            onLoadGameData: function(savedData, error) {
+                if (error) {
+                    // failed
+                    self.log('onLoadGameData failed:' + error);
+                } else {
+                    //success
+                    if (savedData) {
+                        // map["name"]
+                        // map["data"] = cocos2d::Value((char*)gameData->data);
+                        // map["dataLength"] = cocos2d::Value(gameData->dataLength);
+                        // map["lastModifiedTimestamp"] = cocos2d::Value((double)gameData->lastModifiedTimestamp);
+                        // map["deviceName"]
+
+                        console.log(JSON.stringify(savedData));
+                        self.log('onLoadGameData:' + savedData.name);
+                    } else {
+                        self.log('Load Game Data Finish');
+                    }
+                }
+            },
+            onGameDataNames: function(names, error) {
+                if (error) {
+                    // failed
+                    self.log('onGameDataNames failed:' + error);
+                } else {
+                    //success
+                    console.log(JSON.stringify(names));
+                    self.log('onGameDataNames count:' + names.length);
+                }
             }
         });
         sdkbox.PluginSdkboxPlay.init();
@@ -110,6 +149,24 @@ cc.Class({
         } else {
             this.log('to signin...');
             sdkbox.PluginSdkboxPlay.signin();
+        }
+    },
+
+    onButton2: function() {
+        if (sdkbox.PluginSdkboxPlay.isSignedIn()) {
+            this.log('to save game data...');
+            sdkbox.PluginSdkboxPlay.saveGameDataString("key1", "data");
+        } else {
+            this.log('need signin..');
+        }
+    },
+
+    onButton3: function() {
+        if (sdkbox.PluginSdkboxPlay.isSignedIn()) {
+            this.log('to load all game data...');
+            sdkbox.PluginSdkboxPlay.loadAllGameData();
+        } else {
+            this.log('need signin...');
         }
     },
 

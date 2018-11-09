@@ -32,7 +32,7 @@
             ], 
             "connect_on_start": false, 
             "show_achievement_notification": true, 
-            "cloud_save": false, 
+            "cloud_save": true,
             "debug": true
         }
     }, 
