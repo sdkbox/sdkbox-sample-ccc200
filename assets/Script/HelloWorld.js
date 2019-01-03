@@ -16,25 +16,99 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initIAP();
     },
 
-    initPluginName: function() {
+    initIAP: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.IAP) {
+            this.log('sdkbox.IAP is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.IAP.setListener({
+            onSuccess : function (product) {
+                //Purchase success
+                self.log("Purchase successful: " + product.name);
+                self.printProduct(product);
+            },
+            onFailure : function (product, msg) {
+                //Purchase failed
+                //msg is the error message
+                self.log("Purchase failed: " + product.name + " error: " + msg);
+
+            },
+            onCanceled : function (product) {
+                //Purchase was canceled by user
+                self.log("Purchase canceled: " + product.name);
+            },
+            onRestored : function (product) {
+                //Purchase restored
+                self.log("Restored: " + product.name);
+
+                self.printProduct(product);
+            },
+            onProductRequestSuccess : function (products) {
+                //Returns you the data for all the iap products
+                //You can get each item using following method
+                for (var i = 0; i < products.length; i++) {
+                    self.log("================");
+                    self.log("name: " + products[i].name);
+                    self.log("price: " + products[i].price);
+                    self.log("priceValue: " + products[i].priceValue);
+                    self.log("================");
+                }
+            },
+            onProductRequestFailure : function (msg) {
+                //When product refresh request fails.
+                self.log("Failed to get products");
+            },
+            onShouldAddStorePayment: function(productId) {
+                self.log("onShouldAddStorePayment:" + productId);
+                return true;
+            },
+            onFetchStorePromotionOrder : function (productIds, error) {
+                self.log("onFetchStorePromotionOrder:" + " " + " e:" + error);
+            },
+            onFetchStorePromotionVisibility : function (productId, visibility, error) {
+                self.log("onFetchStorePromotionVisibility:" + productId + " v:" + visibility + " e:" + error);
+            },
+            onUpdateStorePromotionOrder : function (error) {
+                self.log("onUpdateStorePromotionOrder:" + error);
+            },
+            onUpdateStorePromotionVisibility : function (error) {
+                self.log("onUpdateStorePromotionVisibility:" + error);
+            },
+        });
+        sdkbox.IAP.init();
+        sdkbox.IAP.setDebug(true);
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        sdkbox.IAP.refresh();
+    },
+
+    onButton2: function() {
+        sdkbox.IAP.purchase("coin_package");
+    },
+
+    printProduct: function(p) {
+        this.log("======The product info======");
+        this.log("name=", p.name);
+        this.log("title=", p.title);
+        this.log("description=", p.description);
+        this.log("price=", p.price);
+        this.log("priceValue=", p.priceValue);
+        this.log("currencyCode=", p.currencyCode);
+        this.log("receipt=", p.receipt);
+        this.log("receiptCipheredPayload=", p.receiptCipheredPayload);
+        this.log("transactionID=", p.transactionID);
+        this.log("");
     },
 
     log: function(s) {
