@@ -1,3 +1,5 @@
+const sdkbox_config = require('../SDKBox/sdkbox_config')
+
 cc.Class({
     extends: cc.Component,
 
@@ -85,7 +87,7 @@ cc.Class({
                 self.log("onUpdateStorePromotionVisibility:" + error);
             },
         });
-        sdkbox.IAP.init();
+        sdkbox.IAP.init(JSON.stringify(sdkbox_config));
         sdkbox.IAP.setDebug(true);
     },
 
