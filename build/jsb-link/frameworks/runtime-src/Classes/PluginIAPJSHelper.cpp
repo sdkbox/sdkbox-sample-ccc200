@@ -82,8 +82,7 @@ public:
         MAKE_V8_HAPPY
         
         se::ValueArray args;
-        //args.push_back(se::Value(products_to_obj(products)));
-        args.push_back(products_to_obj(products));
+        args.push_back(se::Value(products_to_obj(products)));
         invokeJSFun(__FUNCTION__, args);
     }
 

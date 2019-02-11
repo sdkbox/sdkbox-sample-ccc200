@@ -11,6 +11,10 @@
             "verbose": 0, 
             "jsonapi": 0, 
             "forcecopy": 0, 
+            "projectpath": [
+                "proj.ios_mac/sdkbox-sample-ccc200.xcodeproj", 
+                "proj.android-studio"
+            ], 
             "nohelp": 1, 
             "server": "download.sdkbox.com/installer/v1/", 
             "manifest": "manifest.json", 
@@ -20,14 +24,14 @@
             "installer": "/Users/hugo/.sdkbox/bin/sdkbox.pyc", 
             "nopatchingcpp": 0, 
             "local": 0, 
-            "nopatching": 0, 
+            "nopatching": 1, 
             "runin": "gui-creator"
         }, 
         "version": [
             2, 
             4, 
             3, 
-            0
+            3
         ], 
         "result": "ok", 
         "message": "success", 
@@ -35,7 +39,7 @@
             "XCODE_PROJECT": "frameworks/runtime-src/proj.ios_mac/sdkbox-sample-ccc200.xcodeproj/project.pbxproj", 
             "code": "dependencies { compile 'com.android.billingclient:billing:1.0' }\n", 
             "ANDROID_STUDIO_JNI_DIR": "frameworks/runtime-src/proj.android-studio/app/jni/", 
-            "COCOS_BACKUP_DIR": "backup-2018-12-14/", 
+            "COCOS_BACKUP_DIR": "backup-2019-02-11/", 
             "remove_jar": "frameworks/runtime-src/proj.android-studio/app/libs/PluginGooglePlay.jar/", 
             "VS_PROJECT_DIR": "n/a", 
             "COCOS_2DX_INSTALLATION_VERSION": "3.13.0", 

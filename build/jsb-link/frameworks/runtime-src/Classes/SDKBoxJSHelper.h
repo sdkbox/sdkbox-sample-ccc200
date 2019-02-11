@@ -28,3 +28,8 @@ namespace sdkbox {
 
     se::Value getPluginValue(se::Object* obj, const std::string& name);
 }
+
+bool register_all_SDKBoxJS_helper(se::Object* obj);
+SE_DECLARE_FUNC(js_SDKBox_init);
+SE_DECLARE_FUNC(js_SDKBox_getConfig);
+SE_DECLARE_FUNC(js_SDKBox_setConfig);

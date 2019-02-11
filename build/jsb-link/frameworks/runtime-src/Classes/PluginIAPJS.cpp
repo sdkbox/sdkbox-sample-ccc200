@@ -23,6 +23,22 @@ static bool js_PluginIAPJS_IAP_purchase(se::State& s)
 }
 SE_BIND_FUNC(js_PluginIAPJS_IAP_purchase)
 
+static bool js_PluginIAPJS_IAP_getInitializedErrMsg(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 0) {
+        std::string result = sdkbox::IAP::getInitializedErrMsg();
+        ok &= std_string_to_seval(result, &s.rval());
+        SE_PRECONDITION2(ok, false, "js_PluginIAPJS_IAP_getInitializedErrMsg : Error processing arguments");
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 0);
+    return false;
+}
+SE_BIND_FUNC(js_PluginIAPJS_IAP_getInitializedErrMsg)
+
 static bool js_PluginIAPJS_IAP_updateStorePromotionVisibility(se::State& s)
 {
     const auto& args = s.args();
@@ -199,6 +215,19 @@ static bool js_PluginIAPJS_IAP_setDebug(se::State& s)
 }
 SE_BIND_FUNC(js_PluginIAPJS_IAP_setDebug)
 
+static bool js_PluginIAPJS_IAP_requestUpdateTransaction(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    if (argc == 0) {
+        sdkbox::IAP::requestUpdateTransaction();
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 0);
+    return false;
+}
+SE_BIND_FUNC(js_PluginIAPJS_IAP_requestUpdateTransaction)
+
 static bool js_PluginIAPJS_IAP_enableUserSideVerification(se::State& s)
 {
     const auto& args = s.args();
@@ -267,6 +296,7 @@ bool js_register_PluginIAPJS_IAP(se::Object* obj)
     auto cls = se::Class::create("IAP", obj, nullptr, nullptr);
 
     cls->defineStaticFunction("purchase", _SE(js_PluginIAPJS_IAP_purchase));
+    cls->defineStaticFunction("getInitializedErrMsg", _SE(js_PluginIAPJS_IAP_getInitializedErrMsg));
     cls->defineStaticFunction("updateStorePromotionVisibility", _SE(js_PluginIAPJS_IAP_updateStorePromotionVisibility));
     cls->defineStaticFunction("updateStorePromotionOrder", _SE(js_PluginIAPJS_IAP_updateStorePromotionOrder));
     cls->defineStaticFunction("restore", _SE(js_PluginIAPJS_IAP_restore));
@@ -278,6 +308,7 @@ bool js_register_PluginIAPJS_IAP(se::Object* obj)
     cls->defineStaticFunction("getPurchaseHistory", _SE(js_PluginIAPJS_IAP_getPurchaseHistory));
     cls->defineStaticFunction("init", _SE(js_PluginIAPJS_IAP_init));
     cls->defineStaticFunction("setDebug", _SE(js_PluginIAPJS_IAP_setDebug));
+    cls->defineStaticFunction("requestUpdateTransaction", _SE(js_PluginIAPJS_IAP_requestUpdateTransaction));
     cls->defineStaticFunction("enableUserSideVerification", _SE(js_PluginIAPJS_IAP_enableUserSideVerification));
     cls->defineStaticFunction("finishTransaction", _SE(js_PluginIAPJS_IAP_finishTransaction));
     cls->defineStaticFunction("removeListener", _SE(js_PluginIAPJS_IAP_removeListener));

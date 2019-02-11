@@ -42,6 +42,7 @@ namespace sdkbox {
                 param.toObject()->root();
             }
         }
+
         cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName, params, this](){
             this->invokeJSFunNow(funName, params);
         });
@@ -82,4 +83,92 @@ namespace sdkbox {
         }
         return ret;
     }
+}
+
+/**
+    sdkbox.getConfig
+    sdkbox.setConfig
+ */
+
+static bool js_SDKBox_init(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 2) {
+        const char* arg0 = nullptr;
+        const char* arg1 = nullptr;
+        std::string arg0_tmp; ok &= seval_to_std_string(args[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+        std::string arg1_tmp; ok &= seval_to_std_string(args[1], &arg1_tmp); arg1 = arg1_tmp.c_str();
+        SE_PRECONDITION2(ok, false, "js_SDKBox_init : Error processing arguments");
+        sdkbox::init(arg0, arg1);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_SDKBox_init)
+
+static bool js_SDKBox_getConfig(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 0) {
+        std::string result = sdkbox::getConfig();
+        ok &= std_string_to_seval(result, &s.rval());
+        SE_PRECONDITION2(ok, false, "js_SDKBox_getConfig : Error processing arguments");
+        return true;
+    }
+    if (argc == 1) {
+        const char* arg0 = nullptr;
+        std::string arg0_tmp; ok &= seval_to_std_string(args[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+        SE_PRECONDITION2(ok, false, "js_SDKBox_getConfig : Error processing arguments");
+
+        std::string result = sdkbox::getConfig(arg0);
+        ok &= std_string_to_seval(result, &s.rval());
+        SE_PRECONDITION2(ok, false, "js_SDKBox_getConfig : Error processing arguments");
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_SDKBox_getConfig)
+
+static bool js_SDKBox_setConfig(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        const char* arg0 = nullptr;
+        std::string arg0_tmp; ok &= seval_to_std_string(args[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+        SE_PRECONDITION2(ok, false, "js_SDKBox_setConfig : Error processing arguments");
+
+        sdkbox::setConfig(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_SDKBox_setConfig)
+
+bool register_all_SDKBoxJS_helper(se::Object* obj)
+{
+    se::Value nsVal;
+    if (!obj->getProperty("sdkbox", &nsVal))
+    {
+        se::HandleObject jsobj(se::Object::createPlainObject());
+        nsVal.setObject(jsobj);
+        obj->setProperty("sdkbox", nsVal);
+    }
+
+    auto pluginValue = sdkbox::getPluginValue(obj, "sdkbox");
+    auto plugin = pluginValue.toObject();
+    plugin->defineFunction("getConfig", _SE(js_SDKBox_getConfig));
+    plugin->defineFunction("setConfig", _SE(js_SDKBox_setConfig));
+    plugin->defineFunction("init", _SE(js_SDKBox_init));
+
+    se::ScriptEngine::getInstance()->clearException();
+    return true;
 }
