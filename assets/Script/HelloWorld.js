@@ -32,6 +32,7 @@ cc.Class({
             return;
         }
 
+        sdkbox.setConfig(JSON.stringify(sdkbox_config));
         const self = this;
         sdkbox.IAP.setListener({
             onSuccess : function (product) {
@@ -87,7 +88,7 @@ cc.Class({
                 self.log("onUpdateStorePromotionVisibility:" + error);
             },
         });
-        sdkbox.IAP.init(JSON.stringify(sdkbox_config));
+        sdkbox.IAP.init();
         sdkbox.IAP.setDebug(true);
     },
 
