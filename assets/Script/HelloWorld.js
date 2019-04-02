@@ -54,7 +54,7 @@ cc.Class({
                     self.log('GPG on multiplayer invitation');
                 }
             ).SetLogging(gpg.LogLevel.INFO)
-            .EnableSnapshots()
+            .EnableSnapshots() // Android: if login failed, plz comment this line and disable "cloud_save": false, with sdkbox_config.json file
             .Create(
                 function(gs) {
                     if (gs) {
