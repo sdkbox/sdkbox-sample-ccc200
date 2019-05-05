@@ -32,7 +32,10 @@ cc.Class({
             return;
         }
 
-        sdkbox.setConfig(JSON.stringify(sdkbox_config));
+        if (sdkbox.setConfig) {
+            sdkbox.setConfig(JSON.stringify(sdkbox_config));
+        }
+
         const self = this;
         sdkbox.IAP.setListener({
             onSuccess : function (product) {
