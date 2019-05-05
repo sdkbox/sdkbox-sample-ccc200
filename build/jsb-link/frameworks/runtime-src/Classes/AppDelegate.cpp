@@ -110,7 +110,7 @@ void AppDelegate::applicationDidEnterBackground()
 {
     struct CustomEvent event;
     event.name = EVENT_COME_TO_BACKGROUND;
-    EventDispatcher::dispatchCustomEvent(&event);
+//    EventDispatcher::dispatchCustomEvent(&event);
     EventDispatcher::dispatchEnterBackgroundEvent();
 }
 
@@ -119,6 +119,6 @@ void AppDelegate::applicationWillEnterForeground()
 {
     struct CustomEvent event;
     event.name = EVENT_COME_TO_FOREGROUND;
-    EventDispatcher::dispatchCustomEvent(&event);
+//    EventDispatcher::dispatchCustomEvent(&event);
     EventDispatcher::dispatchEnterForegroundEvent();
 }
