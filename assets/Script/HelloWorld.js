@@ -63,11 +63,12 @@ cc.Class({
                 //Returns you the data for all the iap products
                 //You can get each item using following method
                 for (var i = 0; i < products.length; i++) {
-                    self.log("================");
-                    self.log("name: " + products[i].name);
-                    self.log("price: " + products[i].price);
-                    self.log("priceValue: " + products[i].priceValue);
-                    self.log("================");
+                    self.printProduct(products[i]);
+                    // self.log("================");
+                    // self.log("name: " + products[i].name);
+                    // self.log("price: " + products[i].price);
+                    // self.log("priceValue: " + products[i].priceValue);
+                    // self.log("================");
                 }
             },
             onProductRequestFailure : function (msg) {
@@ -92,6 +93,7 @@ cc.Class({
             },
         });
         sdkbox.IAP.init();
+        // sdkbox.IAP.setAutoFinishTransaction(false);
         sdkbox.IAP.setDebug(true);
     },
 
@@ -103,18 +105,25 @@ cc.Class({
         sdkbox.IAP.purchase("coin_package");
     },
 
+    onButton3: function() {
+        sdkbox.IAP.requestUpdateTransaction();
+    },
+
     printProduct: function(p) {
-        this.log("======The product info======");
-        this.log("name=", p.name);
-        this.log("title=", p.title);
-        this.log("description=", p.description);
-        this.log("price=", p.price);
-        this.log("priceValue=", p.priceValue);
-        this.log("currencyCode=", p.currencyCode);
-        this.log("receipt=", p.receipt);
-        this.log("receiptCipheredPayload=", p.receiptCipheredPayload);
-        this.log("transactionID=", p.transactionID);
-        this.log("");
+        // this.log("======The product info======");
+
+        this.log(p.name + ":" + p.price);
+
+        // this.log("name=" + p.name);
+        // this.log("title=" + p.title);
+        // this.log("description=" + p.description);
+        // this.log("price=" + p.price);
+        // this.log("priceValue=" + p.priceValue);
+        // this.log("currencyCode=" + p.currencyCode);
+        // this.log("receipt=" + p.receipt);
+        // this.log("receiptCipheredPayload=" + p.receiptCipheredPayload);
+        // this.log("transactionID=" + p.transactionID);
+        // this.log("");
     },
 
     log: function(s) {
