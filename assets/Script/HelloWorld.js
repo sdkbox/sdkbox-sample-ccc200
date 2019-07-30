@@ -6,8 +6,48 @@ cc.Class({
             default: null,
             type: cc.Label
         },
+        camera: {
+            default: null,
+            type: cc.Camera
+        },
         // defaults, set visually when attaching this script to the Canvas
         text: 'Hello, World!'
+    },
+
+    captureScreen: function (captureScreenFilePath) {
+        const filpYImage = function (data, width, height) {
+            // create the data array
+            let picData = new Uint8Array(width * height * 4);
+            let rowBytes = width * 4;
+            for (let row = 0; row < height; row++) {
+                let srow = height - 1 - row;
+                let start = srow * width * 4;
+                let reStart = row * width * 4;
+                // save the piexls data
+                for (let i = 0; i < rowBytes; i++) {
+                    picData[reStart + i] = data[start + i];
+                }
+            }
+            return picData;
+        }
+
+        const width = cc.visibleRect.width;
+        const height = cc.visibleRect.height;
+        let texture = new cc.RenderTexture();
+        texture.initWithSize(width, height);
+        const backupRenderer = this.camera.targetTexture;
+        this.camera.targetTexture = texture;
+        this.camera.render();
+        this.camera.targetTexture = backupRenderer;
+        let picData = texture.readPixels();
+        // picData = filpYImage(picData, width, height);
+
+        let success = false;
+        if (jsb.saveImageData) {
+            success = jsb.saveImageData(picData, width, height, captureScreenFilePath);
+        }
+
+        return success;
     },
 
     // use this for initialization
@@ -80,12 +120,25 @@ cc.Class({
     },
 
     onButton2: function() {
+        sdkbox.PluginShare.setFileProviderAuthorities("com.sdkbox.test.app.fileprovider");
+
         const shareInfo = {};
         shareInfo.title = "title";
         shareInfo.text = "text";
-        shareInfo.image = "button.png";
+        shareInfo.image = this.captureScreenFilePath;
         shareInfo.link = "www.sdkbox.com";
         sdkbox.PluginShare.nativeShare(shareInfo);
+    },
+
+    onButton3: function() {
+        this.captureScreenFilePath = jsb.fileUtils.getWritablePath() + "capturetest.png";
+        this.captureScreenFilePath = "/mnt/sdcard/screenshot.png";
+        if (this.captureScreen(this.captureScreenFilePath)) {
+            cc.log("save image data success, file: " + this.captureScreenFilePath);
+        } else {
+            this.captureScreenFilePath = null;
+            cc.error("save image data failed!");
+        }
     },
 
     generateRandomStr: function() {
