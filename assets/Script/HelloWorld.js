@@ -44,6 +44,7 @@ cc.Class({
 
         let success = false;
         if (jsb.saveImageData) {
+            // CocosCreator 2.0.2+ support jsb.saveImageData 
             success = jsb.saveImageData(picData, width, height, captureScreenFilePath);
         }
 
