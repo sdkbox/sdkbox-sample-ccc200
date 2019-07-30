@@ -6,14 +6,17 @@
             "patcherrors": 0, 
             "forcedownload": 0, 
             "noupdate": 0, 
+            "days": 10, 
             "remote": 1, 
-            "staging": 1, 
             "verbose": 0, 
             "jsonapi": 0, 
             "forcecopy": 0, 
-            "days": 10, 
+            "projectpath": [
+                "proj.ios_mac/sdkbox-sample-ccc200.xcodeproj", 
+                "proj.android-studio"
+            ], 
             "nohelp": 1, 
-            "server": "staging.sdkbox.com/installer/v1/", 
+            "server": "download.sdkbox.com/installer/v1/", 
             "manifest": "manifest.json", 
             "project": "./", 
             "command": "import", 
@@ -21,14 +24,14 @@
             "installer": "/Users/hugo/.sdkbox/bin/sdkbox.pyc", 
             "nopatchingcpp": 0, 
             "local": 0, 
-            "nopatching": 0, 
+            "nopatching": 1, 
             "runin": "gui-creator"
         }, 
         "version": [
             2, 
-            4, 
-            1, 
-            0
+            5, 
+            0, 
+            1
         ], 
         "result": "ok", 
         "message": "success", 
@@ -87,7 +90,7 @@
             "IOS_PROJECT_DIR": "frameworks/runtime-src/proj.ios_mac/", 
             "XCODE_PROJECT_CXX_LIBRARY": "libc++", 
             "ANDROID_STUDIO_MK": "frameworks/runtime-src/proj.android-studio/app/jni/Android.mk", 
-            "COCOS_BACKUP_DIR": "backup-2018-09-12/", 
+            "COCOS_BACKUP_DIR": "backup-2019-07-30/", 
             "js_sources": [
                 "PluginShareJS.cpp", 
                 "PluginShareJS.hpp", 

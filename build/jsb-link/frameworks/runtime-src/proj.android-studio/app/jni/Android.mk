@@ -43,4 +43,4 @@ $(call import-add-path,$(LOCAL_PATH))
 
 $(call import-module, cocos)
 $(call import-module, ./sdkbox)
-$(call import-module, ./pluginshare)
+$(call import-module, ./PluginShare)

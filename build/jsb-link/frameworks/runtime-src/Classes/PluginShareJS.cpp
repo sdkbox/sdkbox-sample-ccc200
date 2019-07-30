@@ -40,6 +40,23 @@ static bool js_PluginShareJS_PluginShare_setSharePanelCancel(se::State& s)
 }
 SE_BIND_FUNC(js_PluginShareJS_PluginShare_setSharePanelCancel)
 
+static bool js_PluginShareJS_PluginShare_setFileProviderAuthorities(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginShareJS_PluginShare_setFileProviderAuthorities : Error processing arguments");
+        sdkbox::PluginShare::setFileProviderAuthorities(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginShareJS_PluginShare_setFileProviderAuthorities)
+
 static bool js_PluginShareJS_PluginShare_init(se::State& s)
 {
     const auto& args = s.args();
@@ -65,6 +82,36 @@ static bool js_PluginShareJS_PluginShare_init(se::State& s)
 }
 SE_BIND_FUNC(js_PluginShareJS_PluginShare_init)
 
+static bool js_PluginShareJS_PluginShare_logoutTwitter(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    if (argc == 0) {
+        sdkbox::PluginShare::logoutTwitter();
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 0);
+    return false;
+}
+SE_BIND_FUNC(js_PluginShareJS_PluginShare_logoutTwitter)
+
+static bool js_PluginShareJS_PluginShare_setGDPR(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginShareJS_PluginShare_setGDPR : Error processing arguments");
+        sdkbox::PluginShare::setGDPR(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginShareJS_PluginShare_setGDPR)
+
 
 
 static bool js_sdkbox_PluginShare_finalize(se::State& s)
@@ -87,7 +134,10 @@ bool js_register_PluginShareJS_PluginShare(se::Object* obj)
 
     cls->defineStaticFunction("setSharePanelTitle", _SE(js_PluginShareJS_PluginShare_setSharePanelTitle));
     cls->defineStaticFunction("setSharePanelCancel", _SE(js_PluginShareJS_PluginShare_setSharePanelCancel));
+    cls->defineStaticFunction("setFileProviderAuthorities", _SE(js_PluginShareJS_PluginShare_setFileProviderAuthorities));
     cls->defineStaticFunction("init", _SE(js_PluginShareJS_PluginShare_init));
+    cls->defineStaticFunction("logoutTwitter", _SE(js_PluginShareJS_PluginShare_logoutTwitter));
+    cls->defineStaticFunction("setGDPR", _SE(js_PluginShareJS_PluginShare_setGDPR));
     cls->defineFinalizeFunction(_SE(js_sdkbox_PluginShare_finalize));
     cls->install();
     JSBClassType::registerClass<sdkbox::PluginShare>(cls);
