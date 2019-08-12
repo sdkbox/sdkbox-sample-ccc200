@@ -38,6 +38,16 @@ cc.Class({
             }
         });
         sdkbox.PluginMisc.init();
+
+        this.log("Platform:" + sdkbox.PluginMisc.getPlatformName());
+        const metaName = "store";
+        this.log("MetaData: " + metaName + " -> " + sdkbox.PluginMisc.getMetaData(metaName));
+        this.log("IAP Provider:" + sdkbox.PluginMisc.getIAPProvider());
+        this.log("App Version:" + sdkbox.PluginMisc.getAppVersion());
+        this.log("App Build Version:" + sdkbox.PluginMisc.getAppBuildVersion());
+        this.log("App Version Code:" + sdkbox.PluginMisc.getAppVersionCode());
+        this.log("DeviceInfo:" + sdkbox.PluginMisc.getDeviceInfo());
+
     },
 
     onButton1: function() {
