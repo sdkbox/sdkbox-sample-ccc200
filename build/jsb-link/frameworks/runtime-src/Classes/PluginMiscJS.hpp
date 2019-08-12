@@ -8,8 +8,21 @@ extern se::Class* __jsb_sdkbox_PluginMisc_class;
 
 bool js_register_sdkbox_PluginMisc(se::Object* obj);
 bool register_all_PluginMiscJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_setKeychainAccessGroup);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getAppVersion);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getMetaData);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getAppVersionCode);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getPlatformName);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getIAPProvider);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_setKeychainService);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_storeStringInKeychain);
 SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_init);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_removeDataInKeychain);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_fetchStringInKeychain);
 SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_cleanLocalNotify);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getDeviceInfo);
 SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_localNotify);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_getAppBuildVersion);
+SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_setGDPR);
 SE_DECLARE_FUNC(js_PluginMiscJS_PluginMisc_handleLocalNotify);
 
