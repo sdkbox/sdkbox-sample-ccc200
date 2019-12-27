@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F5F48C7AE45905BCDB785D9 /* PluginSdkboxAdsJS.cpp */ = {isa = PBXBuildFile; fileRef = 41AE41228D679251D76F64D6 /* PluginSdkboxAdsJS.cpp */; };
+		120E4F16A98CBA66F83FC213 /* GoogleUtilities.framework */ = {isa = PBXBuildFile; fileRef = BC8546C69A5B9207F81BFD37 /* GoogleUtilities.framework */; };
 		1A37E9DA200DEF120078AF72 /* SystemConfiguration.framework */ = {isa = PBXBuildFile; fileRef = 1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */; };
 		1A37E9DC200DEF190078AF72 /* SystemConfiguration.framework */ = {isa = PBXBuildFile; fileRef = 1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */; };
 		1A499EBB1F0CDDC3004E6AEC /* CFNetwork.framework */ = {isa = PBXBuildFile; fileRef = 1A499EBA1F0CDDC3004E6AEC /* CFNetwork.framework */; };
@@ -22,6 +23,7 @@
 		1AFFCD7D1F7A5D5400628F2C /* LaunchScreen.storyboard */ = {isa = PBXBuildFile; fileRef = 1AFFCD7C1F7A5D4F00628F2C /* LaunchScreen.storyboard */; };
 		1AFFCD7E1F7A5D5400628F2C /* LaunchScreenBackground.png */ = {isa = PBXBuildFile; fileRef = 1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */; };
 		1AFFCD7F1F7A5D5400628F2C /* Images.xcassets */ = {isa = PBXBuildFile; fileRef = 1ABC56911F7A005D00826282 /* Images.xcassets */; };
+		248244A49B4E62267259A056 /* nanopb.framework */ = {isa = PBXBuildFile; fileRef = 2CC947A4ACBBF35402CD7D8A /* nanopb.framework */; };
 		294D7D801D0D668F002CE7B7 /* CoreText.framework */ = {isa = PBXBuildFile; fileRef = 294D7D7F1D0D668F002CE7B7 /* CoreText.framework */; };
 		38324BEA8C2638EBEEB0EDA4 /* PluginAdMobJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 4B9842B98A0E9F3638C9E285 /* PluginAdMobJSHelper.cpp */; };
 		39FD4EBDB2B70C884D95785D /* PluginSdkboxAdsJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 394A481CA4257F751993A788 /* PluginSdkboxAdsJSHelper.cpp */; };
@@ -84,6 +86,7 @@
 		D4545227156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
 		D6B061241803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXBuildFile; fileRef = D6B061231803AB9F0077942B /* CoreMotion.framework */; };
 		D86F4AAFB6FA0CD7F5BE9E82 /* GLKit.framework */ = {isa = PBXBuildFile; fileRef = C0F94BA995DFAC0570EF7656 /* GLKit.framework */; };
+		E3524C29A67EA44A418D9E9E /* GoogleAppMeasurement.framework */ = {isa = PBXBuildFile; fileRef = 830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */; };
 		EE0F4A6D8DF5D5A84494BE02 /* sdkbox.framework */ = {isa = PBXBuildFile; fileRef = 6117469F8982E55BB3524ACF /* sdkbox.framework */; };
 		EF434A37B9A1630E4C576AE9 /* SafariServices.framework */ = {isa = PBXBuildFile; fileRef = 27704F338B151A27FEDF8914 /* SafariServices.framework */; };
 		F0CE48299FF155EB7BFAD0E5 /* StoreKit.framework */ = {isa = PBXBuildFile; fileRef = E7834EDABAF6350DD18772FF /* StoreKit.framework */; };
@@ -113,6 +116,7 @@
 		27704F338B151A27FEDF8914 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		294D7D7F1D0D668F002CE7B7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		2B1443B7AA6DDF7CC2C68BE9 /* SDKBoxJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDKBoxJSHelper.h; path = ../Classes/SDKBoxJSHelper.h; sourceTree = SOURCE_ROOT; };
+		2CC947A4ACBBF35402CD7D8A /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = nanopb.framework; sourceTree = SOURCE_ROOT; };
 		32964C4C8326DDDF402058E2 /* PluginSdkboxAdsJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginSdkboxAdsJS.hpp; path = ../Classes/PluginSdkboxAdsJS.hpp; sourceTree = SOURCE_ROOT; };
 		394A481CA4257F751993A788 /* PluginSdkboxAdsJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginSdkboxAdsJSHelper.cpp; path = ../Classes/PluginSdkboxAdsJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		4033CDBB20E4935000DAA37B /* jsb-adapter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = jsb-adapter; path = ../../../jsb-adapter; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		6117469F8982E55BB3524ACF /* sdkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sdkbox.framework; path = sdkbox.framework; sourceTree = SOURCE_ROOT; };
 		64004592A4C2EB8EE39EF983 /* PluginAdMobJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginAdMobJSHelper.h; path = ../Classes/PluginAdMobJSHelper.h; sourceTree = SOURCE_ROOT; };
 		65884760880C4E8C24B42FE0 /* PluginAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginAdMob.framework; path = PluginAdMob.framework; sourceTree = SOURCE_ROOT; };
+		830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = GoogleAppMeasurement.framework; sourceTree = SOURCE_ROOT; };
 		870945AAB3317A955998D8DC /* SDKBoxJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SDKBoxJSHelper.cpp; path = ../Classes/SDKBoxJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		8ABE4A26824A2B1DE1B356EB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		92DB499DAD0C36A5A7C174C6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
@@ -163,6 +168,7 @@
 		BA4E718219EB6E4600932425 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		BAEE4D831AC40C11003BEB0F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BB9C43D1AB70F4B836E2E40C /* PluginSdkboxAdsJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginSdkboxAdsJSHelper.h; path = ../Classes/PluginSdkboxAdsJSHelper.h; sourceTree = SOURCE_ROOT; };
+		BC8546C69A5B9207F81BFD37 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = GoogleUtilities.framework; sourceTree = SOURCE_ROOT; };
 		C03780EA18BEE0E400FE4F13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../src; sourceTree = "<group>"; };
 		C06E23CB18CEFE680093C81A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C0799CB518BAE62000E9C828 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../res; sourceTree = "<group>"; };
@@ -251,6 +257,9 @@
 				FA3E49ED943DFCAB470A6C7C /* MessageUI.framework */,
 				BD854725AC1DF487BB88155A /* CoreVideo.framework */,
 				EF434A37B9A1630E4C576AE9 /* SafariServices.framework */,
+				E3524C29A67EA44A418D9E9E /* GoogleAppMeasurement.framework */,
+				120E4F16A98CBA66F83FC213 /* GoogleUtilities.framework */,
+				248244A49B4E62267259A056 /* nanopb.framework */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +375,9 @@
 				20D94E7CBF8313405BF0DB23 /* MessageUI.framework */,
 				138C4AEBAEAB6099C8789D2B /* CoreVideo.framework */,
 				27704F338B151A27FEDF8914 /* SafariServices.framework */,
+				830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */,
+				BC8546C69A5B9207F81BFD37 /* GoogleUtilities.framework */,
+				2CC947A4ACBBF35402CD7D8A /* nanopb.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -652,7 +664,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
-PACKAGE_AS_PLACEHOLDER,
+					PACKAGE_AS_PLACEHOLDER,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
@@ -665,6 +677,9 @@ PACKAGE_AS_PLACEHOLDER,
 					"\"PluginSdkboxAds.framework\"",
 					"\"PluginAdMob.framework\"",
 					"\"GoogleMobileAds.framework\"",
+					"\"GoogleAppMeasurement.framework\"",
+					"\"GoogleUtilities.framework\"",
+					"\"nanopb.framework\"",
 				);
 				OTHER_CFLAGS = (
 					-DSDKBOX_ENABLED,
@@ -696,7 +711,7 @@ PACKAGE_AS_PLACEHOLDER,
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
-PACKAGE_AS_PLACEHOLDER,
+					PACKAGE_AS_PLACEHOLDER,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
@@ -709,6 +724,9 @@ PACKAGE_AS_PLACEHOLDER,
 					"\"PluginSdkboxAds.framework\"",
 					"\"PluginAdMob.framework\"",
 					"\"GoogleMobileAds.framework\"",
+					"\"GoogleAppMeasurement.framework\"",
+					"\"GoogleUtilities.framework\"",
+					"\"nanopb.framework\"",
 				);
 				OTHER_CFLAGS = (
 					-DSDKBOX_ENABLED,

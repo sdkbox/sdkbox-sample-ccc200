@@ -46,5 +46,5 @@ $(call import-add-path, $(LOCAL_PATH))
 
 $(call import-module, cocos)
 $(call import-module, ./sdkbox)
-$(call import-module, ./pluginsdkboxads)
-$(call import-module, ./pluginadmob)
+$(call import-module, ./PluginSdkboxAds)
+$(call import-module, ./PluginAdMob)

@@ -14,4 +14,5 @@ SE_DECLARE_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_placement);
 SE_DECLARE_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_cache);
 SE_DECLARE_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_init);
 SE_DECLARE_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_isAvailable);
+SE_DECLARE_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR);
 

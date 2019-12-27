@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-1329374026572143~7139010117" />
     </application>
     <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>

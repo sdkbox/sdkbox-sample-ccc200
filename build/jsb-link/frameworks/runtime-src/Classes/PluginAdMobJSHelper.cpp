@@ -10,63 +10,77 @@ public:
     }
 
     void adViewDidReceiveAd(const std::string &name) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void adViewDidFailToReceiveAdWithError(const std::string &name, const std::string &msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(2);
         args.push_back(se::Value(name));
         args.push_back(se::Value(msg));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void adViewWillPresentScreen(const std::string &name) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFunNow(__FUNCTION__, args);
+        invokeJSFunNow(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void adViewDidDismissScreen(const std::string &name) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void adViewWillDismissScreen(const std::string &name) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void adViewWillLeaveApplication(const std::string &name) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(name));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
     void reward(const std::string &name, const std::string &currency, double amount) override {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(3);
         args.push_back(se::Value(name));
         args.push_back(se::Value(currency));
         args.push_back(se::Value(amount));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
 };
 

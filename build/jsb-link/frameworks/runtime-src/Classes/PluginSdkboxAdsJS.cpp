@@ -110,6 +110,23 @@ static bool js_PluginSdkboxAdsJS_PluginSdkboxAds_isAvailable(se::State& s)
 }
 SE_BIND_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_isAvailable)
 
+static bool js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR : Error processing arguments");
+        sdkbox::PluginSdkboxAds::setGDPR(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR)
+
 
 
 static bool js_sdkbox_PluginSdkboxAds_finalize(se::State& s)
@@ -136,6 +153,7 @@ bool js_register_PluginSdkboxAdsJS_PluginSdkboxAds(se::Object* obj)
     cls->defineStaticFunction("cache", _SE(js_PluginSdkboxAdsJS_PluginSdkboxAds_cache));
     cls->defineStaticFunction("init", _SE(js_PluginSdkboxAdsJS_PluginSdkboxAds_init));
     cls->defineStaticFunction("isAvailable", _SE(js_PluginSdkboxAdsJS_PluginSdkboxAds_isAvailable));
+    cls->defineStaticFunction("setGDPR", _SE(js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR));
     cls->defineFinalizeFunction(_SE(js_sdkbox_PluginSdkboxAds_finalize));
     cls->install();
     JSBClassType::registerClass<sdkbox::PluginSdkboxAds>(cls);

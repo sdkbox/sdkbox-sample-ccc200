@@ -67,6 +67,13 @@ namespace sdkbox {
     public:
 
         /**
+         * Set GDPR
+         *
+         * **NOTE**: please call before 'init' function
+         */
+        static void setGDPR(bool enabled);
+
+        /**
          * Initialize the plugin instance.
          * The plugin initializes from the sdkbox_config.json file and reads configuration of the form:
          *
@@ -196,7 +203,7 @@ namespace sdkbox {
          * Example: sdkbox::PluginSdkboxAds::cache("AdMob", "reward")
          */
         static void cache(const std::string& ad_unit, const std::string& ad_name);
-        
+
         /**
          * check if placement available
          */

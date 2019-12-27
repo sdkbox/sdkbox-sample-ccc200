@@ -73,6 +73,23 @@ static bool js_PluginAdMobJS_PluginAdMob_hide(se::State& s)
 }
 SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_hide)
 
+static bool js_PluginAdMobJS_PluginAdMob_setAutoCache(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginAdMobJS_PluginAdMob_setAutoCache : Error processing arguments");
+        sdkbox::PluginAdMob::setAutoCache(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_setAutoCache)
+
 static bool js_PluginAdMobJS_PluginAdMob_setTestDevices(se::State& s)
 {
     const auto& args = s.args();
@@ -148,6 +165,57 @@ static bool js_PluginAdMobJS_PluginAdMob_cache(se::State& s)
     return false;
 }
 SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_cache)
+
+static bool js_PluginAdMobJS_PluginAdMob_setAppVolume(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        float arg0 = 0;
+        ok &= seval_to_float(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginAdMobJS_PluginAdMob_setAppVolume : Error processing arguments");
+        sdkbox::PluginAdMob::setAppVolume(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_setAppVolume)
+
+static bool js_PluginAdMobJS_PluginAdMob_setAppMuted(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginAdMobJS_PluginAdMob_setAppMuted : Error processing arguments");
+        sdkbox::PluginAdMob::setAppMuted(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_setAppMuted)
+
+static bool js_PluginAdMobJS_PluginAdMob_setAutoCacheDelay(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        int arg0 = 0;
+        ok &= seval_to_int32(args[0], (int32_t*)&arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginAdMobJS_PluginAdMob_setAutoCacheDelay : Error processing arguments");
+        sdkbox::PluginAdMob::setAutoCacheDelay(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_setAutoCacheDelay)
 
 static bool js_PluginAdMobJS_PluginAdMob_getCurrBannerWidth(se::State& s)
 {
@@ -265,10 +333,14 @@ bool js_register_PluginAdMobJS_PluginAdMob(se::Object* obj)
     cls->defineStaticFunction("getCurrBannerHeight", _SE(js_PluginAdMobJS_PluginAdMob_getCurrBannerHeight));
     cls->defineStaticFunction("getCurrBannerHeightInPixel", _SE(js_PluginAdMobJS_PluginAdMob_getCurrBannerHeightInPixel));
     cls->defineStaticFunction("hide", _SE(js_PluginAdMobJS_PluginAdMob_hide));
+    cls->defineStaticFunction("setAutoCache", _SE(js_PluginAdMobJS_PluginAdMob_setAutoCache));
     cls->defineStaticFunction("setTestDevices", _SE(js_PluginAdMobJS_PluginAdMob_setTestDevices));
     cls->defineStaticFunction("show", _SE(js_PluginAdMobJS_PluginAdMob_show));
     cls->defineStaticFunction("getCurrBannerWidthInPixel", _SE(js_PluginAdMobJS_PluginAdMob_getCurrBannerWidthInPixel));
     cls->defineStaticFunction("cache", _SE(js_PluginAdMobJS_PluginAdMob_cache));
+    cls->defineStaticFunction("setAppVolume", _SE(js_PluginAdMobJS_PluginAdMob_setAppVolume));
+    cls->defineStaticFunction("setAppMuted", _SE(js_PluginAdMobJS_PluginAdMob_setAppMuted));
+    cls->defineStaticFunction("setAutoCacheDelay", _SE(js_PluginAdMobJS_PluginAdMob_setAutoCacheDelay));
     cls->defineStaticFunction("getCurrBannerWidth", _SE(js_PluginAdMobJS_PluginAdMob_getCurrBannerWidth));
     cls->defineStaticFunction("init", _SE(js_PluginAdMobJS_PluginAdMob_init));
     cls->defineStaticFunction("getVersion", _SE(js_PluginAdMobJS_PluginAdMob_getVersion));
