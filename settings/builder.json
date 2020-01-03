@@ -19,7 +19,7 @@
     "portrait": false,
     "upsideDown": false
   },
-  "packageName": "com.sdkbox.sample.ccc200",
+  "packageName": "com.sdkbox.test.app.sample",
   "privateKey": "",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",

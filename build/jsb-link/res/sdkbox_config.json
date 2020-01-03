@@ -1,48 +1,177 @@
-
 {
-"android": {
-    "AdMob": {
-        "test": false,
-        "ads": {
-            "banner": {
-                "width": 300,
-                "height": 50,
-                "type": "banner",
-                "id": "ca-app-pub-3940256099942544/6300978111", 
-                "alignment": "bottom"
-            },
-            "interstitial": {
-                "type": "interstitial", 
-                "id": "ca-app-pub-3940256099942544/1033173712"
-            },
-            "reward": {
-                "type": "rewarded_video",
-                "id": "ca-app-pub-3940256099942544/5224354917"
+    "android": {
+        "AdMob": {
+            "test": false, 
+            "ads": {
+                "reward": {
+                    "type": "rewarded_video", 
+                    "id": "ca-app-pub-3940256099942544/5224354917"
+                }, 
+                "banner": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-3940256099942544/6300978111", 
+                    "alignment": "bottom", 
+                    "height": 50
+                }, 
+                "interstitial": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-3940256099942544/1033173712"
+                }
             }
+        }, 
+        "Firebase": {}, 
+        "iap": {
+            "items": {
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
+                }, 
+                "remove_ads": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non1"
+                }, 
+                "double_coin": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non2"
+                }, 
+                "coin_package": {
+                    "id": "com.cocos2dx.plugintest2"
+                }, 
+                "subs": {
+                    "type": "subs", 
+                    "id": "subscription1"
+                }
+            }, 
+            "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq7eIGu7dRcBRBSC05cYvxjBMd7cqq9w6++1er+cqO2tyWPtWB4vuTkliq4k/Fkylx5UMfptdOYOW8ENgQyVucs/NyuOAGmve4j5JFhLPcLa6LjO2HUSY6zk04DRR9Zw7YPET4WAezZTz8jYMGhPG08HYltVj8cmSpSFWd1nI0pGOJoLQIMkIkXplgnPQRbMpuOu70vnQQBS1RFcoFT7OjaV8U0cfJzMoS1TMkGqaJKks2T+qOBNTtkXzge92EnvYIkhpCfN98dj6aQmETNp5yj5Fa+jcbAVF8dy5xymJwioL89XQKfKkGR+P6ESMoBEPfIZYIlMU8EUwmC+UKGLujQIDAQAB"
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "CgkI0sux8sMWEAIQAA", 
+                    "name": "ldb1"
+                }
+            ], 
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQAg", 
+                    "name": "ten-games"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQAw", 
+                    "name": "hunter"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQBA", 
+                    "name": "craftsman"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "CgkI0sux8sMWEAIQBQ", 
+                    "name": "incremental"
+                }
+            ], 
+            "connect_on_start": false, 
+            "show_achievement_notification": true, 
+            "cloud_save": false, 
+            "debug": true
+        }
+    }, 
+    "ios": {
+        "AdMob": {
+            "test": false, 
+            "safearea": true, 
+            "ads": {
+                "reward": {
+                    "type": "rewarded_video", 
+                    "id": "ca-app-pub-3940256099942544/1712485313"
+                }, 
+                "banner": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-3940256099942544/2934735716", 
+                    "alignment": "bottom", 
+                    "height": 50
+                }, 
+                "interstitial": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-3940256099942544/4411468910"
+                }
+            }
+        }, 
+        "Firebase": {}, 
+        "iap": {
+            "items": {
+                "remove_ads": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non1"
+                }, 
+                "double_coin": {
+                    "type": "non_consumable", 
+                    "id": "com.cocos2dx.non2"
+                }, 
+                "coin_package": {
+                    "id": "com.cocos2dx.plugintest2"
+                }, 
+                "coin_package2": {
+                    "id": "com.cocos2dx.plugintest3"
+                }
+            }
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "ldb1", 
+                    "name": "ldb1"
+                }
+            ], 
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "tengames", 
+                    "name": "ten-games"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "hunter", 
+                    "name": "hunter"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "craftsman", 
+                    "name": "craftsman"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "Incremental", 
+                    "name": "incremental"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "hidden_incremental", 
+                    "name": "hidden"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards1", 
+                    "name": "flip_cards1"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards2", 
+                    "name": "flip_cards2"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards3", 
+                    "name": "flip_cards3"
+                }
+            ], 
+            "debug": true, 
+            "connect_on_start": false, 
+            "show_achievement_notification": true
         }
     }
-}, 
-"ios": {
-    "AdMob": {
-        "test": false, 
-        "safearea": true, 
-        "ads": {
-            "banner": {
-                "width": 300,
-                "height": 50,
-                "type": "banner",
-                "id": "ca-app-pub-3940256099942544/2934735716", 
-                "alignment": "bottom"
-            },
-            "interstitial": {
-                "type": "interstitial", 
-                "id": "ca-app-pub-3940256099942544/4411468910"
-            },
-            "reward": {
-                "type": "rewarded_video",
-                "id": "ca-app-pub-3940256099942544/1712485313"
-            }
-        }
-    }
-}
 }

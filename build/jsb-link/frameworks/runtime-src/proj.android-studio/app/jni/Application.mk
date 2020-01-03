@@ -31,3 +31,10 @@ endif
 # Some Android Simulators don't support SSE instruction, so disable it for x86 arch.
 APP_CPPFLAGS += -U__SSE__
 APP_PLATFORM := android-9
+USE_VIDEO := 1
+USE_WEB_VIEW := 1
+USE_EDIT_BOX := 1
+USE_AUDIO := 1
+USE_SPINE := 1
+USE_DRAGONBONES := 1
+USE_SOCKET := 1

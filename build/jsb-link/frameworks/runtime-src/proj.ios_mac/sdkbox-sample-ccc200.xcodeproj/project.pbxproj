@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079C470F96AB8757D7F1C1A4 /* PluginFirebaseJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 8F93447B9874B359570E5665 /* PluginFirebaseJSHelper.cpp */; };
+		0D104DBCBD56251EFF7CE4CC /* libz.tbd */ = {isa = PBXBuildFile; fileRef = A08A4918A32A05088E45AC3A /* libz.tbd */; };
 		0F5F48C7AE45905BCDB785D9 /* PluginSdkboxAdsJS.cpp */ = {isa = PBXBuildFile; fileRef = 41AE41228D679251D76F64D6 /* PluginSdkboxAdsJS.cpp */; };
 		120E4F16A98CBA66F83FC213 /* GoogleUtilities.framework */ = {isa = PBXBuildFile; fileRef = BC8546C69A5B9207F81BFD37 /* GoogleUtilities.framework */; };
 		1A37E9DA200DEF120078AF72 /* SystemConfiguration.framework */ = {isa = PBXBuildFile; fileRef = 1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */; };
@@ -23,16 +25,23 @@
 		1AFFCD7D1F7A5D5400628F2C /* LaunchScreen.storyboard */ = {isa = PBXBuildFile; fileRef = 1AFFCD7C1F7A5D4F00628F2C /* LaunchScreen.storyboard */; };
 		1AFFCD7E1F7A5D5400628F2C /* LaunchScreenBackground.png */ = {isa = PBXBuildFile; fileRef = 1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */; };
 		1AFFCD7F1F7A5D5400628F2C /* Images.xcassets */ = {isa = PBXBuildFile; fileRef = 1ABC56911F7A005D00826282 /* Images.xcassets */; };
+		1BF64FC0B5D02F054BA2E3E9 /* PluginSdkboxPlay.framework */ = {isa = PBXBuildFile; fileRef = 9AEC4705936B1FC8008C8DCC /* PluginSdkboxPlay.framework */; };
 		248244A49B4E62267259A056 /* nanopb.framework */ = {isa = PBXBuildFile; fileRef = 2CC947A4ACBBF35402CD7D8A /* nanopb.framework */; };
 		294D7D801D0D668F002CE7B7 /* CoreText.framework */ = {isa = PBXBuildFile; fileRef = 294D7D7F1D0D668F002CE7B7 /* CoreText.framework */; };
+		2A80468B9168AD1F8F8FCC2A /* FirebaseAnalytics.framework */ = {isa = PBXBuildFile; fileRef = DD844C2AB3B6B66AFC2C8F36 /* FirebaseAnalytics.framework */; };
+		2D0C48DEB8AE45B279B451ED /* nanopb.framework */ = {isa = PBXBuildFile; fileRef = 04274152B32C5CE65BDB01CD /* nanopb.framework */; };
+		2E314CBB8A6FA7B1E47B6B7D /* PluginSdkboxPlayJS.cpp */ = {isa = PBXBuildFile; fileRef = 81D24025A59A8568A969C018 /* PluginSdkboxPlayJS.cpp */; };
+		30DD42AF8BC50F661308157B /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXBuildFile; fileRef = 094046F2B3410E1237BFF389 /* GoogleDataTransportCCTSupport.framework */; };
 		38324BEA8C2638EBEEB0EDA4 /* PluginAdMobJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 4B9842B98A0E9F3638C9E285 /* PluginAdMobJSHelper.cpp */; };
 		39FD4EBDB2B70C884D95785D /* PluginSdkboxAdsJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 394A481CA4257F751993A788 /* PluginSdkboxAdsJSHelper.cpp */; };
+		3A1B49299E4C15A8C99897CD /* GoogleDataTransport.framework */ = {isa = PBXBuildFile; fileRef = 17FD4C43A9303FF7813F88FD /* GoogleDataTransport.framework */; };
 		4033CDBC20E4935100DAA37B /* jsb-adapter */ = {isa = PBXBuildFile; fileRef = 4033CDBB20E4935000DAA37B /* jsb-adapter */; };
 		4033CDBD20E4935100DAA37B /* jsb-adapter */ = {isa = PBXBuildFile; fileRef = 4033CDBB20E4935000DAA37B /* jsb-adapter */; };
 		415E47318947805CD76808C4 /* PluginAdMob.framework */ = {isa = PBXBuildFile; fileRef = 65884760880C4E8C24B42FE0 /* PluginAdMob.framework */; };
 		448749B5ADB94A9B3231298A /* SDKBoxJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = 870945AAB3317A955998D8DC /* SDKBoxJSHelper.cpp */; };
 		450046CA8FF4C1CADA3AA2F6 /* PluginSdkboxAds.framework */ = {isa = PBXBuildFile; fileRef = 5BF946DEA940AA2F54B6D598 /* PluginSdkboxAds.framework */; };
 		47BA4617B6E561E74EC57F1F /* CoreTelephony.framework */ = {isa = PBXBuildFile; fileRef = E7EB4BA484CA90499FC660A9 /* CoreTelephony.framework */; };
+		4DA9439D966B4F947FC9EDC1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXBuildFile; fileRef = 7B144CE4AEC0C41B8195623B /* FirebaseCoreDiagnostics.framework */; };
 		4DD5E6AB1CDAF6430046171E /* libcocos2d Mac.a */ = {isa = PBXBuildFile; fileRef = 4DD0DB561CDAF5F40099AD86 /* libcocos2d Mac.a */; };
 		4DD5E6B11CDAF65C0046171E /* libcocos2d iOS.a */ = {isa = PBXBuildFile; fileRef = 4DD0DB581CDAF5F40099AD86 /* libcocos2d iOS.a */; };
 		502380DC17EBB88200990C9B /* libcurl.dylib */ = {isa = PBXBuildFile; fileRef = 502380DB17EBB88200990C9B /* libcurl.dylib */; };
@@ -54,12 +63,18 @@
 		509D4AEB17EBB82600697056 /* IOKit.framework */ = {isa = PBXBuildFile; fileRef = 509D4AEA17EBB82600697056 /* IOKit.framework */; };
 		5C464764974F0A406198514B /* GoogleMobileAds.framework */ = {isa = PBXBuildFile; fileRef = B3184D1A94E22F8E2041C280 /* GoogleMobileAds.framework */; };
 		5C8F4EDAB8E89B3F5856F395 /* WebKit.framework */ = {isa = PBXBuildFile; fileRef = C0F846AD9EDA1F89FF53C6E8 /* WebKit.framework */; };
+		62544A97A6B527B70906A6F1 /* FirebaseCore.framework */ = {isa = PBXBuildFile; fileRef = 1D6F4DBD9693540CF35937CF /* FirebaseCore.framework */; };
+		637A4BBD876FC92EDDFA67C2 /* GoogleUtilities.framework */ = {isa = PBXBuildFile; fileRef = C6E3405F9DA8BE3383635C7D /* GoogleUtilities.framework */; };
+		68784FCD9B274333C015C7B2 /* PluginSdkboxPlayJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = E07941A3842C75B4A6162F21 /* PluginSdkboxPlayJSHelper.cpp */; };
 		6C874A57B1CB115B2672B8F1 /* CoreMedia.framework */ = {isa = PBXBuildFile; fileRef = 92DB499DAD0C36A5A7C174C6 /* CoreMedia.framework */; };
+		6ED64649B17867CCD77B910D /* GameKit.framework */ = {isa = PBXBuildFile; fileRef = 0041450689133597048238BC /* GameKit.framework */; };
+		738E4F33B6F38CCAA6AF3D96 /* libsqlite3.0.tbd */ = {isa = PBXBuildFile; fileRef = CAD84A0895FFF5E2A0D1F4FF /* libsqlite3.0.tbd */; };
 		77B7407E9208F6E58A908F13 /* EventKit.framework */ = {isa = PBXBuildFile; fileRef = C4594536A6FE223C821BFC80 /* EventKit.framework */; };
 		7AC44294B9E463D895EB7CE9 /* PluginAdMobJS.cpp */ = {isa = PBXBuildFile; fileRef = B23746C0BB7750917D721397 /* PluginAdMobJS.cpp */; };
 		8B71405FAB6038D8B82D4C28 /* AdSupport.framework */ = {isa = PBXBuildFile; fileRef = 8ABE4A26824A2B1DE1B356EB /* AdSupport.framework */; };
 		8DA54252BADE538C8EA28B14 /* EventKitUI.framework */ = {isa = PBXBuildFile; fileRef = E9CF4B06ACF386E30865A50F /* EventKitUI.framework */; };
 		A2E9474F8DB4BB64C2627F30 /* CoreBluetooth.framework */ = {isa = PBXBuildFile; fileRef = 1F3947A8B6C3ABBF87844DAA /* CoreBluetooth.framework */; };
+		A67B4C9C9F3273FEB0D0B3F1 /* PluginIAPJS.cpp */ = {isa = PBXBuildFile; fileRef = 3033487880268083350049BB /* PluginIAPJS.cpp */; };
 		A92275421517C094001B78AA /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
 		A92275461517C094001B78AA /* OpenAL.framework */ = {isa = PBXBuildFile; fileRef = A92275451517C094001B78AA /* OpenAL.framework */; };
@@ -73,6 +88,7 @@
 		ABE456E71D34F87F00F1F400 /* MobileCoreServices.framework */ = {isa = PBXBuildFile; fileRef = ABE456E61D34F87F00F1F400 /* MobileCoreServices.framework */; };
 		ABE456E91D34F88A00F1F400 /* SystemConfiguration.framework */ = {isa = PBXBuildFile; fileRef = ABE456E81D34F88A00F1F400 /* SystemConfiguration.framework */; };
 		ABE456EB1D34F89000F1F400 /* GameController.framework */ = {isa = PBXBuildFile; fileRef = ABE456EA1D34F89000F1F400 /* GameController.framework */; };
+		B8D64C8687CC5061A996537F /* PluginIAP.framework */ = {isa = PBXBuildFile; fileRef = 10264281BBC854C667058EEC /* PluginIAP.framework */; };
 		BA3A85EC1A724AE900924D24 /* Security.framework */ = {isa = PBXBuildFile; fileRef = BA3A85EB1A724AE900924D24 /* Security.framework */; };
 		BA4E718119EB6E3F00932425 /* MediaPlayer.framework */ = {isa = PBXBuildFile; fileRef = BA4E718019EB6E3E00932425 /* MediaPlayer.framework */; };
 		BAEE4D841AC40C11003BEB0F /* Security.framework */ = {isa = PBXBuildFile; fileRef = BAEE4D831AC40C11003BEB0F /* Security.framework */; };
@@ -82,21 +98,32 @@
 		C06E23CC18CEFE680093C81A /* main.cpp */ = {isa = PBXBuildFile; fileRef = C06E23CB18CEFE680093C81A /* main.cpp */; };
 		C0799CB918BAE62000E9C828 /* res */ = {isa = PBXBuildFile; fileRef = C0799CB518BAE62000E9C828 /* res */; };
 		C0799CBA18BAE62000E9C828 /* res */ = {isa = PBXBuildFile; fileRef = C0799CB518BAE62000E9C828 /* res */; };
+		CD994D82B9BCAF53EC732040 /* PluginFirebaseJS.cpp */ = {isa = PBXBuildFile; fileRef = 2EAB48B8AB4C994B5F645474 /* PluginFirebaseJS.cpp */; };
 		D454520C156E22BD00887EB5 /* libz.dylib */ = {isa = PBXBuildFile; fileRef = D454520B156E22BD00887EB5 /* libz.dylib */; };
 		D4545227156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
 		D6B061241803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXBuildFile; fileRef = D6B061231803AB9F0077942B /* CoreMotion.framework */; };
 		D86F4AAFB6FA0CD7F5BE9E82 /* GLKit.framework */ = {isa = PBXBuildFile; fileRef = C0F94BA995DFAC0570EF7656 /* GLKit.framework */; };
 		E3524C29A67EA44A418D9E9E /* GoogleAppMeasurement.framework */ = {isa = PBXBuildFile; fileRef = 830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */; };
+		E69B4444B0DA3FD5FB514109 /* PluginIAPJSHelper.cpp */ = {isa = PBXBuildFile; fileRef = F7FA452B8BCB362F5FD740C2 /* PluginIAPJSHelper.cpp */; };
+		E7E841519DDD68CC7D2C4C86 /* GoogleAppMeasurement.framework */ = {isa = PBXBuildFile; fileRef = 5AD74A61A365DF84266AF70E /* GoogleAppMeasurement.framework */; };
 		EE0F4A6D8DF5D5A84494BE02 /* sdkbox.framework */ = {isa = PBXBuildFile; fileRef = 6117469F8982E55BB3524ACF /* sdkbox.framework */; };
+		EE754D21A94BD785D67D0013 /* FIRAnalyticsConnector.framework */ = {isa = PBXBuildFile; fileRef = EEAF468DA533A7B6CE67D494 /* FIRAnalyticsConnector.framework */; };
 		EF434A37B9A1630E4C576AE9 /* SafariServices.framework */ = {isa = PBXBuildFile; fileRef = 27704F338B151A27FEDF8914 /* SafariServices.framework */; };
 		F0CE48299FF155EB7BFAD0E5 /* StoreKit.framework */ = {isa = PBXBuildFile; fileRef = E7834EDABAF6350DD18772FF /* StoreKit.framework */; };
+		F4AC4FD3BB5F79019E9E68E6 /* FirebaseInstanceID.framework */ = {isa = PBXBuildFile; fileRef = 53C34F40866356C9ACE21102 /* FirebaseInstanceID.framework */; };
 		FA3E49ED943DFCAB470A6C7C /* MessageUI.framework */ = {isa = PBXBuildFile; fileRef = 20D94E7CBF8313405BF0DB23 /* MessageUI.framework */; };
 		FA676C761C71AFA200E091E3 /* libiconv.dylib */ = {isa = PBXBuildFile; fileRef = FA676C751C71AFA200E091E3 /* libiconv.dylib */; };
 		FA676C781C71AFAB00E091E3 /* libiconv.dylib */ = {isa = PBXBuildFile; fileRef = FA676C771C71AFAB00E091E3 /* libiconv.dylib */; };
+		FAEA4666AC4837CDA5E34805 /* PluginFirebase.framework */ = {isa = PBXBuildFile; fileRef = 50154D18AE0F07EDC130671A /* PluginFirebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0041450689133597048238BC /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		04274152B32C5CE65BDB01CD /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Firebase/Analytics/nanopb.framework; sourceTree = SOURCE_ROOT; };
+		094046F2B3410E1237BFF389 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = Firebase/Analytics/GoogleDataTransportCCTSupport.framework; sourceTree = SOURCE_ROOT; };
+		10264281BBC854C667058EEC /* PluginIAP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginIAP.framework; path = PluginIAP.framework; sourceTree = SOURCE_ROOT; };
 		138C4AEBAEAB6099C8789D2B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		17FD4C43A9303FF7813F88FD /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Firebase/Analytics/GoogleDataTransport.framework; sourceTree = SOURCE_ROOT; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -111,19 +138,25 @@
 		1ACA99241F550A28002DE225 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchScreenBackground.png; path = ios/LaunchScreenBackground.png; sourceTree = "<group>"; };
 		1AFFCD7C1F7A5D4F00628F2C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ios/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D6F4DBD9693540CF35937CF /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Firebase/Analytics/FirebaseCore.framework; sourceTree = SOURCE_ROOT; };
 		1F3947A8B6C3ABBF87844DAA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
 		20D94E7CBF8313405BF0DB23 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		27704F338B151A27FEDF8914 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		28DE4DABB7AFE91BBA49AC3E /* PluginSdkboxPlayJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginSdkboxPlayJSHelper.h; path = ../Classes/PluginSdkboxPlayJSHelper.h; sourceTree = SOURCE_ROOT; };
 		294D7D7F1D0D668F002CE7B7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		2B1443B7AA6DDF7CC2C68BE9 /* SDKBoxJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDKBoxJSHelper.h; path = ../Classes/SDKBoxJSHelper.h; sourceTree = SOURCE_ROOT; };
 		2CC947A4ACBBF35402CD7D8A /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = nanopb.framework; sourceTree = SOURCE_ROOT; };
+		2EAB48B8AB4C994B5F645474 /* PluginFirebaseJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginFirebaseJS.cpp; path = ../Classes/PluginFirebaseJS.cpp; sourceTree = SOURCE_ROOT; };
+		3033487880268083350049BB /* PluginIAPJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginIAPJS.cpp; path = ../Classes/PluginIAPJS.cpp; sourceTree = SOURCE_ROOT; };
 		32964C4C8326DDDF402058E2 /* PluginSdkboxAdsJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginSdkboxAdsJS.hpp; path = ../Classes/PluginSdkboxAdsJS.hpp; sourceTree = SOURCE_ROOT; };
 		394A481CA4257F751993A788 /* PluginSdkboxAdsJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginSdkboxAdsJSHelper.cpp; path = ../Classes/PluginSdkboxAdsJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		4033CDBB20E4935000DAA37B /* jsb-adapter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = jsb-adapter; path = ../../../jsb-adapter; sourceTree = "<group>"; };
 		41AE41228D679251D76F64D6 /* PluginSdkboxAdsJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginSdkboxAdsJS.cpp; path = ../Classes/PluginSdkboxAdsJS.cpp; sourceTree = SOURCE_ROOT; };
+		47844EC0A8BFC83B8CC1A1ED /* PluginIAPJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginIAPJSHelper.h; path = ../Classes/PluginIAPJSHelper.h; sourceTree = SOURCE_ROOT; };
 		4B9842B98A0E9F3638C9E285 /* PluginAdMobJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginAdMobJSHelper.cpp; path = ../Classes/PluginAdMobJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		4D697BD91CBD301C00A5AF29 /* libjs_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjs_static.a; path = /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs/libjs_static.a; sourceTree = "<absolute>"; };
 		4D697BDC1CBD303100A5AF29 /* libjs_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjs_static.a; path = /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/external/mac/libs/libjs_static.a; sourceTree = "<absolute>"; };
+		50154D18AE0F07EDC130671A /* PluginFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginFirebase.framework; path = PluginFirebase.framework; sourceTree = SOURCE_ROOT; };
 		502380DB17EBB88200990C9B /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		509D4AAA17EBB24E00697056 /* sdkbox-sample-ccc200-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sdkbox-sample-ccc200-desktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509D4AAB17EBB2AB00697056 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = "<group>"; };
@@ -139,14 +172,24 @@
 		509D4AE617EBB81800697056 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		509D4AE817EBB82000697056 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		509D4AEA17EBB82600697056 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		53C34F40866356C9ACE21102 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Firebase/Analytics/FirebaseInstanceID.framework; sourceTree = SOURCE_ROOT; };
+		5AD74A61A365DF84266AF70E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Firebase/Analytics/GoogleAppMeasurement.framework; sourceTree = SOURCE_ROOT; };
 		5BF946DEA940AA2F54B6D598 /* PluginSdkboxAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginSdkboxAds.framework; path = PluginSdkboxAds.framework; sourceTree = SOURCE_ROOT; };
 		6117469F8982E55BB3524ACF /* sdkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sdkbox.framework; path = sdkbox.framework; sourceTree = SOURCE_ROOT; };
 		64004592A4C2EB8EE39EF983 /* PluginAdMobJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginAdMobJSHelper.h; path = ../Classes/PluginAdMobJSHelper.h; sourceTree = SOURCE_ROOT; };
 		65884760880C4E8C24B42FE0 /* PluginAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginAdMob.framework; path = PluginAdMob.framework; sourceTree = SOURCE_ROOT; };
+		757E4333A6A0FD15204B638B /* PluginFirebaseJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginFirebaseJSHelper.h; path = ../Classes/PluginFirebaseJSHelper.h; sourceTree = SOURCE_ROOT; };
+		7B144CE4AEC0C41B8195623B /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Firebase/Analytics/FirebaseCoreDiagnostics.framework; sourceTree = SOURCE_ROOT; };
+		817E47C6B50B41E2E108AC58 /* PluginSdkboxPlayJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginSdkboxPlayJS.hpp; path = ../Classes/PluginSdkboxPlayJS.hpp; sourceTree = SOURCE_ROOT; };
+		81D24025A59A8568A969C018 /* PluginSdkboxPlayJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginSdkboxPlayJS.cpp; path = ../Classes/PluginSdkboxPlayJS.cpp; sourceTree = SOURCE_ROOT; };
 		830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = GoogleAppMeasurement.framework; sourceTree = SOURCE_ROOT; };
+		830B4A5A8FC5DBD32F618038 /* PluginIAPJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginIAPJS.hpp; path = ../Classes/PluginIAPJS.hpp; sourceTree = SOURCE_ROOT; };
 		870945AAB3317A955998D8DC /* SDKBoxJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SDKBoxJSHelper.cpp; path = ../Classes/SDKBoxJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		8ABE4A26824A2B1DE1B356EB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		8F93447B9874B359570E5665 /* PluginFirebaseJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginFirebaseJSHelper.cpp; path = ../Classes/PluginFirebaseJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		92DB499DAD0C36A5A7C174C6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		9AEC4705936B1FC8008C8DCC /* PluginSdkboxPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginSdkboxPlay.framework; path = PluginSdkboxPlay.framework; sourceTree = SOURCE_ROOT; };
+		A08A4918A32A05088E45AC3A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = file.tbd; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		A922753D1517C094001B78AA /* sdkbox-sample-ccc200-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sdkbox-sample-ccc200-mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -175,14 +218,21 @@
 		C0F846AD9EDA1F89FF53C6E8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		C0F94BA995DFAC0570EF7656 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		C4594536A6FE223C821BFC80 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		C6E3405F9DA8BE3383635C7D /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Firebase/Analytics/GoogleUtilities.framework; sourceTree = SOURCE_ROOT; };
+		CAD84A0895FFF5E2A0D1F4FF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = file.tbd; name = libsqlite3.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.0.tbd; sourceTree = DEVELOPER_DIR; };
 		D454520B156E22BD00887EB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D4545215156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		D4545216156E28EF00887EB5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6B061231803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		D85F4467863B7400CE6600F3 /* PluginAdMobJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginAdMobJS.hpp; path = ../Classes/PluginAdMobJS.hpp; sourceTree = SOURCE_ROOT; };
+		DAC7484FA82DCCFDCBDF1599 /* PluginFirebaseJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginFirebaseJS.hpp; path = ../Classes/PluginFirebaseJS.hpp; sourceTree = SOURCE_ROOT; };
+		DD844C2AB3B6B66AFC2C8F36 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Firebase/Analytics/FirebaseAnalytics.framework; sourceTree = SOURCE_ROOT; };
+		E07941A3842C75B4A6162F21 /* PluginSdkboxPlayJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginSdkboxPlayJSHelper.cpp; path = ../Classes/PluginSdkboxPlayJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		E7834EDABAF6350DD18772FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		E7EB4BA484CA90499FC660A9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		E9CF4B06ACF386E30865A50F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
+		EEAF468DA533A7B6CE67D494 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Firebase/Analytics/FIRAnalyticsConnector.framework; sourceTree = SOURCE_ROOT; };
+		F7FA452B8BCB362F5FD740C2 /* PluginIAPJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginIAPJSHelper.cpp; path = ../Classes/PluginIAPJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		FA676C751C71AFA200E091E3 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		FA676C771C71AFAB00E091E3 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -260,6 +310,22 @@
 				E3524C29A67EA44A418D9E9E /* GoogleAppMeasurement.framework */,
 				120E4F16A98CBA66F83FC213 /* GoogleUtilities.framework */,
 				248244A49B4E62267259A056 /* nanopb.framework */,
+				FAEA4666AC4837CDA5E34805 /* PluginFirebase.framework */,
+				738E4F33B6F38CCAA6AF3D96 /* libsqlite3.0.tbd */,
+				0D104DBCBD56251EFF7CE4CC /* libz.tbd */,
+				EE754D21A94BD785D67D0013 /* FIRAnalyticsConnector.framework */,
+				2A80468B9168AD1F8F8FCC2A /* FirebaseAnalytics.framework */,
+				62544A97A6B527B70906A6F1 /* FirebaseCore.framework */,
+				4DA9439D966B4F947FC9EDC1 /* FirebaseCoreDiagnostics.framework */,
+				F4AC4FD3BB5F79019E9E68E6 /* FirebaseInstanceID.framework */,
+				E7E841519DDD68CC7D2C4C86 /* GoogleAppMeasurement.framework */,
+				637A4BBD876FC92EDDFA67C2 /* GoogleUtilities.framework */,
+				30DD42AF8BC50F661308157B /* GoogleDataTransportCCTSupport.framework */,
+				3A1B49299E4C15A8C99897CD /* GoogleDataTransport.framework */,
+				2D0C48DEB8AE45B279B451ED /* nanopb.framework */,
+				1BF64FC0B5D02F054BA2E3E9 /* PluginSdkboxPlay.framework */,
+				6ED64649B17867CCD77B910D /* GameKit.framework */,
+				B8D64C8687CC5061A996537F /* PluginIAP.framework */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +444,22 @@
 				830A4D68BF0146937F53161D /* GoogleAppMeasurement.framework */,
 				BC8546C69A5B9207F81BFD37 /* GoogleUtilities.framework */,
 				2CC947A4ACBBF35402CD7D8A /* nanopb.framework */,
+				50154D18AE0F07EDC130671A /* PluginFirebase.framework */,
+				CAD84A0895FFF5E2A0D1F4FF /* libsqlite3.0.tbd */,
+				A08A4918A32A05088E45AC3A /* libz.tbd */,
+				EEAF468DA533A7B6CE67D494 /* FIRAnalyticsConnector.framework */,
+				DD844C2AB3B6B66AFC2C8F36 /* FirebaseAnalytics.framework */,
+				1D6F4DBD9693540CF35937CF /* FirebaseCore.framework */,
+				7B144CE4AEC0C41B8195623B /* FirebaseCoreDiagnostics.framework */,
+				53C34F40866356C9ACE21102 /* FirebaseInstanceID.framework */,
+				5AD74A61A365DF84266AF70E /* GoogleAppMeasurement.framework */,
+				C6E3405F9DA8BE3383635C7D /* GoogleUtilities.framework */,
+				094046F2B3410E1237BFF389 /* GoogleDataTransportCCTSupport.framework */,
+				17FD4C43A9303FF7813F88FD /* GoogleDataTransport.framework */,
+				04274152B32C5CE65BDB01CD /* nanopb.framework */,
+				9AEC4705936B1FC8008C8DCC /* PluginSdkboxPlay.framework */,
+				0041450689133597048238BC /* GameKit.framework */,
+				10264281BBC854C667058EEC /* PluginIAP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,6 +496,18 @@
 				D85F4467863B7400CE6600F3 /* PluginAdMobJS.hpp */,
 				4B9842B98A0E9F3638C9E285 /* PluginAdMobJSHelper.cpp */,
 				64004592A4C2EB8EE39EF983 /* PluginAdMobJSHelper.h */,
+				2EAB48B8AB4C994B5F645474 /* PluginFirebaseJS.cpp */,
+				DAC7484FA82DCCFDCBDF1599 /* PluginFirebaseJS.hpp */,
+				8F93447B9874B359570E5665 /* PluginFirebaseJSHelper.cpp */,
+				757E4333A6A0FD15204B638B /* PluginFirebaseJSHelper.h */,
+				81D24025A59A8568A969C018 /* PluginSdkboxPlayJS.cpp */,
+				817E47C6B50B41E2E108AC58 /* PluginSdkboxPlayJS.hpp */,
+				E07941A3842C75B4A6162F21 /* PluginSdkboxPlayJSHelper.cpp */,
+				28DE4DABB7AFE91BBA49AC3E /* PluginSdkboxPlayJSHelper.h */,
+				3033487880268083350049BB /* PluginIAPJS.cpp */,
+				830B4A5A8FC5DBD32F618038 /* PluginIAPJS.hpp */,
+				F7FA452B8BCB362F5FD740C2 /* PluginIAPJSHelper.cpp */,
+				47844EC0A8BFC83B8CC1A1ED /* PluginIAPJSHelper.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -544,6 +638,12 @@
 				448749B5ADB94A9B3231298A /* SDKBoxJSHelper.cpp */,
 				7AC44294B9E463D895EB7CE9 /* PluginAdMobJS.cpp */,
 				38324BEA8C2638EBEEB0EDA4 /* PluginAdMobJSHelper.cpp */,
+				CD994D82B9BCAF53EC732040 /* PluginFirebaseJS.cpp */,
+				079C470F96AB8757D7F1C1A4 /* PluginFirebaseJSHelper.cpp */,
+				2E314CBB8A6FA7B1E47B6B7D /* PluginSdkboxPlayJS.cpp */,
+				68784FCD9B274333C015C7B2 /* PluginSdkboxPlayJSHelper.cpp */,
+				A67B4C9C9F3273FEB0D0B3F1 /* PluginIAPJS.cpp */,
+				E69B4444B0DA3FD5FB514109 /* PluginIAPJSHelper.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +756,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Firebase/Analytics\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -680,6 +781,19 @@
 					"\"GoogleAppMeasurement.framework\"",
 					"\"GoogleUtilities.framework\"",
 					"\"nanopb.framework\"",
+					"\"PluginFirebase.framework\"",
+					"\"Firebase/Analytics/FIRAnalyticsConnector.framework\"",
+					"\"Firebase/Analytics/FirebaseAnalytics.framework\"",
+					"\"Firebase/Analytics/FirebaseCore.framework\"",
+					"\"Firebase/Analytics/FirebaseCoreDiagnostics.framework\"",
+					"\"Firebase/Analytics/FirebaseInstanceID.framework\"",
+					"\"Firebase/Analytics/GoogleAppMeasurement.framework\"",
+					"\"Firebase/Analytics/GoogleUtilities.framework\"",
+					"\"Firebase/Analytics/GoogleDataTransportCCTSupport.framework\"",
+					"\"Firebase/Analytics/GoogleDataTransport.framework\"",
+					"\"Firebase/Analytics/nanopb.framework\"",
+					"\"PluginSdkboxPlay.framework\"",
+					"\"PluginIAP.framework\"",
 				);
 				OTHER_CFLAGS = (
 					-DSDKBOX_ENABLED,
@@ -704,6 +818,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Firebase/Analytics\"",
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -727,6 +842,19 @@
 					"\"GoogleAppMeasurement.framework\"",
 					"\"GoogleUtilities.framework\"",
 					"\"nanopb.framework\"",
+					"\"PluginFirebase.framework\"",
+					"\"Firebase/Analytics/FIRAnalyticsConnector.framework\"",
+					"\"Firebase/Analytics/FirebaseAnalytics.framework\"",
+					"\"Firebase/Analytics/FirebaseCore.framework\"",
+					"\"Firebase/Analytics/FirebaseCoreDiagnostics.framework\"",
+					"\"Firebase/Analytics/FirebaseInstanceID.framework\"",
+					"\"Firebase/Analytics/GoogleAppMeasurement.framework\"",
+					"\"Firebase/Analytics/GoogleUtilities.framework\"",
+					"\"Firebase/Analytics/GoogleDataTransportCCTSupport.framework\"",
+					"\"Firebase/Analytics/GoogleDataTransport.framework\"",
+					"\"Firebase/Analytics/nanopb.framework\"",
+					"\"PluginSdkboxPlay.framework\"",
+					"\"PluginIAP.framework\"",
 				);
 				OTHER_CFLAGS = (
 					-DSDKBOX_ENABLED,
