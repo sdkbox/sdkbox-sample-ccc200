@@ -1,13 +1,14 @@
 import org.apache.tools.ant.taskdefs.condition.Os
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
 
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
     buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.sdkbox.sample.ccc200"
+        applicationId "com.sdkbox.test.app.sample.huawei"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1
@@ -19,7 +20,7 @@ android {
                     // skip the NDK Build step if PROP_NDK_MODE is none
                     targets 'cocos2djs'
                     arguments 'NDK_TOOLCHAIN_VERSION=4.9'
-
+                    
                     def module_paths = [project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x"),
                                         project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos"),
                                         project.file("/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/external")]
@@ -68,7 +69,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
@@ -82,6 +82,10 @@ android {
         }
 
         debug {
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                signingConfig signingConfigs.release
+            }
+
             externalNativeBuild {
                 ndkBuild {
                     arguments 'NDK_DEBUG=1'
@@ -104,7 +108,7 @@ android.applicationVariants.all { variant ->
         copy {
             from "${buildDir}/../../../../../src"
             into "${buildDir}/intermediates/assets/${variant.dirName}/src"
-        }
+        }        
 
         copy {
             from "${buildDir}/../../../../../jsb-adapter"
@@ -123,6 +127,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
+    implementation 'com.huawei.hms:hwid:4.0.1.301'
 }
-dependencies { compile 'com.google.android.gms:play-services-ads:17.2.0' }
-dependencies { compile 'com.google.android.gms:play-services-base:16.1.0' }

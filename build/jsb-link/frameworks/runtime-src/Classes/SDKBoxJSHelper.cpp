@@ -75,11 +75,19 @@ namespace sdkbox {
         std::vector<std::string> vect;
         sdkbox::split(name, ".", vect);
 
-        se::Object* root = obj;
+        se::Value parent(obj, true);
         se::Value ret;
         for (auto n : vect) {
-            root->getProperty(n.c_str(), &ret);
-            root = ret.toObject();
+            se::Object* pObj = parent.toObject();
+            if (nullptr == pObj) {
+                // shoudn't be here
+                break;
+            }
+            if (!pObj->getProperty(n.c_str(), &ret)) {
+                // shouldn't be here
+                break;
+            }
+            parent.setObject(ret.toObject(), true);
         }
         return ret;
     }

@@ -43,12 +43,8 @@ using namespace anysdk::framework;
 
 USING_NS_CC;
 #ifdef SDKBOX_ENABLED
-#include "PluginAdMobJS.hpp"
-#include "PluginAdMobJSHelper.h"
-#endif
-#ifdef SDKBOX_ENABLED
-#include "PluginSdkboxAdsJS.hpp"
-#include "PluginSdkboxAdsJSHelper.h"
+#include "PluginHMSJS.hpp"
+#include "PluginHMSJSHelper.h"
 #endif
 
 AppDelegate::AppDelegate(int width, int height) : Application("Cocos Game", width, height)
@@ -85,12 +81,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     jsb_register_all_modules();
 #ifdef SDKBOX_ENABLED
-    se->addRegisterCallback(register_all_PluginAdMobJS);
-    se->addRegisterCallback(register_all_PluginAdMobJS_helper);
-#endif
-#ifdef SDKBOX_ENABLED
-    se->addRegisterCallback(register_all_PluginSdkboxAdsJS);
-    se->addRegisterCallback(register_all_PluginSdkboxAdsJS_helper);
+    se->addRegisterCallback(register_all_PluginHMSJS);
+    se->addRegisterCallback(register_all_PluginHMSJS_helper);
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS) && PACKAGE_AS

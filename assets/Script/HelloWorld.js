@@ -16,66 +16,41 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginAdMob();
+        this.initPluginHMS();
     },
 
-    initPluginAdMob: function() {
+    initPluginHMS: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginAdMob) {
-            this.log('sdkbox.PluginAdMob is undefined');
+        if ('undefined' == typeof sdkbox.PluginHMS) {
+            this.log('sdkbox.PluginHMS is undefined');
             return;
         }
 
         const self = this;
-        sdkbox.PluginAdMob.setListener({
-            adViewDidReceiveAd: function(name) {
-                self.log('adViewDidReceiveAd:'+name);
+        sdkbox.PluginHMS.setListener({
+            onLogin: function(code, msg) {
+                self.log('HMS Listener onLogin:' + code + ' ' + msg);
             },
-            adViewDidFailToReceiveAdWithError: function(name, msg) {
-                self.log('adViewDidFailToReceiveAdWithError:'+name+':'+msg);
-            },
-            adViewWillPresentScreen: function(name) {
-                self.log('adViewWillPresentScreen:'+name);
-            },
-            adViewDidDismissScreen: function(name) {
-                self.log('adViewDidDismissScreen:'+name);
-            },
-            adViewWillDismissScreen: function(name) {
-                self.log('adViewWillDismissScreen:'+name);
-            },
-            adViewWillLeaveApplication: function(name) {
-                self.log('adViewWillLeaveApplication:'+name);
-            },
-            reward: function(name, currency, amount) {
-                self.log('reward:'+name+':'+currency+':'+amount);
-            }
         });
-        sdkbox.PluginAdMob.init();
+        sdkbox.PluginHMS.init();
     },
 
     onButton1: function() {
-        const adName = 'interstitial'; //interstitial ad
-        // const adName = 'reward'; //reward video
-        if (sdkbox.PluginAdMob.isAvailable(adName)) {
-            sdkbox.PluginAdMob.show(adName);
-        } else {
-            this.log(adName + ' is not available');
-            sdkbox.PluginAdMob.cache(adName);
-        }
+        // const loginType = 0; //slient login
+        const loginType = 1; //idtoken login
+        // const loginType = 2; //authcode login
+
+        this.log('to login with type:' + loginType);
+        sdkbox.PluginHMS.login(loginType);
     },
 
     onButton2: function() {
-        const adName = 'banner';
-        if (sdkbox.PluginAdMob.isAvailable(adName)) {
-            sdkbox.PluginAdMob.show(adName);
-        } else {
-            this.log(adName + ' is not available');
-            sdkbox.PluginAdMob.cache(adName);
-        }
+        this.log('to logout');
+        sdkbox.PluginHMS.logout();
     },
 
     log: function(s) {

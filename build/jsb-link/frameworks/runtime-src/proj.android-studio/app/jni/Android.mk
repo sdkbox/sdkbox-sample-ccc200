@@ -13,11 +13,9 @@ endif
 LOCAL_SRC_FILES := hellojavascript/main.cpp \
 ../../../Classes/AppDelegate.cpp \
 ../../../Classes/jsb_module_register.cpp \
-../../../Classes/PluginSdkboxAdsJS.cpp \
-../../../Classes/PluginSdkboxAdsJSHelper.cpp \
-../../../Classes/SDKBoxJSHelper.cpp \
-../../../Classes/PluginAdMobJS.cpp \
-../../../Classes/PluginAdMobJSHelper.cpp
+../../../Classes/PluginHMSJS.cpp \
+../../../Classes/PluginHMSJSHelper.cpp \
+../../../Classes/SDKBoxJSHelper.cpp
 LOCAL_CPPFLAGS := -DSDKBOX_ENABLED \
 -DSDKBOX_COCOS_CREATOR
 LOCAL_LDLIBS := -landroid \
@@ -32,19 +30,17 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/anysdk
 LOCAL_WHOLE_STATIC_LIBRARIES := PluginProtocolStatic
 endif
 
-LOCAL_WHOLE_STATIC_LIBRARIES += PluginSdkboxAds
+LOCAL_WHOLE_STATIC_LIBRARIES += PluginHMS
 LOCAL_WHOLE_STATIC_LIBRARIES += sdkbox
-LOCAL_WHOLE_STATIC_LIBRARIES += PluginAdMob
 
 LOCAL_STATIC_LIBRARIES := cocos2dx_static
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2
 
 include $(BUILD_SHARED_LIBRARY)
-$(call import-add-path, $(LOCAL_PATH))
+$(call import-add-path,$(LOCAL_PATH))
 
 
 $(call import-module, cocos)
 $(call import-module, ./sdkbox)
-$(call import-module, ./PluginSdkboxAds)
-$(call import-module, ./PluginAdMob)
+$(call import-module, ./PluginHMS)
