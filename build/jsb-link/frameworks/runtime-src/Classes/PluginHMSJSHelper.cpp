@@ -20,6 +20,79 @@ public:
 
         RUN_ON_MAIN_THREAD_END
     }
+    
+    void onIAPReady(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    }
+
+    void onIAPProducts(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    }
+
+    void onIAPPurchase(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    }
+
+    void onIAPPConsume(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onIAPOwnedPurchases(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onIAPOwnedPurchaseRecords(int code, const std::string& msg) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(msg));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
 };
 
 static bool js_PluginHMSJS_PluginHMS_setListener(se::State& s) {

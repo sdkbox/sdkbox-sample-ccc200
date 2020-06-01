@@ -8,8 +8,14 @@ extern se::Class* __jsb_sdkbox_PluginHMS_class;
 
 bool js_register_sdkbox_PluginHMS(se::Object* obj);
 bool register_all_PluginHMSJS(se::Object* obj);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapRequestOwnedPurchases);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapRequestOwnedPurchaseRecords);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapPurchase);
 SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_init);
 SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_logout);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapConsume);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapRequestProducts);
 SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_login);
 SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_setGDPR);
+SE_DECLARE_FUNC(js_PluginHMSJS_PluginHMS_iapPurchaseWithPrice);
 
