@@ -263,7 +263,7 @@ cc.Class({
             },
         
             onArchiveThumbnail(code, errorOrJson, coverData) {
-                self.log('HMS Listener onArchiveThumbnail:' + code);
+                self.log('HMS Listener onArchiveThumbnail:' + code + ' len:' + coverData.length);
                 cc.log(errorOrJson);
             },
         
@@ -273,7 +273,7 @@ cc.Class({
             },
         
             onArchiveLoad(code, errorOrJson, contentData) {
-                self.log('HMS Listener onArchiveLoad:' + code);
+                self.log('HMS Listener onArchiveLoad:' + code + ' len:' + contentData.length);
                 cc.log(errorOrJson);
             },
         
