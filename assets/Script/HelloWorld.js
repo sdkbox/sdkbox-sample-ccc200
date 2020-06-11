@@ -50,6 +50,27 @@ cc.Class({
                 self.log('HMS Listener onLogin:' + code);
                 cc.log(msg);
             },
+
+            onPlayerInfo(code, errorOrJson) {
+                self.log('HMS Listener onPlayerInfo:' + code);
+                cc.log(errorOrJson);
+            },
+
+            onPlayerExtraInfo(code, errorOrJson) {
+                self.log('HMS Listener onPlayerExtraInfo:' + code);
+                cc.log(errorOrJson);
+            },
+
+            onPlayerGameBegin(code, errorOrJson) {
+                self.log('HMS Listener onPlayerGameBegin:' + code);
+                cc.log(errorOrJson);
+            },
+
+            onPlayerGameEnd(code, errorOrJson) {
+                self.log('HMS Listener onPlayerGameEnd:' + code);
+                cc.log(errorOrJson);
+            },
+
             onIAPReady: function(code, msg) {
                 self.log('HMS Listener onIAPReady:' + code);
                 cc.log(msg);
@@ -120,7 +141,158 @@ cc.Class({
             onIAPOwnedPurchaseRecords: function(code, msg) {
                 self.log('HMS Listener onIAPOwnedPurchaseRecords:' + code);
                 cc.log(msg);
-            }
+            },
+
+            onAchievementList(code, errorOrJson) {
+                self.log('HMS Listener onAchievementList:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAchievementShow(code, errorOrJson) {
+                self.log('HMS Listener onAchievementShow:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAchievementVisualize(code, errorOrJson) {
+                self.log('HMS Listener onAchievementVisualize:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAchievementGrow(code, errorOrJson) {
+                self.log('HMS Listener onAchievementGrow:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAchievementMakeSteps(code, errorOrJson) {
+                self.log('HMS Listener onAchievementMakeSteps:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAchievementReach(code, errorOrJson) {
+                self.log('HMS Listener onAchievementReach:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onEventList(code, errorOrJson) {
+                self.log('HMS Listener onEventList:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingSwitchStatus(code, errorOrJson) {
+                self.log('HMS Listener onRankingSwitchStatus:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingSetSwitchStatus(code, errorOrJson) {
+                self.log('HMS Listener onRankingSetSwitchStatus:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingSubmitScore(code, errorOrJson) {
+                self.log('HMS Listener onRankingSubmitScore:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingShow(code, errorOrJson) {
+                self.log('HMS Listener onRankingShow:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingList(code, errorOrJson) {
+                self.log('HMS Listener onRankingList:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingCurPlayerScore(code, errorOrJson) {
+                self.log('HMS Listener onRankingCurPlayerScore:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingPlayerCenteredScores(code, errorOrJson) {
+                self.log('HMS Listener onRankingPlayerCenteredScores:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingMoreScores(code, errorOrJson) {
+                self.log('HMS Listener onRankingMoreScores:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onRankingTopScores(code, errorOrJson) {
+                self.log('HMS Listener onRankingTopScores:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveLimitThumbnailSize(code, errorOrJson) {
+                self.log('HMS Listener onArchiveLimitThumbnailSize:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveLimitDetailsSize(code, errorOrJson) {
+                self.log('HMS Listener onArchiveLimitDetailsSize:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveAdd(code, errorOrJson) {
+                self.log('HMS Listener onArchiveAdd:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveShow(code, errorOrJson) {
+                self.log('HMS Listener onArchiveShow:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveSummaryList(code, errorOrJson) {
+                self.log('HMS Listener onArchiveSummaryList:' + code);
+                cc.log(errorOrJson);
+
+                if (0 != code) {
+                    return;
+                }
+                const rst = JSON.parse(errorOrJson);
+
+                // random select a archive id for test
+                let idx = self.randomInt(0, rst.archiveSummarys.length);
+                self.archiveId = rst.archiveSummarys[idx].id;
+            },
+        
+            onArchiveSelect(code, errorOrJson) {
+                self.log('HMS Listener onArchiveSelect:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveThumbnail(code, errorOrJson, coverData) {
+                self.log('HMS Listener onArchiveThumbnail:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveUpdate(code, errorOrJson) {
+                self.log('HMS Listener onArchiveUpdate:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveLoad(code, errorOrJson, contentData) {
+                self.log('HMS Listener onArchiveLoad:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onArchiveRemove(code, errorOrJson) {
+                self.log('HMS Listener onArchiveRemove:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onGamePlayerStats(code, errorOrJson) {
+                self.log('HMS Listener onGamePlayerStats:' + code);
+                cc.log(errorOrJson);
+            },
+        
+            onGameSummary(code, errorOrJson) {
+                self.log('HMS Listener onGameSummary:' + code);
+                cc.log(errorOrJson);
+            },
+
+
         };
 
         sdkbox.PluginHMS.setListener(listener);
@@ -462,14 +634,14 @@ cc.Class({
             const realtime = true;
             sdkbox.PluginHMS.archiveRequestSummaryList(realtime);
         } else if (menuItemType == "Request Archive Thumbnail") {
-            if (!this.mArchiveId) {
+            if (!this.archiveId) {
                 this.log("archive id is empty");
                 return;
             }
             this.log("to archiveRequestThumbnail...");
-            sdkbox.PluginHMS.archiveRequestThumbnail(this.mArchiveId);
+            sdkbox.PluginHMS.archiveRequestThumbnail(this.archiveId);
         } else if (menuItemType == "Update Archive") {
-            if (!this.mArchiveId) {
+            if (!this.archiveId) {
                 this.log("archive id is empty");
                 return;
             }
@@ -480,12 +652,12 @@ cc.Class({
             const coverBytesType = "png";
             const archiveData = this.stringToUint8Array('archive data from js ' + this.randomInt(1, 1000));
 
-            sdkbox.PluginHMS.archiveUpdate(this.mArchiveId,
+            sdkbox.PluginHMS.archiveUpdate(this.archiveId,
                                              playedTime, progress, description,
                                              this.coverData, coverBytesType,
                                              archiveData);
         } else if (menuItemType == "Load Archive") {
-            if (!this.mArchiveId) {
+            if (!this.archiveId) {
                 this.log("archive id is empty");
                 return;
             }
@@ -494,14 +666,14 @@ cc.Class({
             conflictPolicy = 1; //hms will resolved conflict by played time
             conflictPolicy = 2; //hms will resolved conflict by progress
             conflictPolicy = 3; //hms will resolved conflict by last update time
-            sdkbox.PluginHMS.archiveLoad(this.mArchiveId, conflictPolicy);
+            sdkbox.PluginHMS.archiveLoad(this.archiveId, conflictPolicy);
         } else if (menuItemType == "Remove Archive") {
-            if (!this.mArchiveId) {
+            if (!this.archiveId) {
                 this.log("archive id is empty");
                 return;
             }
             this.log("to archiveRemove...");
-            sdkbox.PluginHMS.archiveRemove(this.mArchiveId);
+            sdkbox.PluginHMS.archiveRemove(this.archiveId);
 
 
         // Game Status
