@@ -168,11 +168,6 @@ cc.Class({
                 cc.log(errorOrJson);
             },
         
-            onAchievementReach(code, errorOrJson) {
-                self.log('HMS Listener onAchievementReach:' + code);
-                cc.log(errorOrJson);
-            },
-        
             onEventList(code, errorOrJson) {
                 self.log('HMS Listener onEventList:' + code);
                 cc.log(errorOrJson);
@@ -297,6 +292,7 @@ cc.Class({
 
         sdkbox.PluginHMS.setListener(listener);
         sdkbox.PluginHMS.init();
+        sdkbox.PluginHMS.buoyShow();
     },
 
     isConsumable: function(productId) {
@@ -339,27 +335,6 @@ cc.Class({
                 self.coverData = binaryData;
             }
         );
-
-        // if (null == jsb) {
-        //     return;
-        // }
-        // const binaryData = jsb.fileUtils.getDataFromFile(cc.url.raw('resources/icon') + '.png');
-        // console.log('load icon data:' + binaryData.length);
-        // this.coverData = binaryData;
-
-
-
-        // cc.loader.loadRes('icon', function (err, file) {
-        //     if (err) {
-        //         return;
-        //     }
-
-        //     if (file instanceof cc.Texture2D) {
-        //         cc.log('texture2d');
-        //     } else if (file instanceof cc.SpriteFrame) {
-        //         cc.log('spriteFrame');
-        //     }
-        // });
     },
 
     stringToUint8Array(str) {

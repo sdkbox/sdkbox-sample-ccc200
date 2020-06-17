@@ -127,6 +127,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: "/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
-    implementation 'com.huawei.hms:hwid:4.0.1.301'
+    implementation 'com.huawei.hms:base:4.0.4.301'
+    implementation 'com.huawei.hms:hwid:4.0.4.300'
     implementation 'com.huawei.hms:iap:4.0.2.300'
+    implementation 'com.huawei.hms:game:4.0.3.301'
 }
+
