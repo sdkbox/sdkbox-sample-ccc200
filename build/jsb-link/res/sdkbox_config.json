@@ -1,7 +1,6 @@
 {
     "android": {
         "hms": {
-            "archive": true, 
             "achievements": [
                 {
                     "incremental": false, 
@@ -19,6 +18,27 @@
                     "id": "001D38EC9E1A80A52ED3F47BFBA35F4B5BDF3776180A2B9AD778800C45CD6540"
                 }
             ], 
+            "ads": {
+                "banner": {
+                    "type": "banner", 
+                    "id": "testw6vs28auh3", 
+                    "alignment": "top"
+                }, 
+                "rewarded-video": {
+                    "type": "rewarded_video", 
+                    "id": "testx9dtjwj8hp"
+                }, 
+                "interstitial": {
+                    "type": "interstitial", 
+                    "id": "testb4znbuh3n2"
+                }
+            }, 
+            "rankings": [
+                {
+                    "name": "shooter", 
+                    "id": "C8B96FA1EDFC2D87DFE9491409440E3F8B2E39AFB8BD7E95C3BE337FC207C253"
+                }
+            ], 
             "events": [
                 {
                     "name": "gencoin", 
@@ -28,14 +48,8 @@
                     "name": "consumecoin", 
                     "id": "E8688F3D9625572F462F5999E7F83EB5628E0FC1F2044E84D026EC4AB33C09F5"
                 }
-            ],
-            "rankings": [
-                {
-                    "name": "shooter", 
-                    "id": "C8B96FA1EDFC2D87DFE9491409440E3F8B2E39AFB8BD7E95C3BE337FC207C253"
-                }
             ], 
-            "debug": true,
+            "key": "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAn9U6yC1QI8cXGRkOQxO9QG/WV8dR4jZDCYt/GJBM4OTTtRZeAIEyVifGPutwMAkPBLgdUsJwHuA2t2jrBAi/nagYJvh8UIazKJv5C4Hykw5Z2iKTWMmiMK9rQ2tMtRTAMiY+LwfaOH2258bEyt8mDQxyG3aRSAH28mZki/nGEbNfx7ZY9By/SSkuaCEWRDNYdiWkGDuZLhf8D97DoJJc6tTnrDPmzf1QqkVDjjudkHJwgCMWpLVACzGGuo4YQYt98Pu9cqbiYWJqSHqEbPYN0AmGXdJw+tO5f1wPcZWnJhn4JqCFmD9i/dSENNJWXVDgJc0DG2PiWX5j+qUaT7WkZMs4/WFtL6VRdRUDzITqYwKUUBYENVvkfdKlhjh+6V4BFKPsipvjOsRdXDpZ7sC6MY/7yn0eMOH3RoIQoiWeGYkxRTkKhdm/QQ/Xv/dvMbiicsNmUIkBce3w4hQG9XlhgjNrl5rI4p9Ho3Stq48s7DJlhWuUE6pXcjo2TJUSJ9+nAgMBAAE=", 
             "items": {
                 "remove_ads": {
                     "type": "non_consumable", 
@@ -49,7 +63,8 @@
                     "id": "com.sdkbox.test.app.sample.coin1"
                 }
             }, 
-            "key": "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAn9U6yC1QI8cXGRkOQxO9QG/WV8dR4jZDCYt/GJBM4OTTtRZeAIEyVifGPutwMAkPBLgdUsJwHuA2t2jrBAi/nagYJvh8UIazKJv5C4Hykw5Z2iKTWMmiMK9rQ2tMtRTAMiY+LwfaOH2258bEyt8mDQxyG3aRSAH28mZki/nGEbNfx7ZY9By/SSkuaCEWRDNYdiWkGDuZLhf8D97DoJJc6tTnrDPmzf1QqkVDjjudkHJwgCMWpLVACzGGuo4YQYt98Pu9cqbiYWJqSHqEbPYN0AmGXdJw+tO5f1wPcZWnJhn4JqCFmD9i/dSENNJWXVDgJc0DG2PiWX5j+qUaT7WkZMs4/WFtL6VRdRUDzITqYwKUUBYENVvkfdKlhjh+6V4BFKPsipvjOsRdXDpZ7sC6MY/7yn0eMOH3RoIQoiWeGYkxRTkKhdm/QQ/Xv/dvMbiicsNmUIkBce3w4hQG9XlhgjNrl5rI4p9Ho3Stq48s7DJlhWuUE6pXcjo2TJUSJ9+nAgMBAAE="
+            "debug": true, 
+            "archive": true
         }
     }, 
     "ios": {}

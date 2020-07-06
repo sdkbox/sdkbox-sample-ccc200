@@ -105,7 +105,7 @@ public:
         RUN_ON_MAIN_THREAD_END
     }
 
-    void onIAPPConsume(int code, const std::string& msg) override {
+    void onIAPConsume(int code, const std::string& msg) override {
         RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
 
@@ -468,6 +468,102 @@ public:
     };
 
     void onGameSummary(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdClose(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdFail(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdLeave(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdOpen(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdLoad(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdClick(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdImpression(int code, const std::string& errorOrJson) override {
+        RUN_ON_MAIN_THREAD_BEGIN
+        MAKE_V8_HAPPY
+
+        se::ValueArray args;
+        args.push_back(se::Value(code));
+        args.push_back(se::Value(errorOrJson));
+        invokeJSFun(funcName, args);
+
+        RUN_ON_MAIN_THREAD_END
+    };
+
+    void onAdReward(int code, const std::string& errorOrJson) override {
         RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
 

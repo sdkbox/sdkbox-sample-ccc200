@@ -6,6 +6,57 @@
 se::Object* __jsb_sdkbox_PluginHMS_proto = nullptr;
 se::Class* __jsb_sdkbox_PluginHMS_class = nullptr;
 
+static bool js_PluginHMSJS_PluginHMS_adCache(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adCache : Error processing arguments");
+        sdkbox::PluginHMS::adCache(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adCache)
+
+static bool js_PluginHMSJS_PluginHMS_adSetAdContentClassification(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetAdContentClassification : Error processing arguments");
+        sdkbox::PluginHMS::adSetAdContentClassification(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetAdContentClassification)
+
+static bool js_PluginHMSJS_PluginHMS_adSetNonPersonalizedAd(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        int arg0 = 0;
+        ok &= seval_to_int32(args[0], (int32_t*)&arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetNonPersonalizedAd : Error processing arguments");
+        sdkbox::PluginHMS::adSetNonPersonalizedAd(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetNonPersonalizedAd)
+
 static bool js_PluginHMSJS_PluginHMS_archiveShow(se::State& s)
 {
     const auto& args = s.args();
@@ -80,6 +131,23 @@ static bool js_PluginHMSJS_PluginHMS_playerRequestExtraInfo(se::State& s)
     return false;
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_playerRequestExtraInfo)
+
+static bool js_PluginHMSJS_PluginHMS_adSetTagForChildProtection(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        int arg0 = 0;
+        ok &= seval_to_int32(args[0], (int32_t*)&arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetTagForChildProtection : Error processing arguments");
+        sdkbox::PluginHMS::adSetTagForChildProtection(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetTagForChildProtection)
 
 static bool js_PluginHMSJS_PluginHMS_buoyShow(se::State& s)
 {
@@ -242,6 +310,23 @@ static bool js_PluginHMSJS_PluginHMS_rankingRequestMoreScores(se::State& s)
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_rankingRequestMoreScores)
 
+static bool js_PluginHMSJS_PluginHMS_adShow(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adShow : Error processing arguments");
+        sdkbox::PluginHMS::adShow(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adShow)
+
 static bool js_PluginHMSJS_PluginHMS_achievementRequestList(se::State& s)
 {
     const auto& args = s.args();
@@ -333,6 +418,23 @@ static bool js_PluginHMSJS_PluginHMS_iapRequestProducts(se::State& s)
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_iapRequestProducts)
 
+static bool js_PluginHMSJS_PluginHMS_adHide(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adHide : Error processing arguments");
+        sdkbox::PluginHMS::adHide(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adHide)
+
 static bool js_PluginHMSJS_PluginHMS_rankingSetSwitchStatus(se::State& s)
 {
     const auto& args = s.args();
@@ -349,6 +451,23 @@ static bool js_PluginHMSJS_PluginHMS_rankingSetSwitchStatus(se::State& s)
     return false;
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_rankingSetSwitchStatus)
+
+static bool js_PluginHMSJS_PluginHMS_adSetTagForUnderAgeOfPromise(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        int arg0 = 0;
+        ok &= seval_to_int32(args[0], (int32_t*)&arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetTagForUnderAgeOfPromise : Error processing arguments");
+        sdkbox::PluginHMS::adSetTagForUnderAgeOfPromise(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetTagForUnderAgeOfPromise)
 
 static bool js_PluginHMSJS_PluginHMS_setGDPR(se::State& s)
 {
@@ -513,6 +632,25 @@ static bool js_PluginHMSJS_PluginHMS_logout(se::State& s)
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_logout)
 
+static bool js_PluginHMSJS_PluginHMS_adIsAvailable(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adIsAvailable : Error processing arguments");
+        bool result = sdkbox::PluginHMS::adIsAvailable(arg0);
+        ok &= boolean_to_seval(result, &s.rval());
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adIsAvailable : Error processing arguments");
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adIsAvailable)
+
 static bool js_PluginHMSJS_PluginHMS_rankingRequestSwitchStatus(se::State& s)
 {
     const auto& args = s.args();
@@ -588,6 +726,23 @@ static bool js_PluginHMSJS_PluginHMS_iapRequestOwnedPurchaseRecords(se::State& s
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_iapRequestOwnedPurchaseRecords)
 
+static bool js_PluginHMSJS_PluginHMS_adSetRewardData(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetRewardData : Error processing arguments");
+        sdkbox::PluginHMS::adSetRewardData(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetRewardData)
+
 static bool js_PluginHMSJS_PluginHMS_archiveRequestSummaryList(se::State& s)
 {
     const auto& args = s.args();
@@ -604,6 +759,23 @@ static bool js_PluginHMSJS_PluginHMS_archiveRequestSummaryList(se::State& s)
     return false;
 }
 SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_archiveRequestSummaryList)
+
+static bool js_PluginHMSJS_PluginHMS_adSetRewardUserId(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= seval_to_std_string(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginHMSJS_PluginHMS_adSetRewardUserId : Error processing arguments");
+        sdkbox::PluginHMS::adSetRewardUserId(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginHMSJS_PluginHMS_adSetRewardUserId)
 
 static bool js_PluginHMSJS_PluginHMS_rankingRequestTopScores(se::State& s)
 {
@@ -757,10 +929,14 @@ bool js_register_PluginHMSJS_PluginHMS(se::Object* obj)
 {
     auto cls = se::Class::create("PluginHMS", obj, nullptr, nullptr);
 
+    cls->defineStaticFunction("adCache", _SE(js_PluginHMSJS_PluginHMS_adCache));
+    cls->defineStaticFunction("adSetAdContentClassification", _SE(js_PluginHMSJS_PluginHMS_adSetAdContentClassification));
+    cls->defineStaticFunction("adSetNonPersonalizedAd", _SE(js_PluginHMSJS_PluginHMS_adSetNonPersonalizedAd));
     cls->defineStaticFunction("archiveShow", _SE(js_PluginHMSJS_PluginHMS_archiveShow));
     cls->defineStaticFunction("buoyHide", _SE(js_PluginHMSJS_PluginHMS_buoyHide));
     cls->defineStaticFunction("rankingRequestList", _SE(js_PluginHMSJS_PluginHMS_rankingRequestList));
     cls->defineStaticFunction("playerRequestExtraInfo", _SE(js_PluginHMSJS_PluginHMS_playerRequestExtraInfo));
+    cls->defineStaticFunction("adSetTagForChildProtection", _SE(js_PluginHMSJS_PluginHMS_adSetTagForChildProtection));
     cls->defineStaticFunction("buoyShow", _SE(js_PluginHMSJS_PluginHMS_buoyShow));
     cls->defineStaticFunction("rankingRequestPlayerCenteredScores", _SE(js_PluginHMSJS_PluginHMS_rankingRequestPlayerCenteredScores));
     cls->defineStaticFunction("iapPurchaseWithPrice", _SE(js_PluginHMSJS_PluginHMS_iapPurchaseWithPrice));
@@ -769,13 +945,16 @@ bool js_register_PluginHMSJS_PluginHMS(se::Object* obj)
     cls->defineStaticFunction("rankingSubmitScore", _SE(js_PluginHMSJS_PluginHMS_rankingSubmitScore));
     cls->defineStaticFunction("eventGrow", _SE(js_PluginHMSJS_PluginHMS_eventGrow));
     cls->defineStaticFunction("rankingRequestMoreScores", _SE(js_PluginHMSJS_PluginHMS_rankingRequestMoreScores));
+    cls->defineStaticFunction("adShow", _SE(js_PluginHMSJS_PluginHMS_adShow));
     cls->defineStaticFunction("achievementRequestList", _SE(js_PluginHMSJS_PluginHMS_achievementRequestList));
     cls->defineStaticFunction("playerSubmitGameEnd", _SE(js_PluginHMSJS_PluginHMS_playerSubmitGameEnd));
     cls->defineStaticFunction("achievementMakeSteps", _SE(js_PluginHMSJS_PluginHMS_achievementMakeSteps));
     cls->defineStaticFunction("init", _SE(js_PluginHMSJS_PluginHMS_init));
     cls->defineStaticFunction("archiveRequestThumbnail", _SE(js_PluginHMSJS_PluginHMS_archiveRequestThumbnail));
     cls->defineStaticFunction("iapRequestProducts", _SE(js_PluginHMSJS_PluginHMS_iapRequestProducts));
+    cls->defineStaticFunction("adHide", _SE(js_PluginHMSJS_PluginHMS_adHide));
     cls->defineStaticFunction("rankingSetSwitchStatus", _SE(js_PluginHMSJS_PluginHMS_rankingSetSwitchStatus));
+    cls->defineStaticFunction("adSetTagForUnderAgeOfPromise", _SE(js_PluginHMSJS_PluginHMS_adSetTagForUnderAgeOfPromise));
     cls->defineStaticFunction("setGDPR", _SE(js_PluginHMSJS_PluginHMS_setGDPR));
     cls->defineStaticFunction("playerSubmitGameBegin", _SE(js_PluginHMSJS_PluginHMS_playerSubmitGameBegin));
     cls->defineStaticFunction("playerRequestInfo", _SE(js_PluginHMSJS_PluginHMS_playerRequestInfo));
@@ -786,12 +965,15 @@ bool js_register_PluginHMSJS_PluginHMS(se::Object* obj)
     cls->defineStaticFunction("archiveLoad", _SE(js_PluginHMSJS_PluginHMS_archiveLoad));
     cls->defineStaticFunction("gameSummaryRequest", _SE(js_PluginHMSJS_PluginHMS_gameSummaryRequest));
     cls->defineStaticFunction("logout", _SE(js_PluginHMSJS_PluginHMS_logout));
+    cls->defineStaticFunction("adIsAvailable", _SE(js_PluginHMSJS_PluginHMS_adIsAvailable));
     cls->defineStaticFunction("rankingRequestSwitchStatus", _SE(js_PluginHMSJS_PluginHMS_rankingRequestSwitchStatus));
     cls->defineStaticFunction("achievementGrow", _SE(js_PluginHMSJS_PluginHMS_achievementGrow));
     cls->defineStaticFunction("archiveRequestLimitThumbnailSize", _SE(js_PluginHMSJS_PluginHMS_archiveRequestLimitThumbnailSize));
     cls->defineStaticFunction("gamePlayerStatsRequest", _SE(js_PluginHMSJS_PluginHMS_gamePlayerStatsRequest));
     cls->defineStaticFunction("iapRequestOwnedPurchaseRecords", _SE(js_PluginHMSJS_PluginHMS_iapRequestOwnedPurchaseRecords));
+    cls->defineStaticFunction("adSetRewardData", _SE(js_PluginHMSJS_PluginHMS_adSetRewardData));
     cls->defineStaticFunction("archiveRequestSummaryList", _SE(js_PluginHMSJS_PluginHMS_archiveRequestSummaryList));
+    cls->defineStaticFunction("adSetRewardUserId", _SE(js_PluginHMSJS_PluginHMS_adSetRewardUserId));
     cls->defineStaticFunction("rankingRequestTopScores", _SE(js_PluginHMSJS_PluginHMS_rankingRequestTopScores));
     cls->defineStaticFunction("archiveRemove", _SE(js_PluginHMSJS_PluginHMS_archiveRemove));
     cls->defineStaticFunction("iapConsume", _SE(js_PluginHMSJS_PluginHMS_iapConsume));

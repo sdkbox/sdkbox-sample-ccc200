@@ -34,6 +34,7 @@ cc.Class({
     },
 
     initPluginHMS: function() {
+        this.adNameArray = ['banner', 'institial', 'rewarded-video'];
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
@@ -109,7 +110,7 @@ cc.Class({
                     self.log('Purchase Success, delivery ' + pId + " to player");
                 }
             },
-            onIAPPConsume: function(code, msg) {
+            onIAPConsume: function(code, msg) {
                 self.log('HMS Listener onIAPPConsume:' + code);
                 cc.log(msg);
 
@@ -287,12 +288,89 @@ cc.Class({
                 cc.log(errorOrJson);
             },
 
+            onAdClose(code, errorOrJson) {
+                self.log("HMS listener onAdClose code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdFail(code, errorOrJson) {
+                self.log("HMS listener onAdFail code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdLeave(code, errorOrJson) {
+                self.log("HMS listener onAdLeave code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdOpen(code, errorOrJson) {
+                self.log("HMS listener onAdOpen code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdLoad(code, errorOrJson) {
+                self.log("HMS listener onAdLoad code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdClick(code, errorOrJson) {
+                self.log("HMS listener onAdClick code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdImpression(code, errorOrJson) {
+                self.log("HMS listener onAdImpression code:" + code);
+                cc.log(errorOrJson);
+            },
+        
+            onAdReward(code, errorOrJson) {
+                self.log("HMS listener onAdReward code:" + code);
+                cc.log(errorOrJson);
+            },
+
 
         };
 
         sdkbox.PluginHMS.setListener(listener);
         sdkbox.PluginHMS.init();
         sdkbox.PluginHMS.buoyShow();
+
+        sdkbox.PluginHMS.adSetRewardData("cdata");
+        sdkbox.PluginHMS.adSetRewardUserId("uid666");
+
+        /*
+         * adContentClassification:
+         *   "W"->Content suitable for toddlers and older audiences;
+         *  "PI"->Content suitable for kids and older audiences
+         *   "J"->Content suitable for teenagers and older audiences.
+         *   "A"->Content suitable only for adults.
+         *    ""->Unknown rating.
+         */
+        sdkbox.PluginHMS.adSetAdContentClassification("A");
+
+        /*
+         * tagForUnderAgeOfPromise:
+         *  0->Do not process ad requests as directed to users under the age of consent;
+         *  1->Process ad requests as directed to users under the age of consent;
+         * -1->Whether to process ad requests as directed to users under the age of consent is not specified;
+         */
+        sdkbox.PluginHMS.adSetTagForUnderAgeOfPromise(0);
+
+        /*
+        * tagForChildProtection:
+        *  0->Do not process ad requests according to the COPPA;
+        *  1->Process ad requests according to the COPPA;
+        * -1->Whether to process ad requests according to the COPPA is not specified;
+        */
+        sdkbox.PluginHMS.adSetTagForChildProtection(0);
+
+        /*
+        * nonPersonalizedAd
+        *  0->Request both personalized and non-personalized ads (default);
+        *  1->Request only non-personalized ads;
+        */
+        sdkbox.PluginHMS.adSetNonPersonalizedAd(0);
+
     },
 
     isConsumable: function(productId) {
@@ -375,6 +453,8 @@ cc.Class({
             this.genGameArchiveMenu();
         } else if (title == "Status") {
             this.genGameStatsMenu();
+        } else if (title == "Ad") {
+            this.genAdMenu();
         }
         this.menu.node.addChild(this.newMenuItem("Back"));
 
@@ -418,7 +498,8 @@ cc.Class({
             this.showMenu('Archive');
         } else if (menuItemType == "Game Status Test") {
             this.showMenu('Status');
-
+        } else if (menuItemType == "Ad Test") {
+            this.showMenu('Ad');
 
         // Account
         } else if (menuItemType == "Login") {
@@ -661,6 +742,22 @@ cc.Class({
             const realtime = false;
             sdkbox.PluginHMS.gameSummaryRequest(realtime);
 
+        // Ad
+        } else if (menuItemType == "Change AdName") {
+            if (this.adName) {
+                this.adNameArray.push(this.adName);
+            }
+            this.adName = this.adNameArray.shift();
+            this.log("current ad: " + this.adName);
+        } else if (menuItemType == "Cache") {
+            this.log("to adCache...");
+            sdkbox.PluginHMS.adCache(this.adName);
+        } else if (menuItemType == "Show") {
+            this.log("to adShow...");
+            sdkbox.PluginHMS.adShow(this.adName);
+        } else if (menuItemType == "Hide") {
+            this.log("to adHide...");
+            sdkbox.PluginHMS.adHide(this.adName);
 
         } else if (menuItemType == "Back") {
             this.showMenu('HMS');
@@ -678,6 +775,7 @@ cc.Class({
         this.menu.node.addChild(this.newMenuItem('Game Ranking Test'));
         this.menu.node.addChild(this.newMenuItem('Game Archive Test'));
         this.menu.node.addChild(this.newMenuItem('Game Status Test'));
+        this.menu.node.addChild(this.newMenuItem('Ad Test'));
     },
 
     genAccountMenu() {
@@ -742,6 +840,13 @@ cc.Class({
     genGameStatsMenu() {
         this.menu.node.addChild(this.newMenuItem('Game Player Stats'));
         this.menu.node.addChild(this.newMenuItem('Game Summary'));
+    },
+
+    genAdMenu() {
+        this.menu.node.addChild(this.newMenuItem('Change AdName'));
+        this.menu.node.addChild(this.newMenuItem('Cache'));
+        this.menu.node.addChild(this.newMenuItem('Show'));
+        this.menu.node.addChild(this.newMenuItem('Hide'));
     },
 
     log: function(s) {

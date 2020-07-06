@@ -19,7 +19,7 @@ namespace sdkbox {
          * login callback
          * code: 0, success; !=0, failed
          */
-        virtual void onLogin(int code, const std::string& errorOrJson) = 0;
+        virtual void onLogin(int code, const std::string& errorOrJson) {};
 
         /*
          * current palyer info callback
@@ -62,7 +62,7 @@ namespace sdkbox {
          * callback for iapConsume
          * errorOrJson: products json if code == 0, error msg if code != 0
          */
-        virtual void onIAPPConsume(int code, const std::string& errorOrJson) {};
+        virtual void onIAPConsume(int code, const std::string& errorOrJson) {};
         
         /*
          * callback for iapRequestOwnedPurchases
@@ -212,6 +212,15 @@ namespace sdkbox {
          */
         virtual void onGameSummary(int code, const std::string& errorOrJson) {};
 
+        virtual void onAdClose(int code, const std::string& errorOrJson) {};
+        virtual void onAdFail(int code, const std::string& errorOrJson) {};
+        virtual void onAdLeave(int code, const std::string& errorOrJson) {};
+        virtual void onAdOpen(int code, const std::string& errorOrJson) {};
+        virtual void onAdLoad(int code, const std::string& errorOrJson) {};
+        virtual void onAdClick(int code, const std::string& errorOrJson) {};
+        virtual void onAdImpression(int code, const std::string& errorOrJson) {};
+        virtual void onAdReward(int code, const std::string& errorOrJson) {};
+
     };
 
     class PluginHMS {
@@ -329,7 +338,7 @@ namespace sdkbox {
         /*
          * consume consumable product
          *
-         * will trigger onIAPPConsume
+         * will trigger onIAPConsume
          */
         static void iapConsume(const std::string& purchaseToken);
 
@@ -576,6 +585,53 @@ namespace sdkbox {
          * hide buoy
          */
         static void buoyHide();
+
+        static void adCache(const std::string& name);
+        static void adShow(const std::string& name);
+        static void adHide(const std::string& name);
+        static bool adIsAvailable(const std::string& name);
+
+        /*
+        * set reward ad custom data
+        * params:
+        * data: custom data, should uri encoded
+        */
+        static void adSetRewardData(const std::string& custom_data);
+
+        static void adSetRewardUserId(const std::string& user_id);
+
+        /*
+         * adContentClassification:
+         *   "W"->Content suitable for toddlers and older audiences;
+         *  "PI"->Content suitable for kids and older audiences
+         *   "J"->Content suitable for teenagers and older audiences.
+         *   "A"->Content suitable only for adults.
+         *    ""->Unknown rating.
+         */
+        static void adSetAdContentClassification(const std::string& adContentClassification);
+
+        /*
+         * tagForUnderAgeOfPromise:
+         *  0->Do not process ad requests as directed to users under the age of consent;
+         *  1->Process ad requests as directed to users under the age of consent;
+         * -1->Whether to process ad requests as directed to users under the age of consent is not specified;
+         */
+        static void adSetTagForUnderAgeOfPromise(int tagForUnderAgeOfPromise);
+
+        /*
+         * tagForChildProtection:
+         *  0->Do not process ad requests according to the COPPA;
+         *  1->Process ad requests according to the COPPA;
+         * -1->Whether to process ad requests according to the COPPA is not specified;
+         */
+        static void adSetTagForChildProtection(int tagForChildProtection);
+
+        /*
+         * nonPersonalizedAd
+         *  0->Request both personalized and non-personalized ads (default);
+         *  1->Request only non-personalized ads;
+         */
+        static void adSetNonPersonalizedAd(int nonPersonalizedAd);
 
     };
 }
