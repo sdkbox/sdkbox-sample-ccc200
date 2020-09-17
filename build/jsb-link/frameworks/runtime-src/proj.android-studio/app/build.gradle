@@ -7,7 +7,7 @@ android {
     buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.sdkbox.sample.ccc200"
+        applicationId "com.sdkbox.test.app.sample"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1

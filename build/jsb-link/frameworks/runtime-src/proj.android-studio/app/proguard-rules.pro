@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+#sdkbox
+-keep class com.sdkbox.** { *; }
+-dontwarn com.sdkbox.**

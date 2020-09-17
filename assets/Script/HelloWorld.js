@@ -16,25 +16,42 @@ cc.Class({
     },
 
     initPlugin: function() {
-        this.initPluginName();
+        this.initSignInWithApple();
     },
 
-    initPluginName: function() {
+    initSignInWithApple: function() {
         if ('undefined' == typeof sdkbox) {
             this.log('sdkbox is undefined');
             return;
         }
 
-        if ('undefined' == typeof sdkbox.PluginName) {
-            this.log('sdkbox.PluginName is undefined');
+        if ('undefined' == typeof sdkbox.PluginSignInWithApple) {
+            this.log('sdkbox.PluginSignInWithApple is undefined');
             return;
         }
 
-        sdkbox.PluginName.init();
+        const self = this;
+        sdkbox.PluginSignInWithApple.setListener({
+            onAuthorizationDidComplete: function(authInfo) {
+                const s = 'onAuthorizationDidComplete:' + authInfo;
+                self.log(s);
+            },
+            onAuthorizationCompleteWithError: function(authInfo) {
+                const s = 'onAuthorizationCompleteWithError:' + authInfo;
+                self.log(s);
+            },
+            onAuthorizationStatus: function(authState) {
+                const s = 'onAuthorizationStatus:' + authState;
+                self.log(s);
+            },
+        });
+        sdkbox.PluginSignInWithApple.init();
+        sdkbox.PluginSignInWithApple.signWithExistingAccount();
     },
 
     onButton1: function() {
-        this.log('button 1 clicked');
+        this.log('to Sign In with Apple ...');
+        sdkbox.PluginSignInWithApple.sign();
     },
 
     log: function(s) {

@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.6968587239583333,
-      "y": 0.6968587239583333,
+      "x": 0.5843587239583333,
+      "y": 0.5843587239583333,
       "z": 1
     },
     "_quat": {
@@ -52,7 +52,7 @@
       "z": 0,
       "w": 1
     },
-    "_localZOrder": 2,
+    "_localZOrder": 6,
     "groupIndex": 0,
     "autoReleaseAssets": false,
     "_id": "2d2f792f-a40c-49bb-a189-ed176a246e49"
@@ -133,7 +133,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 3,
+    "_localZOrder": 7,
     "groupIndex": 0,
     "_id": "a286bbGknJLZpRpxROV6M94"
   },
@@ -194,7 +194,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 4,
+    "_localZOrder": 8,
     "groupIndex": 0,
     "_id": "f1H/As8KdBZIz2IMt6YaU8"
   },
@@ -280,7 +280,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 5,
+    "_localZOrder": 9,
     "groupIndex": 0,
     "_id": "e2e0crkOLxGrpMxpbC4iQg1"
   },
@@ -365,7 +365,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 229,
+      "width": 320.2,
       "height": 40
     },
     "_anchorPoint": {
@@ -396,7 +396,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 6,
+    "_localZOrder": 10,
     "groupIndex": 0,
     "_id": "e5xvIzGmxJsaJVEgaD8A3g"
   },
@@ -411,8 +411,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Plugin Name",
-    "_N$string": "Plugin Name",
+    "_string": "Sign In with Apple",
+    "_N$string": "Sign In with Apple",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -489,7 +489,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 7,
+    "_localZOrder": 11,
     "groupIndex": 0,
     "_id": "3ckrWJQRhB7aTwgKXtgINP"
   },
@@ -550,7 +550,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 8,
+    "_localZOrder": 12,
     "groupIndex": 0,
     "_id": "08oCak0l5Pm7od0dQ3z2DS"
   },
@@ -565,8 +565,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Button1",
-    "_N$string": "Button1",
+    "_string": "Sign In",
+    "_N$string": "Sign In",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -742,7 +742,7 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_localZOrder": 9,
+    "_localZOrder": 13,
     "groupIndex": 0,
     "_id": "1d2PyyXMJLZZDrgFlZSxjS"
   },
