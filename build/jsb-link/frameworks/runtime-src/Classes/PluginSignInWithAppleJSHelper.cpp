@@ -11,30 +11,36 @@ public:
     }
 
     virtual void onAuthorizationDidComplete(const std::string& authInfo) {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(authInfo));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
 
     virtual void onAuthorizationCompleteWithError(const std::string& authInfo) {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(authInfo));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
 
     virtual void onAuthorizationStatus(const std::string& authState) {
+        RUN_ON_MAIN_THREAD_BEGIN
         MAKE_V8_HAPPY
-        
+
         se::ValueArray args;
         args.reserve(1);
         args.push_back(se::Value(authState));
-        invokeJSFun(__FUNCTION__, args);
+        invokeJSFun(funcName, args);
+        RUN_ON_MAIN_THREAD_END
     }
 
 };
