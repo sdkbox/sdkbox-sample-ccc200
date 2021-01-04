@@ -15,5 +15,6 @@ SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_init);
 SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_setAnalyticsCollectionEnabled);
 SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_setScreenName);
 SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_getVersion);
+SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_setGDPR);
 SE_DECLARE_FUNC(js_PluginFirebaseJS_Analytics_resetAnalyticsData);
 

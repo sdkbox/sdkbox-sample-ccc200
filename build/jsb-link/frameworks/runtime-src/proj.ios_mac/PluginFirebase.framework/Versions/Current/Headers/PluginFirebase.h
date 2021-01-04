@@ -1,6 +1,6 @@
 /****************************************************************************
 
- Copyright (c) 2014-2016 SDKBOX Inc
+ Copyright (c) 2014-2020 SDKBOX Inc
 
  ****************************************************************************/
 
@@ -70,10 +70,10 @@ namespace sdkbox {
             /// </ul>
             static const std::string kFIREventAddToWishlist;
 
-            /// App Open event. By logging this event when an App is moved to the foreground, developers can
-            /// understand how often users leave and return during the course of a Session. Although Sessions
-            /// are automatically reported, this event can provide further clarification around the continuous
-            /// engagement of app-users.
+            /// App Open event. By logging this event when an App becomes active, developers can understand how
+            /// often users leave and return during the course of a Session. Although Sessions are automatically
+            /// reported, this event can provide further clarification around the continuous engagement of
+            /// app-users.
             static const std::string kFIREventAppOpen;
 
             /// E-Commerce Begin Checkout event. This event signifies that a user has begun the process of
@@ -99,6 +99,29 @@ namespace sdkbox {
             ///     <li>@c kFIRParameterTravelClass (NSString) (optional) for travel bookings</li>
             /// </ul>
             static const std::string kFIREventBeginCheckout;
+
+            /// Campaign Detail event. Log this event to supply the referral details of a re-engagement
+            /// campaign. Note: you must supply at least one of the required parameters kFIRParameterSource,
+            /// kFIRParameterMedium or kFIRParameterCampaign. Params:
+            ///
+            /// <ul>
+            ///     <li>@c kFIRParameterSource (NSString)</li>
+            ///     <li>@c kFIRParameterMedium (NSString)</li>
+            ///     <li>@c kFIRParameterCampaign (NSString)</li>
+            ///     <li>@c kFIRParameterTerm (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterContent (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterAdNetworkClickID (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterCP1 (NSString) (optional)</li>
+            /// </ul>
+            static const std::string kFIREventCampaignDetails;
+
+            /// Checkout progress. Params:
+            ///
+            /// <ul>
+            ///    <li>@c kFIRParameterCheckoutStep (unsigned 64-bit integer as NSNumber)</li>
+            ///    <li>@c kFIRParameterCheckoutOption (NSString) (optional)</li>
+            /// </ul>
+            static const std::string kFIREventCheckoutProgress;
 
             /// Earn Virtual Currency event. This event tracks the awarding of virtual currency in your app. Log
             /// this along with @c kFIREventSpendVirtualCurrency to better understand your virtual economy.
@@ -212,6 +235,24 @@ namespace sdkbox {
             /// </ul>
             static const std::string kFIREventPurchaseRefund;
 
+            /// Remove from cart event. Params:
+            ///
+            /// <ul>
+            ///     <li>@c kFIRParameterQuantity (signed 64-bit integer as NSNumber)</li>
+            ///     <li>@c kFIRParameterItemID (NSString)</li>
+            ///     <li>@c kFIRParameterItemName (NSString)</li>
+            ///     <li>@c kFIRParameterItemCategory (NSString)</li>
+            ///     <li>@c kFIRParameterItemLocationID (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterPrice (double as NSNumber) (optional)</li>
+            ///     <li>@c kFIRParameterCurrency (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterValue (double as NSNumber) (optional)</li>
+            ///     <li>@c kFIRParameterOrigin (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterDestination (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterStartDate (NSString) (optional)</li>
+            ///     <li>@c kFIRParameterEndDate (NSString) (optional)</li>
+            /// </ul>
+            static const std::string kFIREventRemoveFromCart;
+
             /// Search event. Apps that support search features can use this event to contextualize search
             /// operations by supplying the appropriate, corresponding parameters. This event can help you
             /// identify the most popular content in your app. Params:
@@ -241,6 +282,14 @@ namespace sdkbox {
             ///     <li>@c kFIRParameterItemID (NSString)</li>
             /// </ul>
             static const std::string kFIREventSelectContent;
+
+            /// Set checkout option. Params:
+            ///
+            /// <ul>
+            ///    <li>@c kFIRParameterCheckoutStep (unsigned 64-bit integer as NSNumber)</li>
+            ///    <li>@c kFIRParameterCheckoutOption (NSString)</li>
+            /// </ul>
+            static const std::string kFIREventSetCheckoutOption;
 
             /// Share event. Apps with social features can log the Share event to identify the most viral
             /// content. Params:
@@ -337,6 +386,21 @@ namespace sdkbox {
             /// </ul>
             static const std::string kFIREventViewSearchResults;
 
+            /// Level Start event. Log this event when the user starts a new level. Params:
+            ///
+            /// <ul>
+            ///     <li>@c kFIRParameterLevelName (NSString)</li>
+            /// </ul>
+            static const std::string kFIREventLevelStart;
+
+            /// Level End event. Log this event when the user finishes a level. Params:
+            ///
+            /// <ul>
+            ///     <li>@c kFIRParameterLevelName (NSString)</li>
+            ///     <li>@c kFIRParameterSuccess (NSString)</li>
+            /// </ul>
+            static const std::string kFIREventLevelEnd;
+
 
 
             /*
@@ -359,6 +423,35 @@ namespace sdkbox {
             /// </pre>
             static const std::string kFIRParameterAchievementID;
 
+            /// Ad Network Click ID (NSString). Used for network-specific click IDs which vary in format.
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterAdNetworkClickID : @"1234567",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterAdNetworkClickID;
+
+            /// The store or affiliation from which this transaction occurred (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterAffiliation : @"Google Store",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterAffiliation;
+
+            /// The individual campaign name, slogan, promo code, etc. Some networks have pre-defined macro to
+            /// capture campaign information, otherwise can be populated by developer. Highly Recommended
+            /// (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCampaign : @"winter_promotion",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCampaign;
+
             /// Character used in game (NSString).
             /// <pre>
             ///     NSDictionary *params = @{
@@ -367,6 +460,29 @@ namespace sdkbox {
             ///     };
             /// </pre>
             static const std::string kFIRParameterCharacter;
+
+            /// The checkout step (1..N) (unsigned 64-bit integer as NSNumber).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCheckoutStep : @"1",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCheckoutStep;
+
+            /// Some option on a step in an ecommerce flow (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCheckoutOption : @"Visa",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCheckoutOption;
+
+
+
+            /// Campaign content (NSString).
+            static const std::string kFIRParameterContent;
 
             /// Type of content selected (NSString).
             /// <pre>
@@ -385,6 +501,34 @@ namespace sdkbox {
             ///     };
             /// </pre>
             static const std::string kFIRParameterCoupon;
+
+            /// Campaign custom parameter (NSString). Used as a method of capturing custom data in a campaign.
+            /// Use varies by network.
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCP1 : @"custom_data",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCP1;
+
+            /// The name of a creative used in a promotional spot (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCreativeName : @"Summer Sale",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCreativeName;
+
+            /// The name of a creative slot (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterCreativeSlot : @"summer_banner2",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterCreativeSlot;
 
             /// Purchase currency in 3-letter <a href="http://en.wikipedia.org/wiki/ISO_4217#Active_codes">
             /// ISO_4217</a> format (NSString).
@@ -433,6 +577,24 @@ namespace sdkbox {
             /// </pre>
             static const std::string kFIRParameterGroupID;
 
+            /// Index of an item in a list (signed 64-bit integer as NSNumber).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterIndex : @(1),
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterIndex;
+
+            /// Item brand (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterItemBrand : @"Google",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterItemBrand;
+
             /// Item category (NSString).
             /// <pre>
             ///     NSDictionary *params = @{
@@ -470,6 +632,24 @@ namespace sdkbox {
             /// </pre>
             static const std::string kFIRParameterItemName;
 
+            /// The list in which the item was presented to the user (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterItemList : @"Search Results",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterItemList;
+
+            /// Item variant (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterItemVariant : @"Red",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterItemVariant;
+
             /// Level in game (signed 64-bit integer as NSNumber).
             /// <pre>
             ///     NSDictionary *params = @{
@@ -489,6 +669,16 @@ namespace sdkbox {
             ///     };
             /// </pre>
             static const std::string kFIRParameterLocation;
+
+            /// The advertising or marketing medium, for example: cpc, banner, email, push. Highly recommended
+            /// (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterMedium : @"email",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterMedium;
 
             /// Number of nights staying at hotel (signed 64-bit integer as NSNumber).
             /// <pre>
@@ -580,7 +770,30 @@ namespace sdkbox {
             ///       // ...
             ///     };
             /// </pre>
+            ///
+            /// <b>This constant has been deprecated. Use Method constant instead.</b>
             static const std::string kFIRParameterSignUpMethod;
+
+            /// A particular approach used in an operation; for example, "facebook" or "email" in the context
+            /// of a sign_up or login event.  (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterMethod : @"google",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterMethod;
+
+            /// The origin of your traffic, such as an Ad network (for example, google) or partner (urban
+            /// airship). Identify the advertiser, site, publication, etc. that is sending traffic to your
+            /// property. Highly recommended (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterSource : @"InMobi",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterSource;
 
             /// The departure date, check-in date or rental start date for the item. This should be in
             /// YYYY-MM-DD format (NSString).
@@ -601,6 +814,16 @@ namespace sdkbox {
             ///     };
             /// </pre>
             static const std::string kFIRParameterTax;
+
+            /// If you're manually tagging keyword campaigns, you should use utm_term to specify the keyword
+            /// (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterTerm : @"game",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterTerm;
 
             /// A single ID for a ecommerce group transaction (NSString).
             /// <pre>
@@ -623,9 +846,13 @@ namespace sdkbox {
             /// A context-specific numeric value which is accumulated automatically for each event type. This is
             /// a general purpose parameter that is useful for accumulating a key metric that pertains to an
             /// event. Examples include revenue, distance, time and points. Value should be specified as signed
-            /// 64-bit integer or double as NSNumber. Notes: Currency-related values should be supplied using
-            /// double as NSNumber and must be accompanied by a @c kFIRParameterCurrency parameter. The valid
-            /// range of accumulated values is [-9,223,372,036,854.77, 9,223,372,036,854.77].
+            /// 64-bit integer or double as NSNumber. Notes: Values for pre-defined currency-related events
+            /// (such as @c kFIREventAddToCart) should be supplied using double as NSNumber and must be
+            /// accompanied by a @c kFIRParameterCurrency parameter. The valid range of accumulated values is
+            /// [-9,223,372,036,854.77, 9,223,372,036,854.77]. Supplying a non-numeric value, omitting the
+            /// corresponding @c kFIRParameterCurrency parameter, or supplying an invalid
+            /// <a href="https://goo.gl/qqX3J2">currency code</a> for conversion events will cause that
+            /// conversion to be omitted from reporting.
             /// <pre>
             ///     NSDictionary *params = @{
             ///       kFIRParameterValue : @(3.99),
@@ -644,8 +871,33 @@ namespace sdkbox {
             /// </pre>
             static const std::string kFIRParameterVirtualCurrencyName;
 
+            /// The name of a level in a game (NSString).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterLevelName : @"room_1",
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterLevelName;
+
+            /// The result of an operation. Specify 1 to indicate success and 0 to indicate failure (unsigned
+            /// integer as NSNumber).
+            /// <pre>
+            ///     NSDictionary *params = @{
+            ///       kFIRParameterSuccess : @(1),
+            ///       // ...
+            ///     };
+            /// </pre>
+            static const std::string kFIRParameterSuccess;
 
 
+
+            /**
+             * Set GDPR
+             *
+             * **NOTE**: please call before 'init' function
+             */
+            static void setGDPR(bool enabled);
 
 
             /**
@@ -662,13 +914,13 @@ namespace sdkbox {
             static void setUserID(const std::string& userID);
             static void setScreenName(const std::string& screen, const std::string& screenClass);
             static void logEvent(const std::string& event, const std::map<std::string, std::string>& params);
-            
+
             /**
              * Clears all analytics data for this instance from the device and resets the app instance ID.
              * FIRAnalyticsConfiguration values will be reset to the default values.
              */
             static void resetAnalyticsData();
-            
+
             /**
              * Sets whether analytics collection is enabled for this app on this device.
              * This setting is persisted across app sessions. By default it is enabled. (Only for Android)

@@ -129,6 +129,23 @@ static bool js_PluginFirebaseJS_Analytics_getVersion(se::State& s)
 }
 SE_BIND_FUNC(js_PluginFirebaseJS_Analytics_getVersion)
 
+static bool js_PluginFirebaseJS_Analytics_setGDPR(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginFirebaseJS_Analytics_setGDPR : Error processing arguments");
+        sdkbox::Firebase::Analytics::setGDPR(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginFirebaseJS_Analytics_setGDPR)
+
 static bool js_PluginFirebaseJS_Analytics_resetAnalyticsData(se::State& s)
 {
     const auto& args = s.args();
@@ -169,6 +186,7 @@ bool js_register_PluginFirebaseJS_Analytics(se::Object* obj)
     cls->defineStaticFunction("setAnalyticsCollectionEnabled", _SE(js_PluginFirebaseJS_Analytics_setAnalyticsCollectionEnabled));
     cls->defineStaticFunction("setScreenName", _SE(js_PluginFirebaseJS_Analytics_setScreenName));
     cls->defineStaticFunction("getVersion", _SE(js_PluginFirebaseJS_Analytics_getVersion));
+    cls->defineStaticFunction("setGDPR", _SE(js_PluginFirebaseJS_Analytics_setGDPR));
     cls->defineStaticFunction("resetAnalyticsData", _SE(js_PluginFirebaseJS_Analytics_resetAnalyticsData));
     cls->defineFinalizeFunction(_SE(js_sdkbox_Firebase_Analytics_finalize));
     cls->install();

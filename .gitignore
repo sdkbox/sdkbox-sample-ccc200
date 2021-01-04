@@ -4,6 +4,8 @@ build/jsb-link/res/
 build/jsb-link/src/
 build/jsb-link/frameworks/runtime-src/proj.ios_mac/gpg.framework/
 
+build/jsb-link/frameworks/runtime-src/proj.android-studio/app/.externalNativeBuild
+
 
 
 #/////////////////////////////////////////////////////////////////////////////

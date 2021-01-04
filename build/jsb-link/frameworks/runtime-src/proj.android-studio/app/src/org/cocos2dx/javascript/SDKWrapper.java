@@ -27,187 +27,153 @@ package org.cocos2dx.javascript;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.util.Log;
+import org.cocos2dx.javascript.service.SDKClass;
+import org.json.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SDKWrapper {
-	private final static boolean PACKAGE_AS = true;
-	private final static String TAG = "SDKWrapper";
-	private final static String CLASS_PATH = "com.anysdk.framework.PluginWrapper";
-	private static Class<?> mClass = null;
+    private Context mainActive = null;
+    private static SDKWrapper mInstace = null;
+    private List<SDKClass> sdkClasses;
 
-	private static SDKWrapper mInstace = null;
-	public static SDKWrapper getInstance() {
-		if (null == mInstace){
-			mInstace = new SDKWrapper();
-			if (PACKAGE_AS) {
-				try {
-					mClass = Class.forName(CLASS_PATH);
-				} catch (Exception e) {
-					Log.e(TAG, "Can not find class: " + CLASS_PATH);
-				}
-			}
-		}
-		return mInstace;	
-	}
-	
-	public void init(Context context) {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("init", Context.class).invoke(mClass, context);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			SDKWrapper.nativeLoadAllPlugins();
-		}
-		
-	}
-	
-	public void setGLSurfaceView(GLSurfaceView view) {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("setGLSurfaceView", GLSurfaceView.class).invoke(mClass, view);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	public void onResume() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onResume").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public static SDKWrapper getInstance() {
+        if (null == mInstace) {
+            mInstace = new SDKWrapper();
+        }
+        return mInstace;
+    }
 
-	public void onPause() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onPause").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void init(Context context) {
+        this.mainActive = context;
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.init(context);
+        }
+    }
 
-	public void onDestroy() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onDestroy").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public Context getContext() {
+        return this.mainActive;
+    }
 
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onActivityResult", int.class, int.class, Intent.class).invoke(mClass, requestCode, resultCode, data);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void loadSDKClass() {
+        ArrayList<SDKClass> classes = new ArrayList<SDKClass>();
+        try {
+            String json = this.getJson(this.mainActive, "project.json");
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray serviceClassPath = jsonObject.getJSONArray("serviceClassPath");
+            if (serviceClassPath == null) return;
+            int length = serviceClassPath.length();
+            for (int i = 0; i < length; i++) {
+                String classPath = serviceClassPath.getString(i);
+                SDKClass sdk = (SDKClass) Class.forName(classPath).newInstance();
+                classes.add(sdk);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.sdkClasses = classes;
+    }
 
-	public void onNewIntent(Intent intent) {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onNewIntent", Intent.class).invoke(mClass, intent);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    private String getJson(Context mContext, String fileName) {
+        StringBuilder sb = new StringBuilder();
+        AssetManager am = mContext.getAssets();
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(am.open(fileName)));
+            String next = "";
+            while (null != (next = br.readLine())) {
+                sb.append(next);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            sb.delete(0, sb.length());
+        }
+        return sb.toString().trim();
+    }
 
-	public void onRestart() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onRestart").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}	
-	}
+    public void setGLSurfaceView(GLSurfaceView view, Context context) {
+        this.mainActive = context;
+        this.loadSDKClass();
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.setGLSurfaceView(view);
+        }
+    }
 
-	public void onStop() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onStop").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void onResume() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onResume();
+        }
+    }
 
-	public void onBackPressed() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onBackPressed").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void onPause() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onPause();
+        }
+    }
 
-	public void onConfigurationChanged(Configuration newConfig) {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onConfigurationChanged", Configuration.class).invoke(mClass, newConfig);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void onDestroy() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onDestroy();
+        }
+    }
 
-	public void onRestoreInstanceState(Bundle savedInstanceState) {
-			if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onRestoreInstanceState", Bundle.class).invoke(mClass, savedInstanceState);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 
-	public void onSaveInstanceState(Bundle outState) {
-			if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onSaveInstanceState", Bundle.class).invoke(mClass, outState);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+    public void onNewIntent(Intent intent) {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onNewIntent(intent);
+        }
+    }
 
-	public void onStart() {
-		if (PACKAGE_AS) {
-			try {
-				if (null != mClass)
-				    mClass.getMethod("onStart").invoke(mClass);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	private static native void nativeLoadAllPlugins();
+    public void onRestart() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onRestart();
+        }
+    }
+
+    public void onStop() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onStop();
+        }
+    }
+
+    public void onBackPressed() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onBackPressed();
+        }
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onConfigurationChanged(newConfig);
+        }
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onRestoreInstanceState(savedInstanceState);
+        }
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onSaveInstanceState(outState);
+        }
+    }
+
+    public void onStart() {
+        for (SDKClass sdk : this.sdkClasses) {
+            sdk.onStart();
+        }
+    }
 }
