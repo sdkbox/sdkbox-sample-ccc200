@@ -19,8 +19,8 @@
     "portrait": false,
     "upsideDown": false
   },
-  "packageName": "com.sdkbox.sample.ccc200",
   "privateKey": "",
+  "packageName": "org.cocos2dx.PluginTest",
   "qqplay": {
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait"
