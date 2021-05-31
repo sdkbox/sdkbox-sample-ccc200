@@ -1,6 +1,11 @@
 #include "PluginAdMobJS.hpp"
+#ifdef SDKBOX_JSBINDING_CC3
+#include "cocos/bindings/jswrapper/SeApi.h"
+#include "cocos/bindings/manual/jsb_conversions.h"
+#else
 #include "scripting/js-bindings/manual/jsb_conversions.hpp"
 #include "scripting/js-bindings/manual/jsb_global.h"
+#endif
 #include "PluginAdMob/PluginAdMob.h"
 
 se::Object* __jsb_sdkbox_PluginAdMob_proto = nullptr;
@@ -314,7 +319,6 @@ SE_BIND_FUNC(js_PluginAdMobJS_PluginAdMob_isAvailable)
 
 static bool js_sdkbox_PluginAdMob_finalize(se::State& s)
 {
-    CCLOGINFO("jsbindings: finalizing JS object %p (sdkbox::PluginAdMob)", s.nativeThisObject());
     auto iter = se::NonRefNativePtrCreatedByCtorMap::find(s.nativeThisObject());
     if (iter != se::NonRefNativePtrCreatedByCtorMap::end())
     {

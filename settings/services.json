@@ -1,0 +1,445 @@
+{
+	"game": {
+		"name": "UNKNOW GAME",
+		"appid": "UNKNOW"
+	},
+	"services": [
+		{
+			"service_id": "303",
+			"service_name": "APM",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/46053c315d7c023d22b87fb78fa03e0d.png",
+			"service_desc": "Provides minute-level app performance monitoring capabilities. You can view and analyze app performance data collected by APM in AppGallery Connect to comprehensively understand the performance features of developed apps， helping you quickly and accurately rectify possible performance problems and continuously improve user experience.\n",
+			"service_title": "Provides minute-level application performance monitoring capability to collect application performance data.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-apm.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=303&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcapms/0.5.2_1.3.1.300.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/10/19<br />\n<strong>update note：</strong><br />\nUpdate SDK， add several interfaces.</p>",
+			"service_component_name": "service-agcapms",
+			"package_versions": [
+				"0.5.2_1.3.1.300",
+				"0.5.1_1.3.1"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "304",
+			"service_name": "Auth Service",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/87fab3ee7098640a3a6bcaf9b6d41f31.png",
+			"service_desc": "The AppGallery Connect auth service supports multiple authentication methods and is seamlessly integrated with other Serverless services to help you secure user data based on simple rules that you have defined.\n",
+			"service_title": "Protects your mobile and web users more efficiently with pre-built host authentication.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-auth.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=304&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcauth/0.5.2_1.4.1.300.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/10/19<br />\n<strong>update note：</strong><br />\nUpdate SDK， add several interfaces.</p>",
+			"service_component_name": "service-agcauth",
+			"package_versions": [
+				"0.5.2_1.4.1.300",
+				"0.5.1_1.3.1"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "305",
+			"service_name": "Crash",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/8ea2f92ed25f2b15c194f1687d55f53e.png",
+			"service_desc": "The Crash service provides crash reports that are easy to reference and analyze. The last-hour crash report allows you to monitor the quality of your app in real time. You can be quickly integrated into your app， without the need for coding.\n",
+			"service_title": "Enable rapid resolution with real-time， multidimensional reports.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-crash.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=305&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agccrash/0.5.5_1.4.1.300.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/10/19<br />\n<strong>update note：</strong><br />\nfix some bugs</p>",
+			"service_component_name": "service-agccrash",
+			"package_versions": [
+				"0.5.5_1.4.1.300",
+				"0.5.3_1.3.2"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "306",
+			"service_name": "App Linking",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/c6f540a4b1f061a3aa552e1875dd8bc2.png",
+			"service_desc": "App Linking allows you to create cross-platform links that can work as defined regardless of whether your app has been installed by a user. When a user taps the link， the user will be redirected to the specified in-app content. In App Linking， you can create both long and short links.\n",
+			"service_title": "Direct your users to specific in-app content for better activity.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-applinking.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=306&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcapplinking/0.6.0_1.4.2.301.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/8<br />\n<strong>update note：</strong><br />\n1.Update SDK to v1.4.2.301<br />\n2.Add <strong>intent link type</strong> option to the service panel<br />\n3.Add <strong>Clickboard Setting</strong> option to the service panel</p>",
+			"service_component_name": "service-agcapplinking",
+			"package_versions": [
+				"0.6.0_1.4.2.301",
+				"0.5.9_1.4.1.300",
+				"0.5.7_1.4.1.300",
+				"0.5.4_1.3.2",
+				"0.5.2_1.3.2"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "307",
+			"service_name": "App Messaging",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/8d648e354363686963ad739c5ae31113.png",
+			"service_desc": "You can use App Messaging of AppGallery Connect to send relevant messages to target users actively using your app to encourage them to use key app functions. For example， you can send in-app messages to encourage users to subscribe to certain products， provide tips on passing a game level， or recommend activities of a restaurant.\n",
+			"service_title": "Engage users using in-app messages with individualized templates.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-appmessaging.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=307&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcappmessaging/0.5.6_1.4.2.301.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/04<br />\n<strong>update note：</strong><br />\n1.Update SDK version to 1.4.2.301<br />\n2.Added the interface to set the display location (setDisplayLocation) of pictures and pop-up messages</p>",
+			"service_component_name": "service-agcappmessaging",
+			"package_versions": [
+				"0.5.6_1.4.2.301",
+				"0.5.3_1.4.0",
+				"0.5.3_1.4.0",
+				"0.5.2_1.4.0"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "308",
+			"service_name": "Remote Configuration",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/cb1415def30cb297a226334a4c8866c1.png",
+			"service_desc": "HUAWEI AppGallery Connect provides the Remote Configuration service for you to manage parameters online. With the service， you can change the behavior and appearance of your app online without requiring users to update the app.\n",
+			"service_title": "Changes how your app works and looks without requiring user updates",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-remote.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=308&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcremoteconfig/0.5.1_1.4.1.300.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/10/19<br />\n<strong>update note：</strong><br />\nUpdate SDK 1.4.1.300 and add local configuration entry.</p>",
+			"service_component_name": "service-agcremoteconfig",
+			"package_versions": [
+				"0.5.1_1.4.1.300",
+				"0.5.0_1.4.0"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "309",
+			"service_name": "Cloud Storage",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/477f8cf2c59e70144f7c7060fa8710df.png",
+			"service_desc": "Cloud Storage is scalable and maintenance-free. It allows you to store high volumes of data such as images， audios， and videos generated by your users securely and economically with direct device access.\n",
+			"service_title": "Store user-generated data on the cloud as needed， without maintenance",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-cloudstorage.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=309&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcstorage/0.5.2_1.3.1.100.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/04<br />\n<strong>update note：</strong><br />\n1.Update the Cloud Storage SDK to version 1.3.1.100<br />\n2.Fix the crash of the updatefilemetadata interface<br />\n3.Add some agcstoragereference interfaces<br />\n4.Add a new part to obtain the Android application storage directory interface</p>",
+			"service_component_name": "service-agcstorage",
+			"package_versions": [
+				"0.5.2_1.3.1.100",
+				"0.5.1_1.3.0.300"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "311",
+			"service_name": "Cloud DB",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/dd6263d489cf79ef7cc4ec8e59f5ca17.png",
+			"service_desc": "Cloud DB is a device-cloud synergy database product that provides data synergy management capabilities between the device and cloud， unified data models， and various data management APIs.\n",
+			"service_title": "Provide scalable and zero-maintenance cloud database services",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-clouddb.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=311&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcclouddb/0.5.5_1.2.3.301.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/23<br />\n<strong>update note：</strong><br />\n1.Fix the crash caused by the generator not adapting to the index of the new version of FORMAT-VERSION.<br />\n2.Fix the crash caused by Query type conversion problem.<br />\n3. Repair the database insertion failure caused by the JSON parsing library.</p>",
+			"service_component_name": "service-agcclouddb",
+			"package_versions": [
+				"0.5.5_1.2.3.301",
+				"0.5.4_1.2.3.301",
+				"0.5.3_1.2.3.301",
+				"0.5.1_1.2.1.301"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "312",
+			"service_name": "Cloud Functions",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/49138efdcfe5f9653331651da51ce838.png",
+			"service_desc": "Cloud Functions enables serverless computing. It provides the Function as a Service (FaaS) capabilities to simplify app development and O&M so your functions can be implemented more easily and your service capabilities can be built more quickly.\n",
+			"service_title": "Run code with automated management of server resources， while ensuring high availability and auto-scaling.",
+			"service_guide_url": "https://service.cocos.com/document/en/agc-cloudfunc.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=312&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agcfunction/0.5.0_1.4.1.300.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/11/05<br />\n<strong>update note：</strong><br />\nAdd AGC Cloud Function service</p>",
+			"service_component_name": "service-agcfunction",
+			"package_versions": [
+				"0.5.0_1.4.1.300"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI AppGallery Connect",
+			"service_group_id": "1001",
+			"not_service": false
+		},
+		{
+			"service_id": "301",
+			"service_name": "Location Kit",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/11e7f4732119ae233a205ec417cfa43d.png",
+			"service_desc": "HUAWEI Location Kit combines the GPS， Wi-Fi， and base station location functionalities into your app to build up global positioning capabilities， allowing you to provide flexible location-based services targeted at users around the globe.\n",
+			"service_title": "Allowing you to provide flexible location-based services targeted at users around the globe. ",
+			"service_guide_url": "https://service.cocos.com/document/en/hms-location.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=301&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-hmslocation/0.5.8_5.0.2.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/09/30<br />\n<strong>update note：</strong><br />\nAdd some new APIs support.</p>",
+			"service_component_name": "service-hmslocation",
+			"package_versions": [
+				"0.5.8_5.0.2",
+				"0.5.6_4.0.4"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI HMS Core",
+			"service_group_id": "1002",
+			"not_service": false
+		},
+		{
+			"service_id": "302",
+			"service_name": "Analytics Kit",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/e8b3ed0ab3/b134fdbad8be336fb4bbcaef240c99c2.png",
+			"service_desc": "HUAWEI Analytics Kit (hereinafter referred to as Analytics Kit or Kit) offers a rich array of preset analytics models that help you gain a deeper insight into your users， products， and content. With this insight， you can then take a data-driven approach to market your apps and optimize your products.\n",
+			"service_title": "Offers a rich array of preset analytics models that help you gain a deeper insight into your users， products， and content.",
+			"service_guide_url": "https://service.cocos.com/document/en/hms-analytics.html",
+			"service_sample_url": "https://github.com/CocosService/HUAWEIDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=302&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-hmsanalytics/0.5.7_5.0.5.301.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/16<br />\n<strong>update note：</strong><br />\n1.Add new predefined events and parameters</p>",
+			"service_component_name": "service-hmsanalytics",
+			"package_versions": [
+				"0.5.7_5.0.5.301",
+				"0.5.5_5.0.5.301",
+				"0.5.3_5.0.1"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "HUAWEI HMS Core",
+			"service_group_id": "1002",
+			"not_service": false
+		},
+		{
+			"service_id": "278",
+			"service_name": "Cocos SDKHub",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/dae922b126/63f4169359e77ff35d9287c1a9506efb.png",
+			"service_desc": "Help the game quickly integrate the channel SDK\n",
+			"service_title": "Help the game quickly integrate the channel SDK",
+			"service_guide_url": "https://service.cocos.com/document/en/sdkhub.html",
+			"service_sample_url": "https://github.com/CocosService/sdkhubDemo",
+			"service_dev_url": "",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-sdkhub/0.6.6_0.1.1.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/10/19<br />\n<strong>update note：</strong></li>\n<li>Adapt to Creator 2.4.5</li>\n<li>Fix some bugs</li>\n</ol>",
+			"service_component_name": "service-sdkhub",
+			"package_versions": [
+				"0.6.6_0.1.1",
+				"0.6.5_0.1.1",
+				"0.6.4_0.1.1",
+				"0.6.2_0.1.0",
+				"0.6.1_0.1.0"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "",
+			"service_group_id": "",
+			"not_service": false
+		},
+		{
+			"service_id": "235",
+			"service_name": "Cocos Analytics",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/dae922b126/1eb776afa85e5ae6dd17fd1939a12948.png",
+			"service_desc": "Help managers， producters， operators， developers and other roles， accurate and effective understanding of the product， more efficient access to target customers， to achieve business growth.\n",
+			"service_title": "Accurate understanding of the game's new，active，retained，paid and other data",
+			"service_guide_url": "https://n-analytics.cocos.com/docs",
+			"service_sample_url": "https://github.com/CocosService/cocosAnalyticsDemo",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=235&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android",
+				"iOS",
+				"H5"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-analytics/1.3.7_2.2.1.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/11/25<br />\n<strong>update note：</strong><br />\n1.When channel IDs are mismatched， inform the user of the problem and don’t overwrite the channel that the user has chosen.</p>",
+			"service_component_name": "service-analytics",
+			"package_versions": [
+				"1.3.7_2.2.1",
+				"1.3.5_2.2.1",
+				"1.2.9_2.2.0",
+				"1.2.8_2.1.3",
+				"1.2.7_2.1.2",
+				"1.2.6_2.1.1",
+				"1.2.5_2.1.1",
+				"1.2.3_2.1.1",
+				"1.2.0_2.1.0",
+				"1.1.7_2.0.3",
+				"1.1.6_2.0.1_2.0.2",
+				"1.1.5_2.0.1",
+				"1.1.4_2.0.1",
+				"1.1.3_2.0.1",
+				"1.1.2_2.0.0",
+				"1.0.0_1.0.5"
+			],
+			"build_platform": [],
+			"require_verify": 0,
+			"service_price": "",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "",
+			"service_group_id": "",
+			"not_service": false
+		},
+		{
+			"service_id": "242",
+			"service_name": "Agora RTC",
+			"service_icon": "https://download.cocos.com/CocosUdc/client/0ed3b350b5/273952d155b4cdb72d2b1bc61de91ade.png",
+			"service_desc": "Build the future of communications with the world’s leading voice、video、and interactive broadcasting platform. Agora delivers easy to embed Real-Time Engagement APIs which includes all the development tools and cloud infrastructure needed for mobile、web、and desktop applications.\n",
+			"service_title": "SDKBuilt-in Real-time audio and video SDK",
+			"service_guide_url": "https://docs.agora.io/en/Interactive Gaming/game_c?platform=Cocos Creator",
+			"service_sample_url": "https://github.com/AgoraIO-Community/Agora-Cocos-Quickstart/tree/master/CocosCreator",
+			"service_dev_url": "https://service.cocos.com/serviceConsole/jump?client_id=242&app_id=<app_id>&language=en",
+			"service_type": "3",
+			"service_type_zh": "公司和个人游戏",
+			"support_platform": [
+				"Android",
+				"iOS",
+				"H5"
+			],
+			"package_download_url": "https://download.cocos.com/CocosUdc/plugins/service-agora/1.3.1_3.1.zip",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2020/12/07<br />\n<strong>update note：</strong><br />\n1.Add video module<br />\n2.Add video cloud components to make visualization drag-and-play<br />\n3.Optimize performance</p>",
+			"service_component_name": "service-agora",
+			"package_versions": [
+				"1.3.1_3.1",
+				"1.2.1_3.1.2",
+				"1.1.0_2.2.3.20_2.5.2",
+				"1.0.2_2.2.3.20_2.5.2",
+				"1.0.1_2.2.3.20_2.5.2"
+			],
+			"build_platform": [],
+			"require_verify": 1,
+			"service_price": "The service according to usage billing，<a href='https://cloud.tencent.com/document/product/876/18864'> <font color='#DDDDDD'> billing rules </font> </a>，the fees incurred by the third party from your <a href='https://service.cocos.com/console/#/surplus'> <font color='#DDDDDD'> Cocos balances </font></a>.",
+			"service_protocol": "Game for the first time to open the service，the Cocos after notification service for game on service and initialization parameters，service party may according to need to get your Cocos account information，such as account basic information，game basic information，account balance，click on the confirm open button that is seen as you agree to the service to access your account information，See <a href='https://www.cocos.com/en/policy?type=Agreement'>Cocos user service agreement </a> and <a href='https://www.cocos.com/en/policy?type=privacy'>Cocos privacy policy </a>",
+			"service_group": "",
+			"service_group_id": "",
+			"not_service": false
+		}
+	]
+}

@@ -2,6 +2,16 @@
 #include "PluginSdkboxAds/PluginSdkboxAds.h"
 #include "PluginSdkboxAdsJSHelper.h"
 
+#ifdef SDKBOX_JSBINDING_CC3
+#include "cocos/bindings/jswrapper/SeApi.h"
+#include "cocos/bindings/manual/jsb_conversions.h"
+
+namespace cocos2d = cc;
+#else
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+#include "cocos/scripting/js-bindings/manual/jsb_conversions.hpp"
+#endif
+
 class SdkboxAdsListenerJS : public sdkbox::PluginSdkboxAdsListener, public sdkbox::JSListenerBase
 {
 public:

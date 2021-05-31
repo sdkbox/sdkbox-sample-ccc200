@@ -1,6 +1,5 @@
 #pragma once
 
-#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
 
 namespace se {
     class Object;

@@ -1,6 +1,11 @@
 #include "PluginSdkboxAdsJS.hpp"
+#ifdef SDKBOX_JSBINDING_CC3
+#include "cocos/bindings/jswrapper/SeApi.h"
+#include "cocos/bindings/manual/jsb_conversions.h"
+#else
 #include "scripting/js-bindings/manual/jsb_conversions.hpp"
 #include "scripting/js-bindings/manual/jsb_global.h"
+#endif
 #include "PluginSdkboxAds/PluginSdkboxAds.h"
 
 se::Object* __jsb_sdkbox_PluginSdkboxAds_proto = nullptr;
@@ -131,7 +136,6 @@ SE_BIND_FUNC(js_PluginSdkboxAdsJS_PluginSdkboxAds_setGDPR)
 
 static bool js_sdkbox_PluginSdkboxAds_finalize(se::State& s)
 {
-    CCLOGINFO("jsbindings: finalizing JS object %p (sdkbox::PluginSdkboxAds)", s.nativeThisObject());
     auto iter = se::NonRefNativePtrCreatedByCtorMap::find(s.nativeThisObject());
     if (iter != se::NonRefNativePtrCreatedByCtorMap::end())
     {

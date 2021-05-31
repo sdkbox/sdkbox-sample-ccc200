@@ -1,6 +1,6 @@
 /****************************************************************************
 
- Copyright (c) 2014-2016 SDKBOX Inc
+ Copyright (c) 2014-2020 SDKBOX Inc
 
  ****************************************************************************/
 
@@ -139,6 +139,7 @@ namespace sdkbox {
         virtual void adViewDidReceiveAd(const std::string &name) {}
         virtual void adViewDidFailToReceiveAdWithError(const std::string &name, const std::string &msg) {}
         virtual void adViewWillPresentScreen(const std::string &name) {}
+        virtual void adViewDidPresentScreen(const std::string &name) {}
         virtual void adViewDidDismissScreen(const std::string &name) {}
         virtual void adViewWillDismissScreen(const std::string &name) {}
         virtual void adViewWillLeaveApplication(const std::string &name) {}
