@@ -99,10 +99,21 @@ android {
 
 android.applicationVariants.all { variant ->
     // delete previous files first
-    delete "${buildDir}/intermediates/merged_assets/${variant.dirName}"
+    def outputDir = "${buildDir}/intermediates/merged_assets/${variant.dirName}/out"
+    delete "${outputDir}"
 
     variant.mergeAssets.doLast {
         def sourceDir = "${buildDir}/../../../../.."
+
+        copy {
+            from "${sourceDir}/res"
+            into "${outputDir}/res"
+        }
+
+        copy {
+            from "${sourceDir}/subpackages"
+            into "${outputDir}/subpackages"
+        }
 
         copy {
             from "${sourceDir}"
