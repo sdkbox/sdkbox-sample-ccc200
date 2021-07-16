@@ -65,6 +65,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     se->setExceptionCallback([](const char *location, const char *message, const char *stack) {
         // Send exception information to server like Tencent Bugly.
+        cocos2d::log("\nUncaught Exception:\n - location :  %s\n - msg : %s\n - detail : \n      %s\n", location, message, stack);
     });
     
     jsb_register_all_modules();
@@ -91,13 +92,13 @@ bool AppDelegate::applicationDidFinishLaunching()
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
-void AppDelegate::applicationDidEnterBackground()
+void AppDelegate::onPause()
 {
-    EventDispatcher::dispatchEnterBackgroundEvent();
+    EventDispatcher::dispatchOnPauseEvent();
 }
 
 // this function will be called when the app is active again
-void AppDelegate::applicationWillEnterForeground()
+void AppDelegate::onResume()
 {
-    EventDispatcher::dispatchEnterForegroundEvent();
+    EventDispatcher::dispatchOnResumeEvent();
 }

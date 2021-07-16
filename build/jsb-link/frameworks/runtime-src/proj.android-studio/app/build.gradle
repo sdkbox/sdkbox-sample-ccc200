@@ -20,9 +20,9 @@ android {
                     targets 'cocos2djs'
                     arguments 'NDK_TOOLCHAIN_VERSION=clang'
                     
-                    def module_paths = [project.file("/Applications/CocosCreator.2.0.10.app/Contents/Resources/cocos2d-x"),
-                                        project.file("/Applications/CocosCreator.2.0.10.app/Contents/Resources/cocos2d-x/cocos"),
-                                        project.file("/Applications/CocosCreator.2.0.10.app/Contents/Resources/cocos2d-x/external")]
+                    def module_paths = [project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x"),
+                                        project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/cocos"),
+                                        project.file("/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/external")]
                     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
                     }
@@ -38,9 +38,9 @@ android {
     }
 
     sourceSets.main {
-        java.srcDir "src"
-        res.srcDir "res"
-        jniLibs.srcDir "libs"
+        java.srcDirs "../src", "src"
+        res.srcDirs "../res", 'res'
+        jniLibs.srcDirs "../libs", 'libs'
         manifest.srcFile "AndroidManifest.xml"
     }
 
@@ -103,26 +103,13 @@ android.applicationVariants.all { variant ->
 
     variant.mergeAssets.doLast {
         def sourceDir = "${buildDir}/../../../../.."
-        def outputDir = "${buildDir}/intermediates/merged_assets/${variant.dirName}/out"
 
         copy {
-            from "${sourceDir}/res"
-            into "${outputDir}/res"
-        }
-
-        copy {
-            from "${sourceDir}/subpackages"
-            into "${outputDir}/subpackages"
-        }
-
-        copy {
-            from "${sourceDir}/src"
-            into "${outputDir}/src"
-        }
-
-        copy {
-            from "${sourceDir}/jsb-adapter"
-            into "${outputDir}/jsb-adapter"
+            from "${sourceDir}"
+            include "assets/**"
+            include "src/**"
+            include "jsb-adapter/**"
+            into outputDir
         }
 
         copy {
@@ -134,9 +121,10 @@ android.applicationVariants.all { variant ->
 }
 
 dependencies {
+    implementation fileTree(dir: '../libs', include: ['*.jar','*.aar'])
     implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
-    implementation fileTree(dir: "/Applications/CocosCreator.2.0.10.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
+    implementation fileTree(dir: "/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/java/libs", include: ['*.jar'])
     implementation project(':libcocos2dx')
 }
-dependencies { implementation 'com.google.android.gms:play-services-base:16.1.0' }
-dependencies { implementation 'com.google.android.gms:play-services-ads:20.1.0' }
+dependencies { compile 'com.google.android.gms:play-services-base:16.1.0' }
+dependencies { compile 'com.google.android.gms:play-services-ads:20.1.0' }

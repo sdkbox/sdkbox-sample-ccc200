@@ -43,7 +43,32 @@
     "scheme": "https",
     "host": "",
     "skipRecord": false,
-    "recordPath": ""
+    "recordPath": "",
+    "packageName": "org.cocos2d.demo"
   },
-  "appBundle": false
+  "appBundle": false,
+  "mainCompressionType": "default",
+  "mainIsRemote": false,
+  "nativeMd5Cache": true,
+  "android": {
+    "packageName": "com.sdkbox.sample.ccc200",
+    "REMOTE_SERVER_ROOT": ""
+  },
+  "ios": {
+    "packageName": "com.sdkbox.sample.ccc200",
+    "REMOTE_SERVER_ROOT": "",
+    "ios_enable_jit": true
+  },
+  "mac": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
+    "width": 1280,
+    "height": 720
+  },
+  "win32": {
+    "REMOTE_SERVER_ROOT": "",
+    "width": 1280,
+    "height": 720
+  },
+  "agreements": {}
 }

@@ -37,11 +37,12 @@ public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Workaround in https://stackoverflow.com/questions/16283079/re-launch-of-activity-on-home-button-but-only-the-first-time/16447508
+        // Workaround in
+        // https://stackoverflow.com/questions/16283079/re-launch-of-activity-on-home-button-but-only-the-first-time/16447508
         if (!isTaskRoot()) {
             // Android launched another instance of the root activity into an existing task
-            //  so just quietly finish and go away, dropping the user back into the activity
-            //  at the top of the stack (ie: the last state of this task)
+            // so just quietly finish and go away, dropping the user back into the activity
+            // at the top of the stack (ie: the last state of this task)
             // Don't need to finish it again since it's finished in super.onCreate .
             return;
         }
@@ -49,7 +50,7 @@ public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
         SDKWrapper.getInstance().init(this);
 
     }
-    
+
     @Override
     public Cocos2dxGLSurfaceView onCreateView() {
         Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
@@ -77,6 +78,12 @@ public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        // Workaround in https://stackoverflow.com/questions/16283079/re-launch-of-activity-on-home-button-but-only-the-first-time/16447508
+        if (!isTaskRoot()) {
+            return;
+        }
+
         SDKWrapper.getInstance().onDestroy();
 
     }
@@ -104,7 +111,7 @@ public class AppActivity extends com.sdkbox.plugin.SDKBoxActivity {
         super.onStop();
         SDKWrapper.getInstance().onStop();
     }
-        
+
     @Override
     public void onBackPressed() {
         SDKWrapper.getInstance().onBackPressed();
