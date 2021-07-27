@@ -22,6 +22,6 @@
             </intent-filter>
         </activity>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
-        <provider android:authorities="com.facebook.app.FacebookContentProvider_replace_with_your_app_id_" android:exported="true" android:name="com.facebook.FacebookContentProvider" />
+        <provider android:authorities="com.facebook.app.FacebookContentProvider804439962988217" android:exported="true" android:name="com.facebook.FacebookContentProvider" />
     </application>
 </manifest>
