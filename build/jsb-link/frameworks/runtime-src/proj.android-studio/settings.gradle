@@ -1,4 +1,4 @@
-include ':libcocos2dx'
-project(':libcocos2dx').projectDir = new File('/Applications/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/libcocos2dx')
+include ':libcocos2dx',':game', ':instantapp'
+project(':libcocos2dx').projectDir = new File('/Applications/CocosCreator/Creator/2.4.5/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/android/libcocos2dx')
 include ':sdkbox-sample-ccc200'
 project(':sdkbox-sample-ccc200').projectDir = new File(settingsDir, 'app')

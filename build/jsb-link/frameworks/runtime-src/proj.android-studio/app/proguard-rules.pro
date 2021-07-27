@@ -15,27 +15,30 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
-# facebook
--keep public class com.facebook.** { *; }
--dontwarn com.facebook.**
-# google play service
--keep class com.google.android.gms.** { *; }
--dontwarn com.google.android.gms.**
--keep class com.google.protobuf.** { *; }
--dontwarn com.google.protobuf.**
--keep class * extends java.util.ListResourceBundle {
-    protected Object[][] getContents();
-}
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
-    public static final *** NULL;
-}
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * {
-    @com.google.android.gms.common.annotation.KeepName *;
-}
--keepnames class * implements android.os.Parcelable {
-    public static final ** CREATOR;
-}
-#sdkbox
--keep class com.sdkbox.** { *; }
--dontwarn com.sdkbox.**
+
+# Proguard Cocos2d-x-lite for release
+-keep public class org.cocos2dx.** { *; }
+-dontwarn org.cocos2dx.**
+
+# Proguard Apache HTTP for release
+-keep class org.apache.http.** { *; }
+-dontwarn org.apache.http.**
+
+# Proguard okhttp for release
+-keep class okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+-keep class okio.** { *; }
+-dontwarn okio.**
+
+# Proguard Android Webivew for release. you can comment if you are not using a webview
+-keep public class android.net.http.SslError
+-keep public class android.webkit.WebViewClient
+
+-dontwarn android.webkit.WebView
+-dontwarn android.net.http.SslError
+-dontwarn android.webkit.WebViewClient
+
+# keep anysdk for release. you can comment if you are not using anysdk
+-keep public class com.anysdk.** { *; }
+-dontwarn com.anysdk.**

@@ -3,11 +3,19 @@
 #include "SDKBoxJSHelper.h"
 #include "PluginFacebook/PluginFacebook.h"
 
+#ifdef SDKBOX_JSBINDING_CC3
+#include "cocos/bindings/jswrapper/SeApi.h"
+#include "cocos/bindings/manual/jsb_conversions.h"
+
+namespace cocos2d = cc;
+#else
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
 #include "scripting/js-bindings/manual/jsb_conversions.hpp"
 
 #include "cocos2d.h"
 #include "base/CCScheduler.h"
 #include "platform/CCApplication.h"
+#endif
 
 using namespace sdkbox;
 
@@ -57,7 +65,7 @@ public:
     virtual void onLogin(bool isLogin, const std::string& error)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,isLogin,error,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,isLogin,error,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -81,7 +89,7 @@ public:
     virtual void onSharedSuccess(const std::string& message)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,message,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,message,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -103,7 +111,7 @@ public:
     virtual void onSharedFailed(const std::string& message)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,message,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,message,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -125,7 +133,7 @@ public:
     virtual void onSharedCancel()
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -146,7 +154,7 @@ public:
     virtual void onAPI(const std::string& tag, const std::string& jsonData)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,tag,jsonData,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,tag,jsonData,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -169,7 +177,7 @@ public:
     virtual void onPermission(bool isLogin, const std::string& error)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,isLogin,error,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,isLogin,error,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -192,7 +200,7 @@ public:
     virtual void onFetchFriends(bool ok, const std::string& msg)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -215,7 +223,7 @@ public:
     virtual void onInviteFriendsResult(bool ok, const std::string& msg)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -239,7 +247,7 @@ public:
     virtual void onInviteFriendsWithInviteIdsResult(bool ok, const std::string& msg)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,ok,msg,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -262,7 +270,7 @@ public:
     virtual void onRequestInvitableFriends(const sdkbox::FBInvitableFriendsInfo& invitable_friends_and_pagination )
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,invitable_friends_and_pagination,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,invitable_friends_and_pagination,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -290,7 +298,7 @@ public:
     virtual void onGetUserInfo(const sdkbox::FBGraphUser& userInfo )
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,userInfo,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,userInfo,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -318,7 +326,7 @@ public:
     virtual void onRequestGiftResult(bool result, const std::string& msg)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,result,msg,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,result,msg,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -341,7 +349,7 @@ public:
     virtual void onSendGiftResult(bool result, const std::string& msg)
     {
         std::string funName(__FUNCTION__);
-        cocos2d::Application::getInstance()->getScheduler()->performFunctionInCocosThread([funName,result,msg,this](){
+        AppNS::getInstance()->getScheduler()->performFunctionInCocosThread([funName,result,msg,this](){
             if (!_JSDelegate.isObject())
                 return;
 
@@ -398,23 +406,6 @@ static sdkbox::FBShareInfo map_to_FBShareInfo(const std::map<std::string, std::s
 
     return info;
 }
-
-static bool js_PluginFacebookJS_PluginFacebook_share(se::State& s)
-{
-    const auto& args = s.args();
-    int argc = (int)args.size();
-    if (argc == 1) {
-        bool ok = true;
-        std::map<std::string, std::string> arg0;
-        ok &= seval_to_std_map_string_string(args[0], &arg0);
-        SE_PRECONDITION2(ok, false, "js_PluginFacebookJS_PluginFacebook_share : Error processing arguments");
-        sdkbox::PluginFacebook::share(map_to_FBShareInfo(arg0));
-        return true;
-    }
-    SE_REPORT_ERROR("js_PluginFacebookJS_PluginFacebook_share : wrong number of arguments");
-    return false;
-}
-SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_share)
 
 static bool js_PluginFacebookJS_PluginFacebook_api(se::State& s)
 {
@@ -661,7 +652,6 @@ bool register_all_PluginFacebookJS_helper(se::Object* obj)
     auto pluginValue = sdkbox::getPluginValue(obj, "sdkbox.PluginFacebook");
     auto plugin = pluginValue.toObject();
     plugin->defineFunction("setListener", _SE(js_PluginFacebookJS_setListener));
-    plugin->defineFunction("share", _SE(js_PluginFacebookJS_PluginFacebook_share));
     plugin->defineFunction("api", _SE(js_PluginFacebookJS_PluginFacebook_api));
     plugin->defineFunction("dialog", _SE(js_PluginFacebookJS_PluginFacebook_dialog));
     plugin->defineFunction("requestReadPermissions", _SE(js_PluginFacebookJS_PluginFacebook_requestReadPermissions));

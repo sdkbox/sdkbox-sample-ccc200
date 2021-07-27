@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="app_name" translatable="false">sdkbox-sample-ccc200</string>
+    <string name="facebook_app_id">your_app_id</string>
+    <string name="fb_login_protocol_scheme">fbyour_app_id</string>
+</resources>

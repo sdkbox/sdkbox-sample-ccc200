@@ -1,26 +1,15 @@
 #include "PluginFacebookJS.hpp"
+#ifdef SDKBOX_JSBINDING_CC3
+#include "cocos/bindings/jswrapper/SeApi.h"
+#include "cocos/bindings/manual/jsb_conversions.h"
+#else
 #include "scripting/js-bindings/manual/jsb_conversions.hpp"
 #include "scripting/js-bindings/manual/jsb_global.h"
+#endif
 #include "PluginFacebook/PluginFacebook.h"
 
 se::Object* __jsb_sdkbox_PluginFacebook_proto = nullptr;
 se::Class* __jsb_sdkbox_PluginFacebook_class = nullptr;
-
-static bool js_PluginFacebookJS_PluginFacebook_getSDKVersion(se::State& s)
-{
-    const auto& args = s.args();
-    size_t argc = args.size();
-    CC_UNUSED bool ok = true;
-    if (argc == 0) {
-        std::string result = sdkbox::PluginFacebook::getSDKVersion();
-        ok &= std_string_to_seval(result, &s.rval());
-        SE_PRECONDITION2(ok, false, "js_PluginFacebookJS_PluginFacebook_getSDKVersion : Error processing arguments");
-        return true;
-    }
-    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 0);
-    return false;
-}
-SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_getSDKVersion)
 
 static bool js_PluginFacebookJS_PluginFacebook_isLoggedIn(se::State& s)
 {
@@ -37,6 +26,22 @@ static bool js_PluginFacebookJS_PluginFacebook_isLoggedIn(se::State& s)
     return false;
 }
 SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_isLoggedIn)
+
+static bool js_PluginFacebookJS_PluginFacebook_getSDKVersion(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 0) {
+        std::string result = sdkbox::PluginFacebook::getSDKVersion();
+        ok &= std_string_to_seval(result, &s.rval());
+        SE_PRECONDITION2(ok, false, "js_PluginFacebookJS_PluginFacebook_getSDKVersion : Error processing arguments");
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 0);
+    return false;
+}
+SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_getSDKVersion)
 
 static bool js_PluginFacebookJS_PluginFacebook_getUserID(se::State& s)
 {
@@ -120,6 +125,25 @@ static bool js_PluginFacebookJS_PluginFacebook_requestGift(se::State& s)
 }
 SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_requestGift)
 
+static bool js_PluginFacebookJS_PluginFacebook_gameRequest(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 2) {
+        std::string arg0;
+        std::string arg1;
+        ok &= seval_to_std_string(args[0], &arg0);
+        ok &= seval_to_std_string(args[1], &arg1);
+        SE_PRECONDITION2(ok, false, "js_PluginFacebookJS_PluginFacebook_gameRequest : Error processing arguments");
+        sdkbox::PluginFacebook::gameRequest(arg0, arg1);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 2);
+    return false;
+}
+SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_gameRequest)
+
 static bool js_PluginFacebookJS_PluginFacebook_init(se::State& s)
 {
     const auto& args = s.args();
@@ -149,6 +173,23 @@ static bool js_PluginFacebookJS_PluginFacebook_setAppURLSchemeSuffix(se::State& 
     return false;
 }
 SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_setAppURLSchemeSuffix)
+
+static bool js_PluginFacebookJS_PluginFacebook_setGDPR(se::State& s)
+{
+    const auto& args = s.args();
+    size_t argc = args.size();
+    CC_UNUSED bool ok = true;
+    if (argc == 1) {
+        bool arg0;
+        ok &= seval_to_boolean(args[0], &arg0);
+        SE_PRECONDITION2(ok, false, "js_PluginFacebookJS_PluginFacebook_setGDPR : Error processing arguments");
+        sdkbox::PluginFacebook::setGDPR(arg0);
+        return true;
+    }
+    SE_REPORT_ERROR("wrong number of arguments: %d, was expecting %d", (int)argc, 1);
+    return false;
+}
+SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_setGDPR)
 
 static bool js_PluginFacebookJS_PluginFacebook_logEvent(se::State& s)
 {
@@ -326,7 +367,6 @@ SE_BIND_FUNC(js_PluginFacebookJS_PluginFacebook_getAccessToken)
 
 static bool js_sdkbox_PluginFacebook_finalize(se::State& s)
 {
-    CCLOGINFO("jsbindings: finalizing JS object %p (sdkbox::PluginFacebook)", s.nativeThisObject());
     auto iter = se::NonRefNativePtrCreatedByCtorMap::find(s.nativeThisObject());
     if (iter != se::NonRefNativePtrCreatedByCtorMap::end())
     {
@@ -342,13 +382,15 @@ bool js_register_PluginFacebookJS_PluginFacebook(se::Object* obj)
 {
     auto cls = se::Class::create("PluginFacebook", obj, nullptr, nullptr);
 
-    cls->defineStaticFunction("getSDKVersion", _SE(js_PluginFacebookJS_PluginFacebook_getSDKVersion));
     cls->defineStaticFunction("isLoggedIn", _SE(js_PluginFacebookJS_PluginFacebook_isLoggedIn));
+    cls->defineStaticFunction("getSDKVersion", _SE(js_PluginFacebookJS_PluginFacebook_getSDKVersion));
     cls->defineStaticFunction("getUserID", _SE(js_PluginFacebookJS_PluginFacebook_getUserID));
     cls->defineStaticFunction("setLoginBehavior", _SE(js_PluginFacebookJS_PluginFacebook_setLoginBehavior));
     cls->defineStaticFunction("requestGift", _SE(js_PluginFacebookJS_PluginFacebook_requestGift));
+    cls->defineStaticFunction("gameRequest", _SE(js_PluginFacebookJS_PluginFacebook_gameRequest));
     cls->defineStaticFunction("init", _SE(js_PluginFacebookJS_PluginFacebook_init));
     cls->defineStaticFunction("setAppURLSchemeSuffix", _SE(js_PluginFacebookJS_PluginFacebook_setAppURLSchemeSuffix));
+    cls->defineStaticFunction("setGDPR", _SE(js_PluginFacebookJS_PluginFacebook_setGDPR));
     cls->defineStaticFunction("logEvent", _SE(js_PluginFacebookJS_PluginFacebook_logEvent));
     cls->defineStaticFunction("logout", _SE(js_PluginFacebookJS_PluginFacebook_logout));
     cls->defineStaticFunction("sendGift", _SE(js_PluginFacebookJS_PluginFacebook_sendGift));

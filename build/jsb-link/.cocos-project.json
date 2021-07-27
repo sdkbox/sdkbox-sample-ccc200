@@ -1,7 +1,7 @@
 {
-  "engine_version": "2.0.0",
+  "engine_version": "2.4.5",
   "has_native": true,
   "project_type": "js",
   "projectName": "sdkbox-sample-ccc200",
-  "packageName": "com.sdkbox.sample.ccc200"
+  "packageName": "org.cocos2d.demo"
 }
